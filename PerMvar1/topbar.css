@@ -10,20 +10,21 @@
     background-image: linear-gradient(rgb(13, 47, 71),rgb(212, 229, 238));
     height: 80px;
 }
-
-.active{
+/* Navbar links */
+nav{
+  flex: 1;
+  text-align: right;
+  margin-top: 20px;
+  
+}
+.navbar nav .active{
     background-color:aliceblue;
     border-radius: 30px;
     
 }
-/* Navbar links */
-nav{
-    flex: 1;
-    text-align: right;
-    margin-top: 20px;
-    
-}
-a {
+
+
+.navbar nav a {
     
     text-align: right;
     padding: 10px;
@@ -42,7 +43,7 @@ a {
 
   }
   
-  .navbar input[type=text] {
+  .navbar .search-container input[type=text] {
     padding: 6px 10px;
     height: 30px;
     margin-top: 8px;
@@ -73,8 +74,6 @@ a {
   
   .navbar .search-container button:hover {
     background: #ccc;
-   
-
   }
   
   @media screen and (max-width: 600px) {
@@ -96,23 +95,7 @@ a {
     }
   }
 
-#myvideo
-{
-    
-    position: relative;
-    top: 10px;
-    bottom: 300px;
-    right: 20px;
-    left: 20px;
-    width: 97%;
-    height: 50%;
-}
- 
-@media screen and (max-width: 600px) {
-  .video h1 {
-    font-size: 30px;
-  }
-}
+
 .topnav {
     background-color: #f6f6f6;
     overflow: hidden;
@@ -147,65 +130,4 @@ a {
     color:gold;
   }
 
-  .new h1 {
-    overflow: hidden;
-    text-align: center;
-  }
   
-  .new h1:before,
-  .new h1:after {
-    background-color: #000;
-    content: "";
-    display: inline-block;
-    height: 1px;
-    position: relative;
-    vertical-align: middle;
-    width: 30%;
-  }
-  
-  .new h1:before {
-    right: 0.5em;
-    margin-left: -50%;
-  }
-  
-  .new h1:after {
-    left: 0.5em;
-    margin-right: -50%;
-  }
-  .new{
-      float: inherit;
-  }
- .new .parfum1
-  {
-      position: relative;
-      float: left;
-      left: 50px;
-
-  }
-  .new  .parfum1 h3{
-  
-      float: right;
-      position: relative;
-      
-     top:100px;
-     left: -200px;
-      
-  }
-  .new  .parfum1 p{
-  
-    float: right;
-    position: relative;
-    padding: 150px;
-   top:10px;
-   left: 100px;
-    
-}
-  .new .parfum2
-  {
-    position: relative;
-    float: right;
-    right: 50px;
-    padding: auto;
-    top:550px;
-
-  }

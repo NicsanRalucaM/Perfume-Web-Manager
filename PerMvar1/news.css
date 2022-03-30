@@ -1,0 +1,74 @@
+#myvideo
+{
+    
+    position: relative;
+    top: 10px;
+    bottom: 300px;
+    right: 20px;
+    left: 20px;
+    width: 97%;
+    height: 50%;
+}
+ 
+.new h1 {
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .new h1:before,
+  .new h1:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 30%;
+  }
+  
+  .new h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+  
+  .new h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+  .new{
+      float: inherit;
+  }
+ .new .parfum1
+  {
+      position: relative;
+      float: left;
+      left: 50px;
+
+  }
+  .new  .parfum1 h3{
+  
+      float: right;
+      position: relative;
+      
+     top:100px;
+     left: -200px;
+      
+  }
+  .new  .parfum1 p{
+  
+    float: right;
+    position: relative;
+    padding: 150px;
+   top:10px;
+   left: 100px;
+    
+}
+  .new .parfum2
+  {
+    position: relative;
+    float: right;
+    right: 50px;
+    padding: auto;
+    top:550px;
+
+  }
