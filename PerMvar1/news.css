@@ -12,17 +12,29 @@
  
 .new
 {
- 
-  display: grid;
-grid-template-columns: auto auto;
-gap: 10 px;
+  height: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between;
 
+}
+.new .item1
+{
+  width: 100%;
+  margin: 10px;
+  
+}
+.new .item
+{
+  width: 100%;
+  margin: 10px;
 }
 .new .titlu
 {
 
   text-align: center;
-  grid-column: 1/span2;
   padding: 50px;
 }
 
@@ -35,7 +47,7 @@ gap: 10 px;
   height: 1px;
   position: relative;
   vertical-align: middle;
-  width: 30%;
+  width: 50%;
 }
 
 .new h1:before {
@@ -48,21 +60,142 @@ gap: 10 px;
   margin-right: -50%;
 }
 
-.new .parfumuri
+
+.new .parfumuri1
 {
-  height: 300px;
-  width: 700px;
-  display: grid;
-  grid-template-columns: auto auto;
-  padding: 50px 0px;
+ 
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.new .parfumuri .img1
+.left-col1
 {
-  position: relative;
-  left: 100px;
+  flex-basis: 60%;
 }
-.new .parfumuri .p1
+.left-col1 img{
+  width: 100%;
+}
+
+.right-col1
 {
-  position: relative;
-  left: 100px; 
+  flex-basis: 40%;
+  text-align: right;
 }
+.right-col1 .text{
+  max-width: 500px;
+  margin-right: 100px;
+  display: inline-block;
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
+}
+.parfumuri1 .common-btn
+{
+padding: 18px 40px;
+background-color: transparent;
+outline: none;
+border: 2px solid gold;
+font-weight: bold;
+cursor: pointer;
+}
+.parfumuri1 .text .cf{
+  text-align: right;
+}
+.parfumuri1 .text .uu{
+  text-align: center;
+}
+.new .parfumuri2
+{
+ padding-top: 50px;
+ padding-bottom: 50px;
+  padding: 100px;
+  display: flex;
+
+  align-items: center;
+  flex-wrap: wrap;
+}
+.left-col2
+{
+  flex-basis: 50%;
+  text-align: right;
+  
+}
+.left-col2 .text{
+  max-width: 500px;
+  margin-right: 100px;
+  display: inline-block;
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.right-col2
+{
+  flex-basis: 50%;
+}
+.right-col2 img{
+  width: 100%;
+}
+.parfumuri2 .common-btn
+{
+padding: 18px 40px;
+background-color: transparent;
+outline: none;
+border: 2px solid gold;
+font-weight: bold;
+cursor: pointer;
+}
+.parfumuri2 .text .cf{
+  text-align: left;
+}
+.parfumuri2 .text .uu{
+  text-align: center;
+}
+.item .parfumuri3
+{
+ 
+  padding-top: 50px;
+  padding-bottom: 50px;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+.left-col3
+{
+  flex-basis: 60%;
+}
+.left-col3 img{
+  width: 100%;
+}
+
+.right-col3
+{
+  flex-basis: 40%;
+  text-align: right;
+}
+.right-col3 .text{
+  max-width: 500px;
+  margin-right: 100px;
+  display: inline-block;
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
+ 
+}
+.parfumuri3 .common-btn
+{
+padding: 18px 40px;
+background-color: transparent;
+outline: none;
+border: 2px solid gold;
+font-weight: bold;
+cursor: pointer;
+}
+.parfumuri3 .text .cf{
+  text-align: right;
+}
+.parfumuri3 .text .uu{
+  text-align: center;
+}
+
