@@ -1,27 +1,62 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+.back{
+  background-image:url("imagesNews/about.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.text{
+  max-width: 650px;
+  position: relative;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(255, 255, 255,.4);
+  box-shadow: 0 15 px 20px rgba(0,0,0,.2);
+  color: aliceblue;
+  font-size: 60px;
 
-.text {
-width: 500px;
-   display: inline-block;
-   position: relative;
-   text-align: center;
-   
-  }
-  
-  /* Bottom right text */
-  .text-block {
-    position: absolute;
-   top: 30%;
-   margin-left: 20%;
- 
-   transform: translate(-50%, -50%);
-  }
-  .text-block p{
-      margin-left: 20%;
-      font-size: 150px;
-      color: white;
-  }
-  .content-block p{
-    margin-left: 20%;
-    font-size: 150px;
-    color: white;
+}
+.wpb_wrapper
+{
+  padding: 50px;
+  position: relative;
+  left: 500px;
+  color: #808080; font-size: 30px;
+}
+.container
+{
+  box-sizing: border-box;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.container .left
+{
+  flex-basis: 50%;
+}
+.container .left img{
+  width: 70%;
+  rotate: 180;
+}
+.container .right
+{
+  flex-basis: 40%;
+  text-align: center;
+}
+.container .right .conti{
+  max-width: 500px;
+  margin-right: 100px;
+  display: inline-block;
+  position: relative;
+  top: 20%;
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
 }
