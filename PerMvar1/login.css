@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+
+.full-screen-container {
+    background-image: url("product/log.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-container {
+    background-color: aliceblue;
+    padding: 50px 30px;
+    width: 50%;
+   
+}
+.login-title {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 0;
+    margin-bottom: 40px;
+    font-size:40px;
+    font-weight:normal;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 20px;
+    
+}
+.input-group label {
+    color: rgb(12, 11, 11);
+    font-weight: lighter;
+    font-size:25px;
+    margin-bottom: 7px;
+}
+.login-button {
+    padding: 10px 30px;
+   
+    border-radius: 5px; 
+    background-color:rgb(97, 210, 241);
+    outline: none;
+    font-size:35px;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: 250px;
+   
+}
