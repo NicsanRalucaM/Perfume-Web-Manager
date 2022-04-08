@@ -1,0 +1,27 @@
+
+.text {
+width: 500px;
+   display: inline-block;
+   position: relative;
+   text-align: center;
+   
+  }
+  
+  /* Bottom right text */
+  .text-block {
+    position: absolute;
+   top: 30%;
+   margin-left: 20%;
+ 
+   transform: translate(-50%, -50%);
+  }
+  .text-block p{
+      margin-left: 20%;
+      font-size: 150px;
+      color: white;
+  }
+  .content-block p{
+    margin-left: 20%;
+    font-size: 150px;
+    color: white;
+}
