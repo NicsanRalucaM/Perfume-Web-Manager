@@ -1,137 +1,178 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
-.navbar{
-    display: flex;
-    align-items:center;
-    padding: 10px;
-    background-image: linear-gradient(rgb(13, 47, 71),rgb(212, 229, 238));
-    height: 80px;
-}
-/* Navbar links */
-nav{
+body{
+  font-family: montserrat;
+}.bar{
+
+  background-image: linear-gradient(rgb(4, 37, 58),rgb(85, 105, 142));
+  
+  }
+  
+  .navbar
+  
+  {
+  
+  display: flex;
+  
+  align-items: left;
+  
+  padding: 5px;
+  
+  }
+  
+  .logo{
+  
+  margin-left: 10px;
+  
+  }
+  
+  .logo img{
+  
+  width: 200px;
+  
+  }
+  
+  nav{
+  
   flex: 1;
+  
   text-align: right;
-  margin-top: 20px;
   
+  }
+nav ul{
+  float: right;
+  margin-right: 10px;
 }
-.navbar nav .active{
-    background-color:aliceblue;
-    border-radius: 30px;
-    
+nav ul li{
+  display: inline-block;
+  line-height: 50px;
+  margin: 0 0px;
 }
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 10px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background: #1b9bff;
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 20px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 30px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  .logo img{
 
-
-.navbar nav a {
+    width: 70%;
     
-    text-align: right;
-    padding: 10px;
-    color:black;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Navbar links on mouse-over */
-  .navbar a:hover {
-    color: #000;
-    opacity: 0.7;
-  }
-  .navbar .search-container {
-    float: right;
-
-  }
-  
-  .navbar .search-container input[type=text] {
-    padding: 6px 10px;
-    height: 30px;
-    margin-top: 8px;
-    margin-left: 120px;
-    width: 300px;
-    font-size: 17px;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    border: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    height: auto;
     
-  }
-  
-  .navbar .search-container button {
-    float: right;
-    padding: 6px 10px;
-    height: 30px;
-    margin-top: 8px;
-    margin-right: 16px;
-
-    background:white;
-    font-size: 17px;
-    border: none;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    cursor: pointer;
-  }
-  
-  .navbar .search-container button:hover {
-    background: #ccc;
-  }
-  @media screen and (max-width: 600px) {
-    .topnav {
-      width: 100%;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .navbar .search-container {
-      float: none;
-    }
- .navbar input[type=text], .topnav .search-container button {
-      float: none;
-      display: block;
-      text-align: left;
-
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-    }
-    .navbar input[type=text] {
-      border: 1px solid #ccc;     
+    object-fit: cover;
     
     }
+  nav ul li a{
+    font-size: 16px;
   }
-
-
-.topnav {
-    background-color: #f6f6f6;
-    overflow: hidden;
+}
+@media (max-width: 650px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: absolute;
+    top:70 px;
+    left: 0;
+    width: 25%;
     
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: black;
+    background: #2c3e50;
+    top: 20%;
+    left: -100%;
     text-align: center;
-    position:relative;
-    left: 150px;
-    padding: 15px 20px;
-    text-decoration: none;
-    font-family: "Gill Sans Extrabold", sans-serif;
-    font-size: 17px;
+    transition: all .5s;
   }
+  nav ul li{
+    display: block;
+    margin: 5px 0;
+    line-height: 20px;
+  }
+  nav ul li a{
+    font-size: 10px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
   
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    
-    color: #000;
-    opacity: 0.7;
-    
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: whitesmoke;
-    text-decoration: underline overline;
-    color:gold;
-  }
+  .search
+  {
+  background: transparent;
+  text-align: center;
+}
 
+  .softbox{
+  position:relative;
+  top: 27%;
+	transition: border .2s linear;
+	font-size: 12px;width: 100%;
+	background: #f5f8fa;color: #0b2b41;
+	padding: 8px 52px 8px 12px;	height: 32px;
+	border: 1px solid #000203;border-radius: 50px;
+	outline: none;
+  }
+.softbox:focus{
+	transition: border .2s linear;
+	border: 2px solid rgb(65, 64, 64);
+  }
+.softbtn{position: relative;
+  left: 35%;
+	font-size: 20px;color: #082f49;
+	background-color: transparent;
+	border:none;
+	top: 3px;outline: none;
+	padding: 4px;
+  cursor: pointer;
+  }
   
+  
+  .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 50px; 
+    background-color: #d6dfe5;
+    text-align: center;
+  
+    /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+    }
+  }

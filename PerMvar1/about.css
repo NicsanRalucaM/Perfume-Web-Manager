@@ -96,25 +96,25 @@ border: 2px solid gold;
 font-weight: bold;
 cursor: pointer;
 }
-.row{
+.rowa{
   background-color: aliceblue;
 
 }
-.column {
+.columna {
   float: left;
   width: 50%;
   padding: 10px;
   height: 300px; /* Should be removed. Only for demonstration */
 }
 
-.column .text{
+.columna .text{
   margin-left: 30px;
   font-family:'Times New Roman', Times, serif;
   text-align: center;
   color: gray;
   font-size: 18px;
 }
-.column .common-btn
+.columna .common-btn
 {
  position: relative;
  left: 40%;
@@ -128,7 +128,7 @@ font-weight: bold;
 cursor: pointer;
 }
 /* Clear floats after the columns */
-.row:after {
+.rowa:after {
   content: "";
   display: table;
   clear: both;
@@ -148,7 +148,7 @@ cursor: pointer;
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
-  .column {
+  .columna {
     width: 100%;
   }
 }
