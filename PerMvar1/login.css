@@ -18,43 +18,39 @@
 
 
 .login-container {
-    background-color: aliceblue;
+    background-color: hsla(201, 100%, 6%, 0.6);
     padding: 50px 30px;
     width: 50%;
    
 }
 .login-title {
-    color: rgb(0, 0, 0);
+    color: white;
     text-align: center;
-    margin: 0;
-    margin-bottom: 40px;
-    font-size:40px;
-    font-weight:normal;
+    margin-top:5%;
+    font-size:120%;
 }
 .input-group {
     display: flex;
     flex-direction: column;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-bottom: 10%;
     
 }
 .input-group label {
-    color: rgb(12, 11, 11);
+    color: white;
     font-weight: lighter;
-    font-size:25px;
-    margin-bottom: 7px;
+    font-size:100%;
+    margin-bottom:1%;
 }
 .login-button {
-    padding: 10px 30px;
-   
-    border-radius: 5px; 
-    background-color:rgb(97, 210, 241);
+    padding: 2% 3%;
+    border-radius: 5px;
+    background-color: hsla(201, 100%, 50%, 0.1);
     outline: none;
-    font-size:35px;
+    font-size:100%;
     color: white;
-    margin-top: 20px;
+    margin-top: 5%;
     cursor: pointer;
-    margin-left: 250px;
+    margin-left: 45%;
    
 }
