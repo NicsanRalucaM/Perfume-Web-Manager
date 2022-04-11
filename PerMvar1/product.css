@@ -1,9 +1,14 @@
+body {
+    font-family: "Book Antiqua";
+}
+
 .all {
     padding-top: 0;
     padding-bottom: 50px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 .all .left {
@@ -35,8 +40,9 @@
 
 .all .right .details .titlu {
     width: 60%;
-    font-size: 32px;
+    font-size: 100%;
     padding: 20px;
+
 
 }
 
@@ -110,8 +116,128 @@
     color: black;
     font-size: 15px;
     font-weight: bolder;
+
     border: 2px solid black;
+
 }
+
+.all .restall {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.all .rest {
+    width: 100%;
+    padding-top: 4%;
+    padding-left: 3%;
+
+    border-top: 1px solid black;
+
+
+    height: auto;
+}
+
+.all .rest h1 {
+    font-size: 150%;
+    text-align: center;
+}
+
+.all .rest p {
+    text-align: center;
+
+}
+
+.all .ingredients {
+    padding-top: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    color: gold;
+    text-decoration: underline;
+
+}
+
+.all .ingredients h3 {
+    cursor: pointer;
+    font-size: 130%;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.all .restall .notes {
+    width: 100%;
+    text-align: center;
+    padding-top: 2%;
+    padding-left: 5%;
+    font-size: 120%;
+}
+
+.all .restall .plus {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 120%;
+
+}
+
+.all .restall .plus .prod {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3%;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.all .restall .plus .prod .prod1 {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    text-align: center;
+    padding: 3%;
+    justify-content: space-between;
+    border: 1px solid black;
+
+
+
+}
+
+.all .restall .plus .prod .prod1 img {
+    width: 100%;
+
+    align-self: center;
+    padding:1% 20% 0 20%;
+}
+
+.all .restall .plus .prod .prod1 h1 {
+    font-size: 130%;
+    width: 100%;
+    text-align: center;
+
+}
+
+@media screen and (max-width: 600px) {
+    .prod {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+        padding: 5%;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .prod .prod1 {
+        width: 100%;
+    }
+}
+
 
 
 
