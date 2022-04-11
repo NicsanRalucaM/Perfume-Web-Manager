@@ -1,106 +1,117 @@
-.all{
-    padding-top: 0px;
+.all {
+    padding-top: 0;
     padding-bottom: 50px;
-     display: flex;
-     align-items: center;
-     flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.all .left{
+.all .left {
     flex-basis: 40%;
 }
-.all  .left img{
-    width:100%;
+
+.all .left img {
+    width: 100%;
     padding-left: 50px;
 }
-.all  .left img:hover {
+
+.all .left img:hover {
     transform: scaleX(-1);
-  }
-.all .right{
-    flex-basis: 60%;
-  text-align: right;
 }
 
-.all .right .details{
-    
+.all .right {
+    flex-basis: 60%;
+    text-align: right;
+}
+
+.all .right .details {
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
     width: 100%;
 }
-.all .right .details .titlu{
+
+.all .right .details .titlu {
     width: 60%;
     font-size: 32px;
-    padding:20px;
-      
+    padding: 20px;
+
 }
-.all .right .details .description{
+
+.all .right .details .description {
     position: relative;
     text-align: center;
-    
+
     width: 70%;
     height: 30%;
-    
+
 }
-.all .right .details .some{
+
+.all .right .details .some {
     display: flex;
     flex-wrap: wrap;
 
-    
+
 }
-.all .right .details .some .prices{
+
+.all .right .details .some .prices {
     width: 100%;
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
 
-   
-    }
-    
-.all .right .details .some .cw{
+
+}
+
+.all .right .details .some .cw {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    
+
 }
 
-.all .right .details .some button{
-    width:150px;
-    height:50px;
+.all .right .details .some button {
+    width: 150px;
+    height: 50px;
     cursor: pointer;
-    margin:5px;
+    margin: 5px;
     background: none;
     border: none;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-   
+
 }
-.all .right .details .some .cart{
+
+.all .right .details .some .cart {
     position: relative;
 
-    background:rgb(212 229 238);
-    
+    background: rgb(212 229 238);
+
     border-radius: 10px;
-    color:black;
+    color: black;
     font-size: 15px;
     font-weight: bolder;
     border: 2px solid black;
-    
+
 }
-.all .right .details .some .wish{
+
+.all .right .details .some .wish {
     position: relative;
-   
-   
-    background:rgb(212 229 238);
-    
+
+
+    background: rgb(212 229 238);
+
     border-radius: 10px;
-    color:black;
+    color: black;
     font-size: 15px;
     font-weight: bolder;
     border: 2px solid black;
 }
+
+
 
