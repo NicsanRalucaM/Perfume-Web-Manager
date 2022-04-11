@@ -1,31 +1,34 @@
 
-
-.help{
+.help {
     display: flex;
     flex-wrap: wrap;
 }
- .help img{
+
+.help img {
     width: 100%;
     height: 30%;
     max-width: 100%;
-     padding: 1% 20% 1% 20%;
-     opacity: 0.9;
+    padding: 1% 20% 1% 20%;
+    opacity: 0.9;
 }
- .help img:hover{
+
+.help img:hover {
     opacity: 1;
- }
- .help h1{
-     text-align: left;
+}
+
+.help h1 {
+    text-align: left;
     padding-left: 20%;
-     height: auto;
-     padding-top: 0%;
-     padding-bottom: 3%;
+    height: auto;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    font-size: 80%;
+    color: black;
 
-     color: black;
+    width: 100%;
+}
 
-     width:100%;
- }
-.help p{
+.help p {
     width: 100%;
     text-align: left;
     padding-left: 10%;
