@@ -1,0 +1,34 @@
+
+
+.help{
+    display: flex;
+    flex-wrap: wrap;
+}
+ .help img{
+    width: 100%;
+    height: 30%;
+    max-width: 100%;
+     padding: 1% 20% 1% 20%;
+     opacity: 0.9;
+}
+ .help img:hover{
+    opacity: 1;
+ }
+ .help h1{
+     text-align: left;
+    padding-left: 20%;
+     height: auto;
+     padding-top: 0%;
+     padding-bottom: 3%;
+
+     color: black;
+
+     width:100%;
+ }
+.help p{
+    width: 100%;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 2%;
+}
