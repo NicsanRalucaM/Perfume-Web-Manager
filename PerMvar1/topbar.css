@@ -75,7 +75,11 @@ nav{
   .navbar .search-container button:hover {
     background: #ccc;
   }
-  
+  @media screen and (max-width: 600px) {
+    .topnav {
+      width: 100%;
+    }
+  }
   @media screen and (max-width: 600px) {
     .navbar .search-container {
       float: none;

@@ -25,8 +25,7 @@
 .wpb_wrapper
 {
   padding: 50px;
-  position: relative;
-  left: 500px;
+ text-align: center;
   color: #808080; font-size: 30px;
 }
 .container
@@ -59,4 +58,97 @@
   font-family:'Times New Roman', Times, serif;
   font-style: italic;
   font-size: 20px;
+}
+.container2
+{
+  padding: 100px;
+  box-sizing: border-box;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.container2 .left
+{
+  flex-basis: 50%;
+ 
+}
+
+.container2 .left .conti{
+  max-width: 500px;
+  margin-right: 100px;
+  display: block;
+  font-family:'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 20px;
+}
+.container2 .right
+{
+  flex-basis: 50%;
+ 
+}
+.container2 .right .common-btn
+{
+padding: 18px 40px;
+background-color: transparent;
+outline: none;
+border: 2px solid gold;
+font-weight: bold;
+cursor: pointer;
+}
+.row{
+  background-color: aliceblue;
+
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.column .text{
+  margin-left: 30px;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+  color: gray;
+  font-size: 18px;
+}
+.column .common-btn
+{
+ position: relative;
+ left: 40%;
+ top: 40%;
+  padding: 18px 40px;
+background-color: transparent;
+outline: none;
+border: 5px solid white;
+font-size: 20px;
+font-weight: bold;
+cursor: pointer;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container3{
+  padding: 100px;
+  text-align: center;
+  
+}
+.container3 .text
+{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  color: #808080;
+
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
 }
