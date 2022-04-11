@@ -2,13 +2,28 @@
 .help {
     display: flex;
     flex-wrap: wrap;
+
 }
 
-.help img {
-    width: 100%;
+.help img.photo {
+    width: 30%;
     height: 30%;
-    max-width: 100%;
-    padding: 1% 20% 1% 20%;
+    max-width: 50%;
+    padding: 1% 5% 1% 5%;
+    opacity: 0.9;
+}
+.help img.photo1 {
+    width: 40%;
+    height: 30%;
+    max-width: 50%;
+   padding-top: 4%;
+    opacity: 0.9;
+}
+.help img.photo2 {
+    width: 30%;
+    height: 30%;
+    max-width: 50%;
+    padding: 1% 5% 1% 5%;
     opacity: 0.9;
 }
 
