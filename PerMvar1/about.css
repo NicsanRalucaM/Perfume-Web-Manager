@@ -20,6 +20,7 @@
   box-shadow: 0 15 px 20px rgba(0,0,0,.2);
   color: aliceblue;
   font-size: 60px;
+  font-family: Garamond, serif;
 
 }
 .wpb_wrapper
@@ -27,123 +28,101 @@
   padding: 50px;
  text-align: center;
   color: #808080; font-size: 30px;
+  font-family: Garamond, serif;
 }
-.container
-{
-  box-sizing: border-box;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-.container .left
-{
-  flex-basis: 50%;
-}
-.container .left img{
-  width: 70%;
-  rotate: 180;
-}
-.container .right
-{
-  flex-basis: 40%;
-  text-align: center;
-}
-.container .right .conti{
-  max-width: 500px;
-  margin-right: 100px;
-  display: inline-block;
-  position: relative;
-  top: 20%;
-  font-family:'Times New Roman', Times, serif;
-  font-style: italic;
-  font-size: 20px;
-}
-.container2
-{
-  padding: 100px;
-  box-sizing: border-box;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-.container2 .left
-{
-  flex-basis: 50%;
+.some-page-wrapper {
+  margin: 15px;
  
 }
 
-.container2 .left .conti{
-  max-width: 500px;
-  margin-right: 100px;
-  display: block;
-  font-family:'Times New Roman', Times, serif;
-  font-style: italic;
-  font-size: 20px;
-}
-.container2 .right
-{
-  flex-basis: 50%;
- 
-}
-.container2 .right .common-btn
-{
-padding: 18px 40px;
-background-color: transparent;
-outline: none;
-border: 2px solid gold;
-font-weight: bold;
-cursor: pointer;
-}
-.rowa{
-  background-color: aliceblue;
-
-}
-.columna {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-.columna .text{
-  margin-left: 30px;
-  font-family:'Times New Roman', Times, serif;
-  text-align: center;
-  color: gray;
-  font-size: 18px;
-}
-.columna .common-btn
-{
- position: relative;
- left: 40%;
- top: 40%;
-  padding: 18px 40px;
-background-color: transparent;
-outline: none;
-border: 5px solid white;
-font-size: 20px;
-font-weight: bold;
-cursor: pointer;
-}
-/* Clear floats after the columns */
-.rowa:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.container3{
-  padding: 100px;
-  text-align: center;
+.rowa {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 50px;
   
 }
-.container3 .text
-{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 25px;
-  color: #808080;
 
+.columna {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  height: 100%;
+}
+
+.rc11 img{
+  width: 70%;
+  
+}
+.rc12 
+{
+ position: relative;
+ top: 150px;
+  font-size: 20px;
+  text-align: justify;
+  text-indent: 30px;
+  font-family: Garamond, serif;
+  
+
+}
+.rc3
+{
+  text-align: center;
+  font-family: Garamond, serif;
+  font-size: 15px;
+  color: #808080;
+}
+
+@media screen and (max-width: 600px) {
+  .rc11 img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .rc12 {
+    
+    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+  }
+}
+.rc21 
+{
+  
+  text-align: justify;
+
+  font-size: 20px;
+  padding: 50px;
+  font-family: Garamond, serif;
+  color: rgb(5, 8, 42);
+
+}
+
+.rc22
+{
+  padding: 100px;
+ 
+  text-align: justify;
+  
+ 
+  
+
+}
+.rc22 .common-btn{
+  padding: 18px 40px;
+background-color: white;
+outline: none;
+border: 4px solid black;
+font-weight: bold;
+font-family: Garamond, serif;
+font-size: 20px;
+color: gold;
+cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .rc22 .common-btn {
+    padding: 10px 20px;
+  }
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -151,4 +130,24 @@ cursor: pointer;
   .columna {
     width: 100%;
   }
+}
+@media screen and (max-width: 600px) {
+.back {width: 100%;
+
+
+}}
+@media screen and (max-width: 600px) {
+  .back .text{
+    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+  }
+}
+@media screen and (max-width: 600px) {
+  .wpb_wrapper {
+    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+  }
+  
+  .rc21  {
+    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+  }
+  
 }

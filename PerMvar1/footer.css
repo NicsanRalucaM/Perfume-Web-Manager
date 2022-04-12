@@ -1,0 +1,14 @@
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: rgb(5, 2, 1);
+    color: white;
+    font-family: Garamond, serif;
+  }
+.row_f {
+    display: flex;
+  }
+  
+  .col {
+    flex: 50%;
+  }
