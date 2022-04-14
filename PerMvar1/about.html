@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 </head>
 
@@ -22,58 +23,62 @@
                 <img src="logo.png" alt="logo">
 
             </div>
-            <div class="search">
-                <input type="text" name="q" class="softbox" placeholder="Type to SEARCH">
-                <button type="submit" class="softbtn"><i class="fa fa-search"></i></button>
+            <div class="wrapper">
+
+                <div class="searchBar">
+                    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value="" />
+                    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
             </div>
+            <div class="col">
+                <nav>
 
+                    <input type="checkbox" id="check">
 
-            <nav>
+                    <label for="check" class="checkbtn">
 
-                <input type="checkbox" id="check">
+                        <i class="fas fa-bars"></i>
 
-                <label for="check" class="checkbtn">
+                    </label>
 
-                    <i class="fas fa-bars"></i>
+                    <ul>
 
-                </label>
-
-                <ul>
-
-                    <li><a class="active" href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
-
-
+                        <li><a class="active" href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
 
 
 
 
-                    <li> <a href="#"><i class="fa fa-fw fa-user"></i>My Account</a></li>
 
-                    <li><a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
 
-                    <li><a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
+                        <li> <a href="#"><i class="fa fa-fw fa-user"></i>My Account</a></li>
 
-                    <li> <a href="login.html">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-                    <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
-                </ul>
+                        <li><a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
 
-            </nav>
+                        <li><a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
 
+                        <li> <a href="login.html">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                        <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                    </ul>
+
+                </nav>
+            </div>
         </div>
 
     </div>
-    <div class="tobar">
+    <div class="topbar">
 
         <div class="row">
             <div class="column">
-                <a class="active" href="news.html"><b>NEWS</b></a>
+                <a href="news.html"><b>NEWS</b></a>
 
 
             </div>
             <div class="column"><a href="product.html"><b>PARFUMURI</b></a></div>
             <div class="column"><a href="#"><b>BRENDURI</b></a></div>
             <div class="column"><a href="#"><b>COLECTII</b></a></div>
-            <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
+            <div class="column"><a class="active"  href="about.html"> <b>ABOUT</b></a></div>
 
         </div>
 
@@ -89,7 +94,7 @@
 
     </div>
 
-    <div class="nou">
+    <div class="flex-container">
 
         <div class="wpb_wrapper">
 
@@ -98,94 +103,89 @@
         </div>
 
     </div>
-    <div class='some-page-wrapper'>
-        <div class='rowa'>
-            <div class='columna'>
-                <div class='rc11'>
-                    <img src="imagesNews/parf0.jpeg" alt="logo">
-                </div>
-            </div>
-            <div class='columna'>
-                <div class='rc12'>
-                    <p>At PerMvibes we perfectly know the importance of smells in our life. This strong sense marks
 
-                        our most important moments.
+    <div class="flex-container">
+        <div class="flex-item-left">
 
-                        PerMvibes is by far the largest perfume and cosmetics wholesaler in Europe.
+            <img src="imagesNews/parf0.jpeg" alt="logo">
+        </div>
 
-                        With its premium quality products and its very large catalog, we are proud to provide you with a
+        <div class="flex-item-right">
+            <p>At PerMvibes we perfectly know the importance of smells in our life. This strong sense marks
 
-                        multitude of products.
+                our most important moments.
 
-                        We specialize in the wholesale of large quantities.
-                        PerMvibes’s competitive advantage is its competitive prices, its value-added services, its
+                PerMvibes is by far the largest perfume and cosmetics wholesaler in Europe.
 
-                        advanced logistics, and its powerful technology.</p>
-                </div>
+                With its premium quality products and its very large catalog, we are proud to provide you with a
+
+                multitude of products.
+
+                We specialize in the wholesale of large quantities.
+                PerMvibes’s competitive advantage is its competitive prices, its value-added services, its
+
+                advanced logistics, and its powerful technology.</p>
+        </div>
+    </div>
+    <div class="flex-container_r">
+        <div class="flex-item-left_r">
+            <div class="text2">
+                <h2>BEST PRODUCT SELECTION</h2>
+                <p><br />No need to look elsewhere!
+
+                    Thanks to online wholesale shopping that provides easy access from all over the world, we offer
+                    unique opportunities with over 1200 genuine brands and 60.000 products.
+
+                    Just a click away!
+
+                    StockPerfume.com purchasing volume offers our customers a wide range of leading brands at very
+                    competitive prices, even on single units.
+
+                    StockPerfume.com ensures you the opportunity to find the products you need in many categories.
+                </p>
+        
             </div>
         </div>
-        <div class='rowa'>
-            <div class='columna'>
-                <div class='rc21'>
-                    <h2>BEST PRODUCT SELECTION</h2>
+        <div class="flex-item-right_r">
 
-                    <p><br />No need to look elsewhere!
+            <button class="common-btn">Shop now</button>
 
-                        Thanks to online wholesale shopping that provides easy access from all over the world, we offer
-                        unique opportunities with over 1200 genuine brands and 60.000 products.
-
-                        Just a click away!
-
-                        StockPerfume.com purchasing volume offers our customers a wide range of leading brands at very
-                        competitive prices, even on single units.
-
-                        StockPerfume.com ensures you the opportunity to find the products you need in many categories.
-                    </p>
-
-                </div>
-            </div>
-            <div class='columna'>
-                <div class='rc22'>
-                    <button class="common-btn">Shop now</button>
-                </div>
-            </div>
         </div>
-        <div class='rowa'>
-            <div class='columna'>
-                <div class='rc3'>
-                    Our team of customer service representatives are ready to assist you with any questions or needs
+
+    </div>
+    <div class="flex-container">
+        <div class="text3">
+            Our team of customer service representatives are ready to assist you with any questions or needs
                     from Monday to Friday from 10 A.M. to 5 P.M.
-                </div>
-            </div>
         </div>
     </div>
-    </div>
-    </div>
+
     <footer>
         <div class="row_f">
             <div class="col">
                 <div class="col1">
-<p>
-    <br/>Contact to Us Now !<br/>
-<br/>
-CONTACT
-<br/>
-<br/>
-PerMvibes<br/>
-<br/>
- info@PerMvibes.com<br/>
-  +31 (0) 85 800 02 32
-</p>
+                    <p>
+                        <br />Contact to Us Now !<br />
+                        <br />
+                        CONTACT
+                        <br />
+                        <br />
+                        PerMvibes<br />
+                        <br />
+                        info@PerMvibes.com<br />
+                        +31 (0) 85 800 02 32
+                    </p>
                 </div>
             </div>
             <div class="col">
                 <div class="col2">
-                    <p><br/>About Us !<br/>
-                        <br/>
-                        <br/><br/>
-                    INFORMATION
-                    <br/>
-                    <a style="color: #ffffff;" href="about.html">About Us</a></p>
+                    <p><br />About Us !<br />
+                        <br />
+                        <br /><br />
+                        INFORMATION
+                        <br />
+                        <a style="color: #ffffff;" href="about.html">About Us</a>
+                    </p>
                 </div>
 
             </div>

@@ -140,3 +140,9 @@ cursor: pointer;
     flex-direction: column-reverse;
   }
 }
+@media screen and (max-width: 650px) {
+   .common-btn {
+
+    padding: 10px 15px;
+  }
+}

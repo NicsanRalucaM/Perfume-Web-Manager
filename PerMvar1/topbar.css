@@ -17,16 +17,13 @@ body{
   
   {
   
-  display: flex;
-  
-  align-items: left;
-  
-  padding: 5px;
+    display: flex;
+    flex-direction: row;
   
   }
   
   .logo{
-  
+    flex: 10%;
   margin-left: 10px;
   
   }
@@ -36,7 +33,52 @@ body{
   width: 200px;
   
   }
+  .wrapper {
+   
+    flex: 30%;
+    width: 100%;
+    margin-top: 30px;
+   
+  }
   
+  
+  .searchBar {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  #searchQueryInput {
+    width: 100%;
+    height:25px;
+    background: #f5f5f5;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding-left: 5px;
+    font-size: 20px;
+    font-family: Garamond, serif;
+  }
+  
+  #searchQuerySubmit {
+    width: 50px;
+    height: 10px;
+    margin-left: -40px;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  #searchQuerySubmit:hover {
+    cursor: pointer;
+  }
+  @media (max-width: 650px){
+    .searchBar #searchQueryInput {
+    font-size: 10px;
+    }
+  }
   nav{
   
   flex: 1;
@@ -124,35 +166,6 @@ nav a.active, nav a:hover{
   }
 }
   
-  .search
-  {
-  background: transparent;
-  text-align: center;
-}
-
-  .softbox{
-  position:relative;
-  top: 27%;
-	transition: border .2s linear;
-	font-size: 12px;width: 100%;
-	background: #f5f8fa;color: #0b2b41;
-	padding: 8px 52px 8px 12px;	height: 32px;
-	border: 1px solid #000203;border-radius: 50px;
-	outline: none;
-  }
-.softbox:focus{
-	transition: border .2s linear;
-	border: 2px solid rgb(65, 64, 64);
-  }
-.softbtn{position: relative;
-  left: 35%;
-	font-size: 20px;color: #082f49;
-	background-color: transparent;
-	border:none;
-	top: 3px;outline: none;
-	padding: 4px;
-  cursor: pointer;
-  }
   
   
   .column {
@@ -178,7 +191,7 @@ nav a.active, nav a:hover{
   @media screen and (max-width: 650px) {
     .column {
       width: 100%;
-      font-size: 10px;
+      font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));;
     }
   }
   .topbar {

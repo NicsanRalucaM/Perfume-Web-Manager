@@ -1,114 +1,112 @@
-*
-{
+* {
   margin: 0;
   padding: 0;
 }
-.back{
-  background-image:url("imagesNews/about.jpg");
+
+.back {
+  background-image: url("imagesNews/about.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
 }
-.text{
+
+.text {
   max-width: 650px;
   position: relative;
   display: block;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-  background: rgba(255, 255, 255,.4);
-  box-shadow: 0 15 px 20px rgba(0,0,0,.2);
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, .4);
+  box-shadow: 0 15 px 20px rgba(0, 0, 0, .2);
   color: aliceblue;
   font-size: 60px;
   font-family: Garamond, serif;
 
 }
-.wpb_wrapper
-{
-  padding: 50px;
- text-align: center;
-  color: #808080; font-size: 30px;
+
+.wpb_wrapper {
+  flex: 100%;
+  margin-top: 50px;
+  text-align: center;
+  color: #808080;
+  font-size: 30px;
   font-family: Garamond, serif;
 }
-.some-page-wrapper {
-  margin: 15px;
- 
-}
 
-.rowa {
+.flex-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 50px;
-  
+  font-size: 30px;
+
 }
 
-.columna {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
-  height: 100%;
+
+
+.flex-item-left {
+  padding: 10px;
+  flex: 40%;
+
 }
 
-.rc11 img{
-  width: 70%;
-  
-}
-.rc12 
-{
- position: relative;
- top: 150px;
-  font-size: 20px;
-  text-align: justify;
-  text-indent: 30px;
-  font-family: Garamond, serif;
+.flex-item-left img {
+  width: 50%;
   
 
 }
-.rc3
-{
-  text-align: center;
-  font-family: Garamond, serif;
-  font-size: 15px;
-  color: #808080;
-}
 
-@media screen and (max-width: 600px) {
-  .rc11 img {
+@media (max-width: 650px) {
+
+  .flex-item-left img {
     width: 100%;
   }
 }
-@media screen and (max-width: 600px) {
-  .rc12 {
-    
-    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
-  }
-}
-.rc21 
-{
-  
-  text-align: justify;
 
-  font-size: 20px;
-  padding: 50px;
+.flex-item-right {
+
+  margin-top: 80px;
+  flex: 60%;
   font-family: Garamond, serif;
-  color: rgb(5, 8, 42);
+  font-size: 20px;
+}
+
+.flex-container_r {
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
 
 }
 
-.rc22
+
+
+.flex-item-left_r {
+  padding: 10px;
+  flex: 70%;
+  font-family: Garamond, serif;
+  font-size: 20px;
+}
+.flex-container .text3
 {
-  padding: 100px;
+  flex: 100%;
+  text-align: center;
+  font-size: 15px;
  
-  text-align: justify;
-  
- 
-  
-
+  font-family: Garamond, serif;
+  color:#808080;
 }
-.rc22 .common-btn{
+
+
+
+.flex-item-right_r {
+
+  margin-top: 80px;
+  flex: 30%;
+  font-family: Garamond, serif;
+  font-size: 20px;
+}
+
+
+.common-btn{
   padding: 18px 40px;
 background-color: white;
 outline: none;
@@ -119,35 +117,64 @@ font-size: 20px;
 color: gold;
 cursor: pointer;
 }
-@media screen and (max-width: 600px) {
-  .rc22 .common-btn {
-    padding: 10px 20px;
-  }
-}
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .columna {
+
+
+@media screen and (max-width: 650px) {
+  .back {
     width: 100%;
-  }
-}
-@media screen and (max-width: 600px) {
-.back {width: 100%;
 
 
-}}
-@media screen and (max-width: 600px) {
-  .back .text{
-    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
   }
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 650px) {
+  .back .text {
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+  }
+}
+
+@media (max-width: 650px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 650px) {
+  .flex-container_r {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 650px) {
   .wpb_wrapper {
-    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
   }
-  
-  .rc21  {
-    font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) );
+}
+
+
+@media screen and (max-width: 650px) {
+  .flex-item-right {
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
   }
-  
+
+ .flex-item-left_r .text2 {
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+  }
+  .flex-item-left_r .text2 h2 {
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+  }
+}
+
+@media screen and (max-width: 650px) {
+   .flex-item-right_r .common-btn {
+
+    padding: 5px 10px;
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+  }}
+  @media screen and (max-width: 650px){
+  .flex-container .text3{
+font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+
+  }
 }
