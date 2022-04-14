@@ -3,10 +3,8 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-
-
 .full-screen-container {
-    background-image: url("product/log.jpg");
+    background-image: url("imagesLogin/log.jpg");
     height: 100vh;
     width: 100vw;
     background-size: cover;
@@ -16,42 +14,42 @@
     align-items: center;
 }
 
-
 .login-container {
     background-color: hsla(201, 100%, 6%, 0.6);
     padding: 50px 30px;
     width: 50%;
-   
 }
+
 .login-title {
     color: white;
     text-align: center;
-    margin-top:5%;
-    font-size:120%;
+    margin-top: 5%;
+    font-size: 120%;
 }
+
 .input-group {
     display: flex;
     flex-direction: column;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 10%;
-    
 }
+
 .input-group label {
     color: white;
     font-weight: lighter;
-    font-size:100%;
-    margin-bottom:1%;
+    font-size: 100%;
+    margin-bottom: 1%;
 }
+
 .login-button {
     padding: 2% 3%;
     border-radius: 5px;
     background-color: hsla(201, 100%, 50%, 0.1);
     outline: none;
-    font-size:100%;
+    font-size: 100%;
     color: white;
     margin-top: 5%;
     cursor: pointer;
     margin-left: 45%;
-   
 }

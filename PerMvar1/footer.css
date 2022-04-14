@@ -4,22 +4,25 @@ footer {
     background-color: rgb(5, 2, 1);
     color: white;
     font-family: Garamond, serif;
-  }
+}
+
 .row_f {
     display: flex;
-  }
-  
-  .col {
+}
+
+.col {
     flex: 50%;
-  }
-  @media (max-width: 650px) {
+}
+
+@media (max-width: 650px) {
     .row_f {
-      flex-direction: column;
+        flex-direction: column;
     }
-  }
-  @media screen and (max-width: 650px) {
+}
+
+@media screen and (max-width: 650px) {
     .col .col1, .col .col2 {
-      font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
-  }
+}
   

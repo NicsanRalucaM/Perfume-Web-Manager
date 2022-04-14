@@ -1,58 +1,49 @@
-*{
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
 }
-body{
-  font-family: Garamond, serif;
-}.bar{
 
-  background-image: linear-gradient(rgb(4, 37, 58),rgb(85, 105, 142));
-  
-  }
-  
-  .navbar
-  
-  {
-  
+body {
+    font-family: Garamond, serif;
+}
+
+.bar {
+    background-image: linear-gradient(rgb(4, 37, 58), rgb(85, 105, 142));
+}
+
+.navbar {
     display: flex;
     flex-direction: row;
-  
-  }
-  
-  .logo{
+}
+
+.logo {
     flex: 10%;
-  margin-left: 10px;
-  
-  }
-  
-  .logo img{
-  
-  width: 200px;
-  
-  }
-  .wrapper {
-   
+    margin-left: 10px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.wrapper {
     flex: 30%;
     width: 100%;
     margin-top: 30px;
-   
-  }
-  
-  
-  .searchBar {
+}
 
+.searchBar {
     width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
-  }
-  
-  #searchQueryInput {
+}
+
+#searchQueryInput {
     width: 100%;
-    height:25px;
+    height: 25px;
     background: #f5f5f5;
     outline: none;
     border: none;
@@ -60,164 +51,167 @@ body{
     padding-left: 5px;
     font-size: 20px;
     font-family: Garamond, serif;
-  }
-  
-  #searchQuerySubmit {
+}
+
+#searchQuerySubmit {
     width: 50px;
     height: 10px;
     margin-left: -40px;
     background: none;
     border: none;
     outline: none;
-  }
-  
-  #searchQuerySubmit:hover {
-    cursor: pointer;
-  }
-  @media (max-width: 650px){
-    .searchBar #searchQueryInput {
-    font-size: 10px;
-    }
-  }
-  nav{
-  
-  flex: 1;
-  
-  text-align: right;
-  
-  }
-nav ul{
-  float: right;
-  margin-right: 10px;
 }
-nav ul li{
-  display: inline-block;
-  line-height: 50px;
-  margin: 0 0px;
-}
-nav ul li a{
-  color: black;
-  font-size: 17px;
-  padding: 7px 10px;
-  border-radius: 3px;
-  text-transform: uppercase;
-}
-nav a.active, nav a:hover{
-  background-color:aliceblue;
-    border-radius: 30px;
-  transition: .5s;
-}
-.checkbtn{
-  font-size: 20px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 30px;
-  cursor: pointer;
-  display: none;
-}
-#check{
-  display: none;
-}
-@media (max-width: 952px){
-  .logo img{
 
-    width: 70%;
-    
-    height: auto;
-    
-    object-fit: cover;
-    
+#searchQuerySubmit:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 650px) {
+    .searchBar #searchQueryInput {
+        font-size: 10px;
     }
-  nav ul li a{
-    font-size: 16px;
-  }
 }
-@media (max-width: 650px){
-  .checkbtn{
-    display: block;
-  }
-  ul{
-    position: absolute;
-    top:70 px;
-    left: 0;
-    width: 25%;
-    
-    background: #2c3e50;
-    top: 20%;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-  }
-  nav ul li{
-    display: block;
-    margin: 5px 0;
-    line-height: 20px;
-  }
-  nav ul li a{
-    font-size: 10px;
-  }
-  a:hover,a.active{
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul{
-    left: 0;
-  }
+
+nav {
+    flex: 1;
+    text-align: right;
 }
-  
-  
-  
-  .column {
+
+nav ul {
+    float: right;
+    margin-right: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 0px;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 17px;
+    padding: 7px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav a.active, nav a:hover {
+    background-color: #d6dfe5;
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.checkbtn {
+    font-size: 20px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width: 952px) {
+    .logo img {
+        width: 70%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 25%;
+        background: #2c3e50;
+        top: 20%;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+        line-height: 20px;
+    }
+
+    nav ul li a {
+        font-size: 10px;
+    }
+
+    a:hover, a.active {
+        background: none;
+        color: #0082e6;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+
+.column {
     float: left;
     width: 20%;
     padding: 10px;
-    height: 40px; 
+    height: 40px;
     background-color: #d6dfe5;
-    
-  
-    
-  }
-  
- .row .column{
-   text-align: center;
-   align-items: center;
- }
-  .row:after {
+}
+
+.row .column {
+    text-align: center;
+    align-items: center;
+}
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  @media screen and (max-width: 650px) {
+}
+
+@media screen and (max-width: 650px) {
     .column {
-      width: 100%;
-      font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));;
+        width: 100%;
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));;
     }
-  }
-  .topbar {
+}
+
+.topbar {
     text-align: center;
     background-color: #f6f6f6;
     overflow: hidden;
     color: #000;
-   
-  }
-  
-  .topbar a
-  {
+}
+
+.topbar a {
     color: black;
-  }
-  
-  /* Change the color of links on hover */
-  .topbar a:hover {
-    
+}
+
+/* Change the color of links on hover */
+.topbar a:hover {
     color: #000;
     opacity: 0.7;
-    
-  }
-  
-  /* Add a color to the active/current link */
-  .topbar a.active {
-    background-color: whitesmoke;
+}
+
+/* Add a color to the active/current link */
+.topbar a.active {
+    background-color: #d6dfe5;
     text-decoration: underline overline;
-    color:gold;
-  }
+    color: gold;
+}

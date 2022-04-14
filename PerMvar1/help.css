@@ -2,7 +2,6 @@
 .help {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .help img.photo {
@@ -12,13 +11,15 @@
     padding: 1% 5% 1% 5%;
     opacity: 0.9;
 }
+
 .help img.photo1 {
     width: 40%;
     height: 30%;
     max-width: 50%;
-   padding-top: 4%;
+    padding-top: 4%;
     opacity: 0.9;
 }
+
 .help img.photo2 {
     width: 30%;
     height: 30%;
@@ -39,7 +40,6 @@
     padding-bottom: 1%;
     font-size: 100%;
     color: black;
-
     width: 100%;
 }
 

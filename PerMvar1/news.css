@@ -1,10 +1,8 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-#myvideo
-{
-    
+#myvideo {
     position: relative;
     top: 10px;
     bottom: 300px;
@@ -13,136 +11,131 @@
     width: 100%;
     height: 50%;
 }
+
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  font-size: 30px;
-  
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
 }
-.flex-container_r{
-  display: flex;
-  flex-direction: row;
-  font-size: 30px;
-  
+
+.flex-container_r {
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
 }
-.flex-all 
-{
-  
-  padding: 10px;
-  text-align: center;
-  font-size: 40px;
-  font-family: Garamond, serif;
+
+.flex-all {
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-family: Garamond, serif;
 
 }
+
 .flex-all h1:before,
 .flex-all h1:after {
-  background-color: #000;
-  content: "";
-  display: inline-block;
-  height: 1px;
-  position: relative;
-  vertical-align: middle;
-  width: 30%;
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 30%;
 }
 
 .flex-all h1:before {
-  right: 0.5em;
-  margin-left: -50%;
+    right: 0.5em;
+    margin-left: -50%;
 }
 
 .flex-all h1:after {
-  left: 0.5em;
-  margin-right: -50%;
+    left: 0.5em;
+    margin-right: -50%;
 }
-@media (max-width: 650px) {
-  .flex-all h1::before,.flex-all h1::after {
-   right: 0.2em;
-   left: 0.2em;
-  }
-  .flex-all h1
-  {
-    font-size: 10px;
-  }
 
+@media (max-width: 650px) {
+    .flex-all h1::before, .flex-all h1::after {
+        right: 0.2em;
+        left: 0.2em;
+    }
+
+    .flex-all h1 {
+        font-size: 10px;
+    }
 }
 
 .flex-item-left {
-  padding: 10px;
-  flex: 60%;
- 
+    padding: 10px;
+    flex: 60%;
 }
-.flex-item-left img{
-  width: 100%;
+
+.flex-item-left img {
+    width: 100%;
 }
 
 @media (max-width: 650px) {
-  .flex-item-left img,.flex-item-right img, .flex-item-left3 img{
-width: 100%;
-  }
+    .flex-item-left img, .flex-item-right img, .flex-item-left3 img {
+        width: 100%;
+    }
 }
 
-.flex-item-right{
- 
-  margin-top: 80px;
-  flex: 40%;
-  font-family: Garamond, serif;
-  font-size: 20px;
+.flex-item-right {
+    margin-top: 80px;
+    flex: 40%;
+    font-family: Garamond, serif;
+    font-size: 20px;
 }
+
 .flex-item-left .text2 {
- text-align: justify;
-  margin-top: 100px;
-  flex: 50%;
-  font-family: Garamond, serif;
-  font-size: 20px;
+    text-align: justify;
+    margin-top: 100px;
+    flex: 50%;
+    font-family: Garamond, serif;
+    font-size: 20px;
 }
+
 .flex-item-left3 {
-  padding: 10px;
-  flex: 50%;
-
-  
-  
- 
+    padding: 10px;
+    flex: 50%;
 }
-.flex-item-left3 img
-{
- 
-  width: 90%;
 
+.flex-item-left3 img {
+    width: 90%;
 }
 
 
-.flex-item-right3{
- 
-  margin-top: 150px;
-  flex: 50%;
-  font-family: Garamond, serif;
-  font-size: 20px;
-  text-align: left;
+.flex-item-right3 {
+    margin-top: 150px;
+    flex: 50%;
+    font-family: Garamond, serif;
+    font-size: 20px;
+    text-align: left;
 }
 
- .common-btn
-{
-padding: 18px 40px;
-background-color: transparent;
-outline: none;
-border: 2px solid gold;
-font-weight: bold;
-cursor: pointer;
+.common-btn {
+    padding: 18px 40px;
+    background-color: transparent;
+    outline: none;
+    border: 2px solid gold;
+    font-weight: bold;
+    cursor: pointer;
 }
+
 /* Responsive layout - makes a one column-layout instead of two-column layout */
 @media (max-width: 650px) {
-  .flex-container {
-    flex-direction: column;
-  }
+    .flex-container {
+        flex-direction: column;
+    }
 }
-@media (max-width: 650px) {
-  .flex-container_r {
-    flex-direction: column-reverse;
-  }
-}
-@media screen and (max-width: 650px) {
-   .common-btn {
 
-    padding: 10px 15px;
-  }
+@media (max-width: 650px) {
+    .flex-container_r {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .common-btn {
+        padding: 10px 15px;
+    }
 }

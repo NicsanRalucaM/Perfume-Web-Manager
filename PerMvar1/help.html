@@ -3,50 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="topbar.css">
-    <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="help.css">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Help</title>
+    <link href="topbar.css" rel="stylesheet">
+    <link href="help.css" rel="stylesheet">
+    <link href="footer.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:100,300,500">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:100,300,500" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
 </head>
 
 <body>
-<div class="navbar">
-    <div class="logo">
-        <img src="logo.png" width="30%" alt="logo">
+<div class="bar">
+    <div class="navbar">
+        <div class="logo">
+            <img alt="logo" src="imagesLogo/logo.png">
+        </div>
+        <div class="wrapper">
+            <div class="searchBar">
+                <input id="searchQueryInput" name="searchQueryInput" placeholder="Search" type="text" value=""/>
+                <button id="searchQuerySubmit" name="searchQuerySubmit" type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <nav>
+                <input id="check" type="checkbox">
+                <label class="checkbtn" for="check">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i>My Account</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
+                    <li><a href="login.html">Login <i aria-hidden="true" class="fa fa-sign-in"></i></a></li>
+                    <li><a class="active" href="help.html"><i aria-hidden="true" class="fa fa-question-circle"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </div>
-
-    <div class="search-container">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </div>
-
-    <nav>
-        <a href="news.html"><i class="fa fa-fw fa-home"></i> Home</a>
-        <a href="#"><i class="fa fa-fw fa-user"></i>My Account</a>
-        <a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a>
-        <a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a>
-        <a href="login.html">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a>
-        <a class="active" href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
-    </nav>
 </div>
 
-<div class="topnav">
-    <a href="news.html"><b>NEWS</b></a>
-    <a href="product.html"><b>PARFUMURI</b></a>
-    <a href="#"><b>BRENDURI</b></a>
-    <a href="#"><b>COLECTII</b></a>
-    <a href="about.html"> <b>ABOUT</b></a>
+<div class="topbar">
+
+    <div class="row">
+        <div class="column"><a href="news.html"><b>NEWS</b></a></div>
+        <div class="column"><a href="#"><b>PERFUMES</b></a></div>
+        <div class="column"><a href="#"><b>BRANDS</b></a></div>
+        <div class="column"><a href="#"><b>COLLECTIONS</b></a></div>
+        <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
+    </div>
+
 </div>
+
 <div class="help">
 
-    <img src="help10.png" class="photo">
-    <img src="help3.png" class="photo1">
-    <img src="help10.png" class="photo2">
+    <img alt="photo1" class="photo" src="imagesHelp/help10.png">
+    <img alt="photo2" class="photo1" src="imagesHelp/help3.png">
+    <img alt="photo3" class="photo2" src="imagesHelp/help10.png">
     <h1>HOW CAN I SIGN UP?</h1>
     <p>
         You can easily register on our site. Once your account is approved you can place your order directly from our
@@ -66,4 +88,37 @@
         the related topic and fill in all of the information. We will get back to you as soon as we have more
         information about the issue. Please note that this can take up to 1 business days.</p>
 </div>
+
+<footer>
+    <div class="row_f">
+        <div class="col">
+            <div class="col1">
+                <p>
+                    <br/>Contact to Us Now !<br/>
+                    <br/>
+                    CONTACT
+                    <br/>
+                    <br/>
+                    PerMvibes<br/>
+                    <br/>
+                    info@PerMvibes.com<br/>
+                    +31 (0) 85 800 02 32
+                </p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="col2">
+                <p><br/>About Us !<br/>
+                    <br/>
+                    <br/><br/>
+                    INFORMATION
+                    <br/>
+                    <a href="about.html" style="color: #ffffff;">About Us</a>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
 </body>
