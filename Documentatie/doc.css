@@ -1,0 +1,31 @@
+li {
+    list-style-type: none;
+}
+
+section ul li {
+    list-style-type: circle;
+}
+
+section ol li {
+    list-style-type: circle;
+}
+
+body{
+    margin: auto;
+    max-width: 900px;
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif
+}
+
+h1, h2 {
+    color: #000000; 
+}
+
+h2 {
+    border-bottom: 3px solid black;
+}
+
+body > h1{
+    text-align: center;
+}
+
