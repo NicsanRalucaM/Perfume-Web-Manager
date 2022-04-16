@@ -118,7 +118,7 @@ nav a.active, nav a:hover {
 
 @media (max-width: 952px) {
     .logo img {
-        width: 70%;
+        width: 100%;
         height: auto;
         object-fit: cover;
     }
@@ -128,18 +128,16 @@ nav a.active, nav a:hover {
     }
 }
 
-@media (max-width: 650px) {
+@media screen and (max-width: 650px) {
     .checkbtn {
         display: block;
     }
 
     ul {
         position: absolute;
-        top: 70px;
-        left: 0;
-        width: 25%;
+        width: 20%;
         background: #2c3e50;
-        top: 20%;
+        top: 10%;
         left: -100%;
         text-align: center;
         transition: all .5s;
@@ -148,16 +146,19 @@ nav a.active, nav a:hover {
     nav ul li {
         display: block;
         margin: 5px 0;
-        line-height: 20px;
+        line-height: 10px;
+       
     }
 
     nav ul li a {
-        font-size: 10px;
+        font-size: 8px;
+        width: 10px;
     }
 
     a:hover, a.active {
         background: none;
-        color: #0082e6;
+        color: #010609;
+        padding: 5px;
     }
 
     #check:checked ~ ul {
@@ -188,10 +189,19 @@ nav a.active, nav a:hover {
 @media screen and (max-width: 650px) {
     .column {
         width: 100%;
-        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));;
+        
     }
+    .column a {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+        
+    }
+    
 }
-
+@media screen and (max-width: 250px) {
+.col a
+    {
+       font-size: 5px;
+    }}
 .topbar {
     text-align: center;
     background-color: #f6f6f6;
