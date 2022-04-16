@@ -185,24 +185,26 @@ body {
 }
 
 .all .restall .plus .prod .prod1 h1 {
-    font-size: 130%;
+    font-size: 100%;
     width: 100%;
     text-align: center;
 }
 
 @media screen and (max-width: 600px) {
-    .prod {
+    .all .restall .plus .prod {
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: space-around;
         width: 100%;
         padding: 5%;
+
     }
 }
 
 @media screen and (max-width: 600px) {
-    .prod .prod1 {
+    .all .restall .plus  .prod .prod1 {
         width: 100%;
+        border: 1px solid black;
     }
 }
 
