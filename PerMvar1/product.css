@@ -202,11 +202,19 @@ body {
 }
 
 @media screen and (max-width: 600px) {
-    .all .restall .plus  .prod .prod1 {
+    .all .restall .plus .prod .prod1 {
         width: 100%;
         border: 1px solid black;
     }
 }
+
+@media (max-width: 650px) {
+    .all .right .details .titlu, .all .right .details .description, .all .rest h1, .all .plus h2, .all .notes h2, .all .rest p, .all .ingredients h3, .all .restall .plus .prod .prod1 h1 {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+
+}
+
 
 
 
