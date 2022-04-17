@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-   
+
 }
 
 .full-screen-container {
@@ -24,7 +24,7 @@
     color: white;
     text-align: center;
     margin-top: 5%;
-    font-size: 120%;
+    font-size: 100%;
 }
 
 .input-group {
@@ -52,4 +52,12 @@
     margin-top: 5%;
     cursor: pointer;
     margin-left: 45%;
+}
+
+@media (max-width: 650px) {
+
+    .full-screen-container .login-container .login-title,.full-screen-container .login-container .input-group label,.full-screen-container .login-container .login-button {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+
 }
