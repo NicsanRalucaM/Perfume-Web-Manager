@@ -32,26 +32,51 @@
     flex-direction: column;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 
 .input-group label {
     color: white;
     font-weight: lighter;
     font-size: 100%;
-    margin-bottom: 1%;
+    margin-bottom: 0;
 }
+.input-group p{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    color: white;
+    font-weight: lighter;
+    font-size: 100%;
+    margin-bottom: 0;
+    text-align: right;
+}
+.input-group .re a{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-weight: lighter;
+    font-size: 100%;
+    margin-bottom: 0;
+    text-align: right;
 
-.login-button {
-    padding: 2% 3%;
+}
+.login-button
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-button button {
+    padding: 2% 2%;
     border-radius: 5px;
     background-color: hsla(201, 100%, 50%, 0.1);
     outline: none;
     font-size: 100%;
     color: white;
-    margin-top: 5%;
+    margin-top: 0;
     cursor: pointer;
-    margin-left: 45%;
+
 }
 
 @media (max-width: 650px) {
@@ -60,4 +85,16 @@
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
 
+}
+
+.register{
+    text-align: center;
+    padding: 10px;
+    font-size: 17px;
+    color: white;
+}
+.register .re a
+{
+    color: white;
+    margin-left: 100px;
 }

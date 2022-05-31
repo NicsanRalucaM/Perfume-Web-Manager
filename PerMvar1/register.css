@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+
+}
+.full-screen-container {
+    background-image: url("imagesRegister/4.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background-color: hsla(201, 100%, 6%, 0.6);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 45%;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+
+.form-element label {
+    color: white;
+    font-weight: lighter;
+    font-size: 100%;
+    margin-bottom: 0%;
+}
+.register-button
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.register-button button{
+    padding: 2% 2%;
+    border-radius: 5px;
+    background-color: hsla(201, 100%, 50%, 0.1);
+    outline: none;
+    font-size: 100%;
+    color: white;
+    margin-top: 0%;
+    cursor: pointer;
+
+
+}
+
+@media (max-width: 650px) {
+
+    .full-screen-container .register-container,.full-screen-container .register-container .form-element label,.full-screen-container .register-container .register-button {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+    .register-button button{
+
+        padding: 1px 1px;
+        border-radius: 3px;
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+
+}
