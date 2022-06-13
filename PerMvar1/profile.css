@@ -43,22 +43,37 @@ body {
     flex-basis: 60%;
     width: 60%;
 }
+.all .right #start{
+    text-align: center;
+}
+.all .right #start .image{
+
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    height:50%;
+}
 .all .right #personal_data{
 
-    flex-basis: 65%;
+    flex-basis: 55%;
 
-    height: 50%;
+margin-top: 25px;
+    height: 70%;
    text-align: center;
+
     background-color: #d6dfe5;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+
 
     width: 100%;
 }
-.all .right .data{
-    justify-content: space-around;
+.all .right #personal_data .data{
+    justify-content: space-between;
+    margin-top: 25px;
+    margin-bottom:25px ;
 
 }
 

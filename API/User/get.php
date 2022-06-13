@@ -1,4 +1,3 @@
-
 <?php
 
 header("Access-Control-Allow-Origin: *");
@@ -11,42 +10,30 @@ header('Content-Type: application/json');
 include_once '../Config/database.php';
 include_once '../Objects/user.php';
 
-// get database connection
 $database = new Database();
 $db = $database->getConnection();
 
-// prepare product object
 $user = new user($db);
 
-// set ID property of record to read
 $user->id = $_GET['id'];
 
-
 $user->readOne();
-if($user->firstname!=null){
+if ($user->firstname != null) {
 // create array
-$product_arr = array(
-"id" =>  $user->id,
-"firstname" => $user->firstname,
-"lastname" => $user->lastname,
-"email" => $user->email
-);
+    $product_arr = array(
+        "id" => $user->id,
+        "firstname" => $user->firstname,
+        "lastname" => $user->lastname,
+        "email" => $user->email
+    );
 
-// set response code - 200 OK
-http_response_code(200);
 
-// make it json format
+    http_response_code(200);
+    echo $user->firstname;
 
-echo $user->firstname;
+} else {
 
-}
-
-else{
-
-// set response code - 404 Not found
-http_response_code(404);
-
-// tell the user product does not exist
-echo json_encode(array("message" => "Product does not exist."));
+    http_response_code(404);
+    echo json_encode(array("message" => "User does not exist."));
 }
 ?>

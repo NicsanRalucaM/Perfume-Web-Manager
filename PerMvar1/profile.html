@@ -102,7 +102,7 @@
             <li>
                 <a href="#" id="signout">
                     <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
-                    <span class="item" onclick="name(1)">Sign Out</span>
+                    <span class="item" onclick="signoutFunction()">Sign Out</span>
                 </a>
             </li>
 
@@ -110,24 +110,45 @@
     </div>
 
     <div class="right">
-        <div id="personal_data">
+        <div id="start">
+            <img src="imagesProfile/profileee.jpg" class="image">
+        </div>
+
+        <div id="personal_data" style="display: none">
             <div class="data">
-                <span><b>First Name:</b></span>
+                <span><b><br><br><br>First Name: </b></span>
                 <span id="firstname"></span><br>
             </div>
             <div class="data">
-                <span><b>Last Name:</b></span>
+                <span><b>Last Name: </b></span>
                 <span id="lastname"></span><br>
             </div>
             <div class="data">
-                <span><b>Email:</b></span>
+                <span><b>Email: </b></span>
                 <span id="email"></span>
             </div>
+            <div class="data">
+                <span><b>Phone: ~</b></span>
+                <span id="phone"></span>
+            </div>
         </div>
-        <div class="na" id="per" style="display: none">
-            <span>lala</span>
 
+        <div  id="orders_details" style="display: none">
+            <span>You have 0 orders!!!</span>
         </div>
+        <div  id="wishs_details" style="display: none">
+            <span>You have 0 wishs!!!</span>
+        </div>
+        <div  id="address_details" style="display: none">
+            <span>You have 0 address!!!</span>
+        </div>
+        <div  id="password_details" style="display: none">
+            <span>You have a nice pass !!! Don't change it :)</span>
+        </div>
+        <div  id="signout_details" style="display: none">
+            <span>OUT!!</span>
+        </div>
+
     </div>
 
 
@@ -135,12 +156,18 @@
 
 <script>
     function dataFunction() {
-
-        let a = JSON.parse((localStorage.getItem("email")));
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("wishs_details").style.display = 'none';
+        document.getElementById("orders_details").style.display = 'none';
+        document.getElementById("address_details").style.display = 'none';
+        document.getElementById("password_details").style.display = 'none';
+        document.getElementById("signout_details").style.display = 'none';
+        document.getElementById("personal_data").style.display = 'block';
+        let a = getCookie("id");
         get_firstname(a);
         get_lastname(a);
+        getEmail(a);
 
-        document.getElementById("email").innerHTML = a;
 
         document.getElementById("data").classList.add("active");
         document.getElementById("wishs").classList.remove("active");
@@ -151,7 +178,16 @@
     }
 
     function orderFunction() {
-        document.getElementById("demo").innerHTML = "orders";
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("personal_data").style.display = 'none';
+        document.getElementById("wishs_details").style.display = 'none';
+        document.getElementById("address_details").style.display = 'none';
+        document.getElementById("password_details").style.display = 'none';
+        document.getElementById("signout_details").style.display = 'none';
+
+
+        document.getElementById("orders_details").style.display = 'block';
+
         document.getElementById("order").classList.add("active");
         document.getElementById("wishs").classList.remove("active");
         document.getElementById("data").classList.remove("active");
@@ -161,7 +197,17 @@
     }
 
     function wishsFunction() {
-        document.getElementById("demo").innerHTML = "orders";
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("personal_data").style.display = 'none';
+        document.getElementById("orders_details").style.display = 'none';
+        document.getElementById("address_details").style.display = 'none';
+        document.getElementById("password_details").style.display = 'none';
+        document.getElementById("signout_details").style.display = 'none';
+
+
+        document.getElementById("wishs_details").style.display = 'block';
+
+
         document.getElementById("wishs").classList.add("active");
         document.getElementById("order").classList.remove("active");
         document.getElementById("data").classList.remove("active");
@@ -171,7 +217,17 @@
     }
 
     function passwordFunction() {
-        document.getElementById("demo").innerHTML = "orders";
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("personal_data").style.display = 'none';
+        document.getElementById("orders_details").style.display = 'none';
+        document.getElementById("address_details").style.display = 'none';
+        document.getElementById("wishs_details").style.display = 'none';
+        document.getElementById("signout_details").style.display = 'none';
+
+
+        document.getElementById("password_details").style.display = 'block';
+
+
         document.getElementById("password").classList.add("active");
         document.getElementById("wishs").classList.remove("active");
         document.getElementById("data").classList.remove("active");
@@ -182,7 +238,17 @@
     }
 
     function signoutFunction() {
-        document.getElementById("demo").innerHTML = "na";
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("personal_data").style.display = 'none';
+        document.getElementById("orders_details").style.display = 'none';
+        document.getElementById("address_details").style.display = 'none';
+        document.getElementById("password_details").style.display = 'none';
+        document.getElementById("wishs_details").style.display = 'none';
+
+
+        document.getElementById("signout_details").style.display = 'block';
+
+
         document.getElementById("signout").classList.add("active");
         document.getElementById("wishs").classList.remove("active");
         document.getElementById("data").classList.remove("active");
@@ -193,7 +259,15 @@
     }
 
     function addressFunction() {
-        document.getElementById("demo").innerHTML = "address";
+        document.getElementById("start").style.display = 'none';
+        document.getElementById("personal_data").style.display = 'none';
+        document.getElementById("wishs_details").style.display = 'none';
+        document.getElementById("orders_details").style.display = 'none';
+        document.getElementById("password_details").style.display = 'none';
+        document.getElementById("signout_details").style.display = 'none';
+        document.getElementById("address_details").style.display = 'block';
+
+
         document.getElementById("address").classList.add("active");
         document.getElementById("wishs").classList.remove("active");
         document.getElementById("data").classList.remove("active");
@@ -204,8 +278,7 @@
     }
 
     function get_firstname(str) {
-        //document.getElementById("personal_data").style.display='none';
-        // document.getElementById("per").style.display='inline';
+
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
@@ -217,7 +290,7 @@
             }
         });
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_FirstName.php?email=" + str);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_FirstName.php?id=" + str);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
@@ -225,8 +298,7 @@
     }
 
     function get_lastname(str) {
-        // document.getElementById("personal_data").style.display='none';
-        // document.getElementById("per").style.display='inline';
+
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
@@ -238,14 +310,14 @@
             }
         });
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_LastName.php?email=" + str);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_LastName.php?id=" + str);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
 
     }
 
-    function getID(str) {
+    function getEmail(str) {
 
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -253,15 +325,31 @@
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                    document.getElementById("firstname").innerHTML = this.responseText;
+                    document.getElementById("email").innerHTML = this.responseText;
                 }
             }
         });
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/getId.php?email=" + str);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/getEmail.php?id=" + str);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
     }
 
 </script>

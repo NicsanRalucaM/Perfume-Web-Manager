@@ -28,15 +28,16 @@ if ($ok) {
     if (!$result) {
         $ok = false;
         $messages[] = 'Email doesn`t exists';
-    }else
-    {
+    } else {
         if (password_verify($password, $result['password'])) {
-            $ok=true;
+            $ok = true;
             $_SESSION['user_id'] = $result['id'];
+            $cookie_value = $result['id'];
+            setcookie("id", $cookie_value, time() + (86400 * 30), "/");
 
         } else {
-            $ok=false;
-            $messages[]='Email password combination is wrong!';
+            $ok = false;
+            $messages[] = 'Email password combination is wrong!';
 
         }
     }
