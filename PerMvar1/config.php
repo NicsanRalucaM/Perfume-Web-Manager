@@ -5,7 +5,7 @@ class Database{
     private $user  = 'root';
     private $password   = "";
     private $database  = 'web';
-    private $port = "3307";
+    private $port = "8111";
 
     public function getConnection(){
 
