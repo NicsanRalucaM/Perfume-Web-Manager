@@ -63,49 +63,82 @@
 
 <div class="full-screen-container">
     <div class="register-container">
-        <form method="post" action="register.php" name="signup-form">
+        <div class="form">
             <div class="form-element">
-                <label>First Name</label>
-                <input type="text" name="firstname" pattern="[a-zA-Z0-9]+" required/>
+                <ul id="form-messages"></ul>
             </div>
             <div class="form-element">
-                <label>Last Name</label>
-                <input type="text" name="lastname" pattern="[a-zA-Z0-9]+" required/>
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" spellcheck="false">
             </div>
             <div class="form-element">
-                <label>Email</label>
-                <input type="email" name="email" required/>
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" spellcheck="false">
             </div>
             <div class="form-element">
-                <label>Password</label>
-                <input type="password" name="password" required/>
+                <label for="email">Email</label>
+                <input type="text" id="email" spellcheck="false">
+            </div>
+            <div class="form-element">
+                <label for="password">Password</label>
+                <input type="password" id="password">
             </div>
             <div class="register-button">
-                <button type="submit" name="register" value="register">Register</button>
+                <button type="submit" id="btn-submit">Register</button>
             </div>
-        </form>
-
-
-
+        </div>
     </div>
-
 </div>
-
-<div class="open_grepper_editor" title="Edit & Save To Grepper"></div>
-</body>
-</html>
 <script>
-    function errorMessage() {
-        var error = document.getElementById("error")
-        if (isNaN(document.getElementById("register").value))
-        {
+    const form = {
+        firstname: document.getElementById('firstname'),
+        lastname: document.getElementById('lastname'),
+        email: document.getElementById('email'),
+        password: document.getElementById('password'),
+        submit: document.getElementById('btn-submit'),
+        messages: document.getElementById('form-messages')
+    };
 
-            // Changing content and color of content
-            error.textContent = "Please enter a valid number"
-            error.style.color = "red"
+    form.submit.addEventListener('click', () => {
+        const request = new XMLHttpRequest();
+
+        request.onload = () => {
+            let responseObject = null;
+
+            try {
+                responseObject = JSON.parse(request.responseText);
+            } catch (e) {
+                console.error('Could not parse JSON!');
+            }
+
+            if (responseObject) {
+                handleResponse(responseObject);
+            }
+        };
+
+        const requestData = `firstname=${form.firstname.value}&lastname=${form.lastname.value}&email=${form.email.value}&password=${form.password.value}`;
+
+        request.open('post', 'register.php');
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        request.send(requestData);
+    });
+
+    function handleResponse(responseObject) {
+        if (responseObject.ok) {
+            location.href = 'login.html';
         } else {
-            error.textContent = ""
+            while (form.messages.firstChild) {
+                form.messages.removeChild(form.messages.firstChild);
+            }
+
+            responseObject.messages.forEach((message) => {
+                const li = document.createElement('li');
+                li.textContent = message;
+                form.messages.appendChild(li);
+            });
+
+            form.messages.style.display = "block";
         }
     }
 </script>
-
+</body>

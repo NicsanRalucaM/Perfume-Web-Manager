@@ -1,44 +1,63 @@
 <?php
-session_start();
+
 include_once 'config.php';
 
-$database=new Database();
-$db=$database->getConnection();
-$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$errors = array();
-if (isset($_POST['register'])) {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $password_hash = password_hash($password, PASSWORD_BCRYPT);
+$database = new Database();
+$db = $database->getConnection();
+
+$firstname = isset($_POST['firstname']) ? $_POST['firstname'] : '';
+$lastname = isset($_POST['lastname']) ? $_POST['lastname'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
+$password_hash = password_hash($password, PASSWORD_BCRYPT);
+$ok = true;
+$messages = array();
+
+if ( empty($firstname)) {
+    $ok = false;
+    $messages[] = 'First name cannot be empty!';
+}
+if (empty($lastname)) {
+    $ok = false;
+    $messages[] = 'Last name cannot be empty!';
+}
+if ( empty($email)) {
+    $ok = false;
+    $messages[] = 'First name cannot be empty!';
+}
+
+if (empty($password)) {
+    $ok = false;
+    $messages[] = 'Password cannot be empty!';
+}
+
+if ($ok) {
     $query = $db->prepare("SELECT * FROM users WHERE email=:email");
     $query->bindParam("email", $email, PDO::PARAM_STR);
     $query->execute();
     if ($query->rowCount() > 0) {
-        array_push($errors, "Username already exists");
-    }
-    if ($query->rowCount() == 0) {
+        $ok = false;
+        $messages[] = 'Email already exists';
+    } else {
         $query = $db->prepare("INSERT INTO users(firstname,lastname,email,password) VALUES (:firstname,:lastname,:email,:password_hash)");
         $query->bindParam("firstname", $firstname, PDO::PARAM_STR);
         $query->bindParam("lastname", $lastname, PDO::PARAM_STR);
         $query->bindParam("email", $email, PDO::PARAM_STR);
         $query->bindParam("password_hash", $password_hash, PDO::PARAM_STR);
         $result = $query->execute();
-        if ($result) {
-            echo '<p class="success">Your registration was successful!</p>';
-        } else {
-            echo '<p class="error">Something went wrong!</p>';
+        if (!$result) {
+            $ok = false;
+            $messages[] = 'Something went wrong!';
+
         }
     }
-    if(!empty($error))
-    {
-        header("location:register.html");
-    }
-    else
-        header("location:login.html");
-
 }
+echo json_encode(
+    array(
+        'ok' => $ok,
+        'messages' => $messages
+    )
+);
 
 
 ?>

@@ -41,7 +41,22 @@
     font-size: 100%;
     margin-bottom: 0;
 }
-.input-group p{
+
+.input-group #form-messages {
+    background-color: rgb(215, 232, 232);
+    background-color: hsla(201, 100%, 6%, 0.6);
+    margin-top: 50px;
+    border: 1px solid black;
+    color: gray;
+    display: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 10px 25px;
+    max-width: 250px;
+}
+
+.input-group p {
     display: flex;
     flex-direction: column;
     padding-top: 10px;
@@ -51,7 +66,8 @@
     margin-bottom: 0;
     text-align: right;
 }
-.input-group .re a{
+
+.input-group .re a {
     display: flex;
     flex-direction: column;
     color: white;
@@ -61,12 +77,13 @@
     text-align: right;
 
 }
-.login-button
-{
+
+.login-button {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .login-button button {
     padding: 2% 2%;
     border-radius: 5px;
@@ -81,20 +98,20 @@
 
 @media (max-width: 650px) {
 
-    .full-screen-container .login-container .login-title,.full-screen-container .login-container .input-group label,.full-screen-container .login-container .login-button {
+    .full-screen-container .login-container .login-title, .full-screen-container .login-container .input-group label, .full-screen-container .login-container .login-button {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
 
 }
 
-.register{
+.register {
     text-align: center;
     padding: 10px;
     font-size: 17px;
     color: white;
 }
-.register .re a
-{
+
+.register .re a {
     color: white;
     margin-left: 100px;
 }
