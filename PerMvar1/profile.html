@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile</title>
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+</head>
+<body>
+<div class="bar">
+    <div class="navbar">
+        <div class="logo">
+            <img src="imagesLogo/logo.png" alt="logo">
+        </div>
+
+        <div class="wrapper">
+            <div class="searchBar">
+                <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value=""/>
+                <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="col">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li><a class="active" href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
+                    <li><a href="login.html">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="topbar">
+
+    <div class="row">
+
+        <div class="column"><a href="news.html"><b>NEWS</b></a></div>
+        <div class="column"><a href="#"><b>PERFUMES</b></a></div>
+        <div class="column"><a href="#"><b>BRANDS</b></a></div>
+        <div class="column"><a href="#"><b>COLLECTIONS</b></a></div>
+        <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
+
+    </div>
+
+</div>
+<div class="title">
+    <h1>Welcome, Magda!!</h1>
+</div>
+<div class="all">
+
+    <div class="left">
+        <ul>
+            <li>
+                <a href="#" id="data">
+                    <span class="icon"><i class="fas fa-user"></i></span>
+                    <span class="item" onclick="dataFunction()">Personal Data</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="order" onclick="orderFunction()">
+                    <span class="icon"><i class="fa fa-box-open"></i></span>
+                    <span class="item">Orders</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="wishs">
+                    <span class="icon"><i class="fa fa-heart"></i></span>
+                    <span class="item" onclick="wishsFunction()">Wishs</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="password">
+                    <span class="icon"><i class="fas fa-key"></i></span>
+                    <span class="item" onclick="passwordFunction()">Change Password</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="address">
+                    <span class="icon"><i class="fa fa-address-card"></i></span>
+                    <span class="item" onclick="addressFunction()">Address</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id="signout">
+                    <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                    <span class="item" onclick="name(1)">Sign Out</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="right">
+        <div id="personal_data">
+            <div class="data">
+                <span><b>First Name:</b></span>
+                <span id="firstname"></span><br>
+            </div>
+            <div class="data">
+                <span><b>Last Name:</b></span>
+                <span id="lastname"></span><br>
+            </div>
+            <div class="data">
+                <span><b>Email:</b></span>
+                <span id="email"></span>
+            </div>
+        </div>
+        <div class="na" id="per" style="display: none">
+            <span>lala</span>
+
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+    function dataFunction() {
+
+        let a = JSON.parse((localStorage.getItem("email")));
+        get_firstname(a);
+        get_lastname(a);
+
+        document.getElementById("email").innerHTML = a;
+
+        document.getElementById("data").classList.add("active");
+        document.getElementById("wishs").classList.remove("active");
+        document.getElementById("order").classList.remove("active");
+        document.getElementById("password").classList.remove("active");
+        document.getElementById("address").classList.remove("active");
+        document.getElementById("signout").classList.remove("active");
+    }
+
+    function orderFunction() {
+        document.getElementById("demo").innerHTML = "orders";
+        document.getElementById("order").classList.add("active");
+        document.getElementById("wishs").classList.remove("active");
+        document.getElementById("data").classList.remove("active");
+        document.getElementById("password").classList.remove("active");
+        document.getElementById("address").classList.remove("active");
+        document.getElementById("signout").classList.remove("active");
+    }
+
+    function wishsFunction() {
+        document.getElementById("demo").innerHTML = "orders";
+        document.getElementById("wishs").classList.add("active");
+        document.getElementById("order").classList.remove("active");
+        document.getElementById("data").classList.remove("active");
+        document.getElementById("password").classList.remove("active");
+        document.getElementById("address").classList.remove("active");
+        document.getElementById("signout").classList.remove("active");
+    }
+
+    function passwordFunction() {
+        document.getElementById("demo").innerHTML = "orders";
+        document.getElementById("password").classList.add("active");
+        document.getElementById("wishs").classList.remove("active");
+        document.getElementById("data").classList.remove("active");
+        document.getElementById("order").classList.remove("active");
+        document.getElementById("address").classList.remove("active");
+        document.getElementById("signout").classList.remove("active");
+
+    }
+
+    function signoutFunction() {
+        document.getElementById("demo").innerHTML = "na";
+        document.getElementById("signout").classList.add("active");
+        document.getElementById("wishs").classList.remove("active");
+        document.getElementById("data").classList.remove("active");
+        document.getElementById("password").classList.remove("active");
+        document.getElementById("address").classList.remove("active");
+        document.getElementById("order").classList.remove("active");
+
+    }
+
+    function addressFunction() {
+        document.getElementById("demo").innerHTML = "address";
+        document.getElementById("address").classList.add("active");
+        document.getElementById("wishs").classList.remove("active");
+        document.getElementById("data").classList.remove("active");
+
+        document.getElementById("password").classList.remove("active");
+        document.getElementById("order").classList.remove("active");
+        document.getElementById("signout").classList.remove("active");
+    }
+
+    function get_firstname(str) {
+        //document.getElementById("personal_data").style.display='none';
+        // document.getElementById("per").style.display='inline';
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("firstname").innerHTML = this.responseText;
+                }
+            }
+        });
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_FirstName.php?email=" + str);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+
+    }
+
+    function get_lastname(str) {
+        // document.getElementById("personal_data").style.display='none';
+        // document.getElementById("per").style.display='inline';
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("lastname").innerHTML = this.responseText;
+                }
+            }
+        });
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_LastName.php?email=" + str);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+
+    }
+
+    function getID(str) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("firstname").innerHTML = this.responseText;
+                }
+            }
+        });
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/getId.php?email=" + str);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+
+</script>
+</body>
+</html>

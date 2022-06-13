@@ -1,0 +1,132 @@
+body {
+    font-family: "Book Antiqua";
+    background-color: white;
+}
+
+.title h1{
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    margin: 3%;
+}
+.all {
+
+
+    height: 100%;
+    width: 80%;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding:50px;
+    margin: auto;
+    gap: 10px;
+    border-radius: 5px;
+    outline: 5px solid #CCC;
+    border: 1px solid black;
+    justify-content: space-around;
+
+}
+
+.all .left {
+    flex-basis: 30%;
+    width: 30%;
+    height: 100%;
+    background: #d6dfe5;
+    padding-left: 0%;
+    padding-top: 20px;
+    float:left;
+    text-align: left;
+    vertical-align: top;
+
+}
+.all .right{
+    flex-basis: 60%;
+    width: 60%;
+}
+.all .right #personal_data{
+
+    flex-basis: 65%;
+
+    height: 50%;
+   text-align: center;
+    background-color: #d6dfe5;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+
+    width: 100%;
+}
+.all .right .data{
+    justify-content: space-around;
+
+}
+
+.all .left ul{
+    width: 95%;
+
+}
+.all .left ul li a{
+    display: block;
+    vertical-align: top;
+    margin: 10%;
+    border-bottom: 1px solid #0e0e0e;
+    color: rgb(14, 14, 14);
+    font-size: 25px;
+
+}
+
+.all .left ul li a .icon{
+    color: #0e0e0e;
+    width: 30px;
+    display: inline-block;
+}
+.all .left ul li a:hover,
+.all .left ul li a.active{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.all .left ul li a:hover .icon,
+.all .left ul li a.active .icon{
+    color: #0c7db1;
+}
+
+.all .left ul li a:hover:before,
+.all .left ul li a.active:before{
+    display: block;
+}
+@media (max-width: 650px) {
+    .title h1,.title p  {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+
+    }
+    .all {
+        padding-top: 0;
+        height: 2000px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .all .left{
+        width: 50%;
+    }
+
+
+    .all .left ul {
+        width: 50%;
+        position: relative;
+
+        padding-left: 500px;
+    }
+    .all .left ul li a
+    {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+}
