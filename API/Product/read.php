@@ -30,6 +30,7 @@ if(true){
             "description" => html_entity_decode($description),
             "price" => $price,
             "category_id" => $category_id,
+            "image_1"=>$image_1,
 
         );
 

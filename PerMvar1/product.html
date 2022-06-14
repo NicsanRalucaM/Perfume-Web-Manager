@@ -59,7 +59,7 @@
 
     <div class="row">
         <div class="column"><a href="news.html"><b>NEWS</b></a></div>
-        <div class="column"><a href="#"><b>PERFUMES</b></a></div>
+        <div class="column"><a href="products.html"><b>PERFUMES</b></a></div>
         <div class="column"><a href="#"><b>BRANDS</b></a></div>
         <div class="column"><a href="#"><b>COLLECTIONS</b></a></div>
         <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
@@ -176,7 +176,6 @@
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                    document.getElementById("price").innerText = "da";
 
                     const a = JSON.parse(this.responseText);
                     document.getElementById("title_details").innerText=a.name;
@@ -200,8 +199,9 @@
         xhr.send();
         return a;
     }
-
-    window.onload = set_data(20);
+    var baseUrl = (window.location).href; // You can also use document.URL
+    var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+    window.onload = set_data(koopId);
     function addProduct(id){
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -209,7 +209,7 @@
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                    document.getElementById("price").innerText="la";
+
 
                     document.getElementById("price").innerText=this.responseText;
                 }
@@ -217,7 +217,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Cart/addToCart.php?product=" +"20");
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Cart/addToCart.php?product=" +id);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
