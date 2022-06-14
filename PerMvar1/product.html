@@ -75,29 +75,25 @@
     <div class="right">
         <div class="details">
             <div class="titlu">
-                <h1>Arabia Black Widian</h1>
+                <h1 id="title_details"></h1>
             </div>
             <div class="description">
-                <p> A journey of love. Black IV tells the tale of love at first sight, an animalistic attraction.
-                    Subtle and playful, it’s a story of subdued romance; a stolen glance and an instant allure.
-                    It is shyly awaiting a sign, a greeting to greet back. It is silently anticipating beauty to
-                    present
-                    itself to be tenderly appreciated, cherished, and loved.
+                <p id="description_details">
                 </p>
             </div>
             <div class="some">
                 <div class="prices">
-                    <p><i> PRICE : 100$</i></p>
+                    <p id="price"><i> PRICE :100$ </i></p>
                 </div>
 
                 <div class="cw">
-                    <button class="cart">
+                    <button class="cart" onclick="addProduct(20)">
                         <span>Add to Cart</span>
-                        <i class="fa fa-fw fa-shopping-bag"></i>
+                        <i class="fa fa-fw fa-shopping-bag" ></i>
                     </button>
-                    <button class="wish">
+                    <button class="wish" onclick="addWish(20)">
                         <span>Add to Wishes</span>
-                        <i class="fa fa-fw fa-heart"></i>
+                        <i class="fa fa-fw fa-heart" ></i>
                     </button>
                 </div>
             </div>
@@ -112,10 +108,10 @@
                 more.</p>
         </div>
         <div class="ingredients">
-            <h3>AMBER SCENT</h3>
-            <h3>CEDARWOOD NOTE</h3>
-            <h3> COFFEE NOTE</h3>
-            <h3> PEPPER (PINK) NOTE</h3>
+            <h3 id="ingredient1"></h3>
+            <h3 id="ingredient2"></h3>
+            <h3 id="ingredient3"> </h3>
+            <h3 id="ingredient4"> </h3>
         </div>
         <div class="notes">
             <h2>Heart Notes:</h2>
@@ -172,6 +168,82 @@
         </div>
     </div>
 </footer>
+<script>
+    function set_data(id) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("price").innerText = "da";
+
+                    const a = JSON.parse(this.responseText);
+                    document.getElementById("title_details").innerText=a.name;
+                    document.getElementById("description_details").innerText=a.description;
+                    document.getElementById("price").innerText = "PRICE: " + a.price + " $";
+                    document.getElementById("ingredient1").innerText=a.ingredient1;
+                    document.getElementById("ingredient2").innerText=a.ingredient2;
+                    document.getElementById("ingredient3").innerText=a.ingredient3;
+                    document.getElementById("ingredient4").innerText=a.ingredient4;
+
+
+
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Product/read_one.php?id=" + id);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+        return a;
+    }
+
+    window.onload = set_data(20);
+    function addProduct(id){
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("price").innerText="la";
+
+                    document.getElementById("price").innerText=this.responseText;
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Cart/addToCart.php?product=" +"20");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+
+    }
+    function addWish(id){
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("price").innerText="la";
+
+                    document.getElementById("price").innerText=this.responseText;
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Fav/addToFav.php?product=" +"20");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+</script>
 </body>
 
 </html>

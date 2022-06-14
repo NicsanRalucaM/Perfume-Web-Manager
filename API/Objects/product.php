@@ -26,7 +26,7 @@ class Product
     {
 
         $query = "SELECT
-                 p.id, p.name, p.description, p.price, p.category_id
+                 p.id, p.name, p.description, p.price, p.category_id,p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4
             FROM
                 " . $this->table_name . " p";
 
@@ -42,7 +42,7 @@ class Product
     {
 
         $query = "SELECT
-                 p.id, p.name, p.description, p.price, p.category_id
+                 p.id, p.name, p.description, p.price, p.category_id, p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4
             FROM
                 " . $this->table_name . " p
                 
@@ -59,8 +59,13 @@ class Product
         $this->price = $row['price'];
         $this->description = $row['description'];
         $this->category_id = $row['category_id'];
+        $this->ingredient1=$row['ingredient1'];
+        $this->ingredient2=$row['ingredient2'];
+        $this->ingredient3=$row['ingredient3'];
+        $this->ingredient4=$row['ingredient4'];
 
     }
+
 
 }
 

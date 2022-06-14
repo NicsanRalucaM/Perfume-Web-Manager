@@ -14,11 +14,10 @@ $database = new Database();
 $db = $database->getConnection();
 
 $product = new Product($db);
-$product->id = 12;
+$product->id = $_GET['id'];
 
 
 $product->readOne();
-echo "$product->name";
 if ($product->name != null) {
 
     $product_arr = array(
@@ -27,6 +26,10 @@ if ($product->name != null) {
         "description" => $product->description,
         "price" => $product->price,
         "category_id" => $product->category_id,
+        "ingredient1"=>$product->ingredient1,
+        "ingredient2"=>$product->ingredient2,
+        "ingredient3"=>$product->ingredient3,
+        "ingredient4"=>$product->ingredient4,
 
 
     );

@@ -63,7 +63,7 @@
 
 </div>
 <div class="title">
-    <h1>Welcome, Magda!!</h1>
+    <h1 id="title_user" ></h1>
 </div>
 <div class="all">
 
@@ -335,7 +335,27 @@
 
         xhr.send();
     }
+    function getTitle(){
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+
+                    document.getElementById("title_user").innerHTML ="Welcome, "+this.responseText+" !! ^^";
+                }
+            }
+        });
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/User/get_FirstName.php?id=" + getCookie("id"));
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+
+    }
+
+window.onload=getTitle();
     function getCookie(cname) {
         let name = cname + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
@@ -351,6 +371,7 @@
         }
         return "";
     }
+
 
 </script>
 </body>
