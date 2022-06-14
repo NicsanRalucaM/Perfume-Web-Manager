@@ -80,7 +80,7 @@
                 <input type="hidden" name="price" value="<?= $fetch_product['price']; ?>">
                 <input type="hidden" name="image" value="<?= $fetch_product['image_1']; ?>">
                 <button class="fas fa-heart" type="submit" name="add_to_wishlist" onclick="addWish(<?= $fetch_product['id']; ?>)"></button>
-                <a href="" class="fas fa-eye"></a>
+                <a href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
                 <img src="imagesProduct/<?= $fetch_product['image_1']; ?>" alt="">
                 <div class="flex">
                     <div class="name"><b><?= $fetch_product['name']; ?></b></div>
