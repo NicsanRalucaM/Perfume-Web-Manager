@@ -41,9 +41,9 @@
                 </label>
                 <ul>
                     <li><a class="active" href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-user"></i>My Account</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
+                    <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
+                    <li><a href="cart.html"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
+                    <li><a href="favorite.html"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
                     <li><a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a></li>
                     <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
                 </ul>
@@ -56,8 +56,7 @@
     <div class="row">
         <div class="column"><a href="news.html"><b>NEWS</b></a></div>
         <div class="column"><a class="active" href="products.html" onload="dataFunction()"><b>PERFUMES</b></a></div>
-        <div class="column"><a href="#"><b>BRANDS</b></a></div>
-        <div class="column"><a href="#"><b>COLLECTIONS</b></a></div>
+        <div class="column"><a href="brand.html"><b>BRANDS</b></a></div>
         <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
     </div>
 </div>
@@ -97,7 +96,7 @@
             findByIngredient(koopId);
             a = document.getElementsByName("box_item");
             if(a.length===1)
-                findByCategory(koopId);
+                findByBrand(koopId);
         }
 
 
@@ -191,7 +190,7 @@
         xhr.send();
     }
 
-    function findByCategory(input) {
+    function findByBrand(input) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         var a;
@@ -228,7 +227,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByCategory.php?category_name=" + input);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByBrand.php?brand_name=" + input);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();

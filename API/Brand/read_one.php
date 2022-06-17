@@ -7,33 +7,33 @@ header("Access-Control-Allow-Credentials: true");
 header('Content-Type: application/json');
 
 include_once '../Config/database.php';
-include_once '../Objects/category.php';
+include_once '../Objects/brand.php';
 
 
 $database = new Database();
 $db = $database->getConnection();
 
-$category = new Category($db);
-$category->id = $_GET['id'];
+$brand = new Brand($db);
+$brand->id = $_GET['id'];
 
 
-$category->readOne();
-if ($category->name != null) {
+$brand->readOne();
+if ($brand->name != null) {
 
-    $category_arr = array(
-        "id" => $category->id,
-        "name" => $category->name,
-        "image"=>$category->image,
+    $brand_arr = array(
+        "id" => $brand->id,
+        "name" => $brand->name,
+        "image"=>$brand->image,
 
 
     );
 
     http_response_code(200);
-    echo json_encode($category_arr);
+    echo json_encode($brand_arr);
 
 } else {
 
     http_response_code(404);
-    echo json_encode(array("message" => "Category does not exist."));
+    echo json_encode(array("message" => "Brand does not exist."));
 }
 ?>

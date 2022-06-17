@@ -8,20 +8,20 @@ header('Content-Type: application/json');
 
 include_once '../Config/database.php';
 include_once '../Objects/product.php';
-include_once '../Objects/category.php';
+include_once '../Objects/brand.php';
 
 
 $database = new Database();
 $db = $database->getConnection();
 
 $product = new Product($db);
-$category=new Category($db);
-$category->name=$_GET['category_name'];
-$category->readByName();
-if($category->id!=null)
+$brand=new Brand($db);
+$brand->name=$_GET['brand_name'];
+$brand->readByName();
+if($brand->id!=null)
 
-$product->category_id=$category->id;
-$stmt = $product->readByCategoryId();
+$product->brand_id=$brand->id;
+$stmt = $product->readByBrandId();
 
 if(true){
 
@@ -39,7 +39,7 @@ if(true){
             "name" => $name,
             "description" => html_entity_decode($description),
             "price" => $price,
-            "category_id" => $category_id,
+            "brand_id" => $brand_id,
             "image_1"=>$image_1,
 
         );

@@ -11,7 +11,7 @@ class Product
     public $name;
     public $description;
     public $price;
-    public $category_id;
+    public $brand_id;
     public $ingredient1;
     public $ingredient2;
     public $ingredient3;
@@ -27,7 +27,7 @@ class Product
     {
 
         $query = "SELECT
-                 p.id, p.name, p.description, p.price, p.category_id,p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4, p.image_1
+                 p.id, p.name, p.description, p.price, p.brand_id,p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4, p.image_1
             FROM
                 " . $this->table_name . " p";
 
@@ -43,7 +43,7 @@ class Product
     {
 
         $query = "SELECT
-                 p.id, p.name, p.description, p.price, p.category_id, p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4,p.image_1
+                 p.id, p.name, p.description, p.price, p.brand_id, p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4,p.image_1
             FROM
                 " . $this->table_name . " p
                 
@@ -59,7 +59,7 @@ class Product
         $this->name = $row['name'];
         $this->price = $row['price'];
         $this->description = $row['description'];
-        $this->category_id = $row['category_id'];
+        $this->brand_id = $row['brand_id'];
         $this->ingredient1 = $row['ingredient1'];
         $this->ingredient2 = $row['ingredient2'];
         $this->ingredient3 = $row['ingredient3'];
@@ -81,9 +81,9 @@ class Product
         return $query;
 
     }
-    function readByCategoryId(){
-        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE category_id=:category_id");
-        $query->bindParam("category_id", $this->category_id, PDO::PARAM_STR);
+    function readByBrandId(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE brand_id=:brand_id");
+        $query->bindParam("brand_id", $this->brand_id, PDO::PARAM_STR);
 
         $query->execute();
         return $query;

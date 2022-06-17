@@ -1,11 +1,11 @@
 <?php
 
-class Category
+class Brand
 {
 
 
     private $conn;
-    private $table_name = "category";
+    private $table_name = "brands";
 
     public $id;
     public $name;

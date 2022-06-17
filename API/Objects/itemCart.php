@@ -4,7 +4,7 @@ class itemCart
 
 
     private $conn;
-    private $table_name = "orders";
+    private $table_name = "carts";
 
     public $id;
     public $user;

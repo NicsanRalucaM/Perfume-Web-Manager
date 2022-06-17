@@ -34,7 +34,7 @@ if(true){
             "name" => $name,
             "description" => html_entity_decode($description),
             "price" => $price,
-            "category_id" => $category_id,
+            "brand_id" => $brand_id,
             "image_1"=>$image_1,
 
         );

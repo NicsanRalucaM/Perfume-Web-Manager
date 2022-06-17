@@ -4,43 +4,43 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include_once '../Config/database.php';
-include_once '../Objects/category.php';
+include_once '../Objects/brand.php';
 
 $database = new Database();
 $db = $database->getConnection();
 
 
-$category = new Category($db);
-$stmt = $category->read();
+$brand = new Brand($db);
+$stmt = $brand->read();
 
 if(true){
 
 
-    $category_arr=array();
-    $category_arr["records"]=array();
+    $brand_arr=array();
+    $brand_arr["records"]=array();
 
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
         extract($row);
 
-        $category_item=array(
+        $brand_item=array(
             "id" => $id,
             "name" => $name,
             "image" => $image,
 
         );
 
-        $category_arr["records"][] = $category_item;
+        $brand_arr["records"][] = $brand_item;
     }
 
 
     http_response_code(200);
-    echo json_encode($category_arr);
+    echo json_encode($brand_arr);
 }
 else{
 
     http_response_code(404);
     echo json_encode(
-        array("message" => "No products found.")
+        array("message" => "No brands found.")
     );}
