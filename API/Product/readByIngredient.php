@@ -1,24 +1,30 @@
 <?php
 
 header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Headers: access");
+header("Access-Control-Allow-Methods: GET");
+header("Access-Control-Allow-Credentials: true");
+header('Content-Type: application/json');
 
 include_once '../Config/database.php';
 include_once '../Objects/product.php';
 
+
 $database = new Database();
 $db = $database->getConnection();
 
-
 $product = new Product($db);
-$stmt = $product->read();
+$product->ingredient1 = $_GET['ingredient'];
+
+
+$stmt = $product->readByIngredient();
 
 if(true){
 
 
     $products_arr=array();
     $products_arr["records"]=array();
-    $i=-1;
+
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
 
@@ -33,9 +39,8 @@ if(true){
             "image_1"=>$image_1,
 
         );
-        $i=$i+1;
-      //  console.log($product_item->id);
-        $products_arr["records"][$i] = $product_item;
+
+        $products_arr["records"][] = $product_item;
     }
 
 
@@ -49,3 +54,4 @@ else{
         array("message" => "No products found.")
     );
 }
+?>

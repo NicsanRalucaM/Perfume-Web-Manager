@@ -53,6 +53,18 @@ class Category
         $this->image = $row['image'];
 
     }
+    function readByName()
+    {
+
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE name=:name");
+        $query->bindParam("name", $this->name, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        $this->id = $row['id'];
+
+    }
 }
 
 ?>

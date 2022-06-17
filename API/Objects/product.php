@@ -66,6 +66,28 @@ class Product
         $this->ingredient4 = $row['ingredient4'];
         $this->image_1 = $row['image_1'];
     }
+    function readByName(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE name=:name");
+        $query->bindParam("name", $this->name, PDO::PARAM_STR);
+
+        $query->execute();
+       return $query;
+    }
+    function readByIngredient(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE ingredient1=:ingredient or ingredient2=:ingredient or ingredient3=:ingredient or ingredient4=:ingredient");
+        $query->bindParam("ingredient", $this->ingredient1, PDO::PARAM_STR);
+
+        $query->execute();
+        return $query;
+
+    }
+    function readByCategoryId(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE category_id=:category_id");
+        $query->bindParam("category_id", $this->category_id, PDO::PARAM_STR);
+
+        $query->execute();
+        return $query;
+    }
 
 
 }
