@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PerMvibes</title>
+    <link rel="stylesheet" href="topbar.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="news.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+
+<body>
+<div class="bar">
+    <div class="navbar">
+        <div class="logo">
+            <img src="imagesLogo/logo.png" alt="logo">
+        </div>
+
+        <div class="wrapper">
+            <div class="searchBar">
+                <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value=""/>
+                <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div class="col">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <ul>
+                    <li><a class="active" href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-user"></i>My Account</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
+                    <li><a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<div class="topbar">
+    <div class="row">
+        <div class="column"><a href="news.html"><b>NEWS</b></a></div>
+        <div class="column"><a class="active" href="products.html" onload="dataFunction()"><b>PERFUMES</b></a></div>
+        <div class="column"><a href="#"><b>BRANDS</b></a></div>
+        <div class="column"><a href="#"><b>COLLECTIONS</b></a></div>
+        <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
+    </div>
+</div>
+
+<div class="box-container" id="box_cont">
+
+
+    <p id="ased" onload="productss()"></p>
+    <form action="" method="post" class="box" name="box_item" id="box_det" style="display: none">
+        <input type="hidden" name="pid" value="">
+        <input type="hidden" name="name" value="">
+        <input type="hidden" name="price" value="">
+        <input type="hidden" name="image" value="">
+        <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish"></button>
+        <a href="" id="redict" class="fas fa-eye"></a>
+        <img src="" id="imgg" alt="">
+        <div class="flex">
+            <div class="name" id="abc"><b></b></div>
+            <div class="price" id="price_det"><span><b></b></span><b></b></div>
+        </div>
+        <input type="submit" value="Add to cart" class="btn" name="add_to_cart" id="addCart">
+    </form>
+
+
+</div>
+
+
+<script>
+    function productss() {
+        //document.getElementById("asd").innerText ="asada";
+        var baseUrl = (window.location).href; // You can also use document.URL
+        var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+
+        findByName(koopId);
+        var a = document.getElementsByName("box_item");
+        if (a.length === 1) {
+            findByIngredient(koopId);
+            a = document.getElementsByName("box_item");
+            if(a.length===1)
+                findByCategory(koopId);
+        }
+
+
+    }
+
+    window.onload = productss();
+
+    function findByIngredient(input) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+
+
+                    let a = JSON.parse(this.responseText);
+                    var i = 0;
+                    while (i < a['records'].length) {
+
+                        const node = document.getElementById("box_cont");
+                        const div = document.getElementById('box_det');
+                        const clone = div.cloneNode(true);
+
+                        console.log(clone.childNodes);
+
+                        document.getElementById(clone.childNodes[15].childNodes[1].id).innerText = a['records'][i].name;
+                        document.getElementById(clone.childNodes[15].childNodes[3].id).innerText = a['records'][i].price + " $";
+                        document.getElementById(clone.childNodes[13].id).src = "imagesProduct/" + a['records'][i].image_1;
+
+                        // document.getElementById(clone.childNodes[17].id).src="imagesProduct/"+a['records'][i].image_1;
+                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][i].id;
+                        document.getElementById(clone.id).style.display = 'block';
+                        node.appendChild(clone);
+
+                        i = i + 1;
+
+                    }
+
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByIngredient.php?ingredient=" + input);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+
+    function findByName(input) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+
+
+                    let a = JSON.parse(this.responseText);
+                    var i = 0;
+                    while (i < a['records'].length) {
+
+                        const node = document.getElementById("box_cont");
+                        const div = document.getElementById('box_det');
+                        const clone = div.cloneNode(true);
+
+                        console.log(clone.childNodes);
+
+                        document.getElementById(clone.childNodes[15].childNodes[1].id).innerText = a['records'][i].name;
+                        document.getElementById(clone.childNodes[15].childNodes[3].id).innerText = a['records'][i].price + " $";
+                        document.getElementById(clone.childNodes[13].id).src = "imagesProduct/" + a['records'][i].image_1;
+
+                        // document.getElementById(clone.childNodes[17].id).src="imagesProduct/"+a['records'][i].image_1;
+                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][i].id;
+                        document.getElementById(clone.id).style.display = 'block';
+                        node.appendChild(clone);
+
+                        i = i + 1;
+
+                    }
+
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByName.php?name=" + input);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+
+    function findByCategory(input) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+
+
+                    let a = JSON.parse(this.responseText);
+                    var i = 0;
+                    while (i < a['records'].length) {
+
+                        const node = document.getElementById("box_cont");
+                        const div = document.getElementById('box_det');
+                        const clone = div.cloneNode(true);
+
+                        console.log(clone.childNodes);
+
+                        document.getElementById(clone.childNodes[15].childNodes[1].id).innerText = a['records'][i].name;
+                        document.getElementById(clone.childNodes[15].childNodes[3].id).innerText = a['records'][i].price + " $";
+                        document.getElementById(clone.childNodes[13].id).src = "imagesProduct/" + a['records'][i].image_1;
+
+                        // document.getElementById(clone.childNodes[17].id).src="imagesProduct/"+a['records'][i].image_1;
+                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][i].id;
+                        document.getElementById(clone.id).style.display = 'block';
+                        node.appendChild(clone);
+
+                        i = i + 1;
+
+                    }
+
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByCategory.php?category_name=" + input);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+
+    function addProduct(id) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    // document.getElementById("abc").innerText = "saluttyy";
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send();
+
+    }
+
+    function addWish(id) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    document.getElementById("abc").innerText = "saluttyy";
+
+
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Fav/addToFav.php?product=" + id);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+
+
+</script>
+</body>
+
+</html>
