@@ -26,11 +26,11 @@ if ($product->name != null) {
         "description" => $product->description,
         "price" => $product->price,
         "brand_id" => $product->brand_id,
-        "ingredient1"=>$product->ingredient1,
-        "ingredient2"=>$product->ingredient2,
-        "ingredient3"=>$product->ingredient3,
-        "ingredient4"=>$product->ingredient4,
-
+        "ingredient1" => $product->ingredient1,
+        "ingredient2" => $product->ingredient2,
+        "ingredient3" => $product->ingredient3,
+        "ingredient4" => $product->ingredient4,
+        "image_1" => $product->image_1,
 
     );
 

@@ -12,7 +12,7 @@ $db = $database->getConnection();
 
 $item = new itemFav($db);
 $item->product = $_GET['product'];
-$item->user=$_COOKIE['id'];
+$item->user=1;//$_COOKIE['id'];
 $stmt = $item->post();
 echo $stmt;
 

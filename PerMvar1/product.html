@@ -68,7 +68,7 @@
 <div class="all">
 
     <div class="left">
-        <img src="imagesProduct/imagegood.jpg" alt="parfum">
+        <img src="" id="img_details" alt="parfum">
     </div>
 
     <div class="right">
@@ -82,17 +82,17 @@
             </div>
             <div class="some">
                 <div class="prices">
-                    <p id="price"><i> PRICE :100$ </i></p>
+                    <p id="price"><i> PRICE: $ </i></p>
                 </div>
 
                 <div class="cw">
-                    <button class="cart" onclick="addProduct(20)">
+                    <button class="cart" onclick="" id="addToCart">
                         <span>Add to Cart</span>
-                        <i class="fa fa-fw fa-shopping-bag" ></i>
+                        <i class="fa fa-fw fa-shopping-bag"></i>
                     </button>
-                    <button class="wish" onclick="addWish(20)">
+                    <button class="wish" onclick="" id="addToFav">
                         <span>Add to Wishes</span>
-                        <i class="fa fa-fw fa-heart" ></i>
+                        <i class="fa fa-fw fa-heart"></i>
                     </button>
                 </div>
             </div>
@@ -107,30 +107,25 @@
                 more.</p>
         </div>
         <div class="ingredients">
-            <a  href="" id="ingredient1"></a>
-            <a  href="" id="ingredient2"></a>
-            <a  href="" id="ingredient3"></a>
-            <a  href="" id="ingredient4"></a>
-        </div>
-        <div class="notes">
-            <h2>Heart Notes:</h2>
-            <p>Vanilla, Orange Blossom & White Flowers</p>
+            <a href="" id="ingredient1"></a>
+            <a href="" id="ingredient2"></a>
+            <a href="" id="ingredient3"></a>
+            <a href="" id="ingredient4"></a>
         </div>
         <div class="plus">
             <h2>You may also like:</h2>
             <div class="prod">
-                <div class="prod1">
-                    <h1>Black Opium</h1>
-
-                    <img src="imagesProduct/p3.jpg" alt="na">
+                <div class="prod1" id="prod1">
+                    <h1 id="titlu_rec1"></h1>
+                    <img src="" id="img1" alt="na">
                 </div>
-                <div class="prod1">
-                    <h1>1986 Xerjoff</h1>
-                    <img src="imagesProduct/p2.jpg" alt="na">
+                <div class="prod1" id="prod2">
+                    <h1 id="titlu_rec2"></h1>
+                    <img src="" id="img2" alt="na">
                 </div>
-                <div class="prod1">
-                    <h1>Oud Satin Mood Maison Francis Kurkdjian</h1>
-                    <img src="imagesProduct/p1.webp" alt="na">
+                <div class="prod1" id="prod3">
+                    <h1 id="titlu_rec3"></h1>
+                    <img src="" id="img3" alt="na">
                 </div>
             </div>
         </div>
@@ -167,91 +162,7 @@
         </div>
     </div>
 </footer>
-<script>
-    function set_data(id) {
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        var a;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-
-                    const a = JSON.parse(this.responseText);
-                    document.getElementById("title_details").innerText=a.name;
-                    document.getElementById("description_details").innerText=a.description;
-                    document.getElementById("price").innerText = "PRICE: " + a.price + " $";
-                    document.getElementById("ingredient1").innerText=a.ingredient1;
-                    document.getElementById("ingredient1").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient1;
-                    document.getElementById("ingredient2").innerText=a.ingredient2;
-                    document.getElementById("ingredient2").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient2;
-
-                    document.getElementById("ingredient3").innerText=a.ingredient3;
-                    document.getElementById("ingredient3").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient3;
-
-                    document.getElementById("ingredient4").innerText=a.ingredient4;
-                    document.getElementById("ingredient4").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient4;
-
-
-
-
-
-
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/read_one.php?id=" + id);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-        return a;
-    }
-    var baseUrl = (window.location).href; // You can also use document.URL
-    var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-    window.onload = set_data(koopId);
-    function addProduct(id){
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        var a;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-
-
-                    document.getElementById("price").innerText=this.responseText;
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" +id);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-
-    }
-    function addWish(id){
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        var a;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-                    document.getElementById("price").innerText="la";
-
-                    document.getElementById("price").innerText=this.responseText;
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Fav/addToFav.php?product=" +"20");
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-    }
-</script>
+<script type="text/javascript" src="product.js"></script>
 </body>
 
 </html>
