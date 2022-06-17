@@ -111,58 +111,7 @@
         xhr.send();
         return a;
     }
-    function category_product(id)
-    {
-        setTimeout(function(){
-            window.location.href = 'products.html';
-        }, 6000);
 
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        var a;
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/read_category.php?category_id="+id);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-
-
-                    let a = JSON.parse(this.responseText);
-                    for (var i = 0; i < a['records'].length; i++) {
-
-                        const node = document.getElementById("box_cont");
-                        const div = document.getElementById('box_det');
-                        const clone = div.cloneNode(true);
-
-                        console.log(clone.childNodes);
-
-                        document.getElementById(clone.childNodes[15].childNodes[1].id).innerText = a['records'][i].name;
-                        document.getElementById(clone.childNodes[15].childNodes[3].id).innerText = a['records'][i].price + " $";
-                        document.getElementById(clone.childNodes[13].id).src = "imagesProduct/" + a['records'][i].image_1;
-                        var c=a['records'][i].id;
-                        document.getElementById(clone.childNodes[17].id).addEventListener('click', (function (i) {
-                            return function () {
-                                addProduct(a['records'][i].id);
-                            };
-                        }(i)));
-                        // document.getElementById(clone.childNodes[17].id).src="imagesProduct/"+a['records'][i].image_1;
-                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][i].id;
-                        document.getElementById(clone.id).style.display = 'block';
-                        node.appendChild(clone);
-
-
-
-                    }
-
-                }
-            }
-        });
-
-
-
-
-        xhr.send();
-    }
 
     window.onload = set_data();
 </script>

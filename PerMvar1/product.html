@@ -108,10 +108,10 @@
                 more.</p>
         </div>
         <div class="ingredients">
-            <h3 id="ingredient1"></h3>
-            <h3 id="ingredient2"></h3>
-            <h3 id="ingredient3"> </h3>
-            <h3 id="ingredient4"> </h3>
+            <a  href="" id="ingredient1"></a>
+            <a  href="" id="ingredient2"></a>
+            <a  href="" id="ingredient3"></a>
+            <a  href="" id="ingredient4"></a>
         </div>
         <div class="notes">
             <h2>Heart Notes:</h2>
@@ -182,9 +182,18 @@
                     document.getElementById("description_details").innerText=a.description;
                     document.getElementById("price").innerText = "PRICE: " + a.price + " $";
                     document.getElementById("ingredient1").innerText=a.ingredient1;
+                    document.getElementById("ingredient1").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient1;
                     document.getElementById("ingredient2").innerText=a.ingredient2;
+                    document.getElementById("ingredient2").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient2;
+
                     document.getElementById("ingredient3").innerText=a.ingredient3;
+                    document.getElementById("ingredient3").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient3;
+
                     document.getElementById("ingredient4").innerText=a.ingredient4;
+                    document.getElementById("ingredient4").href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input="+a.ingredient4;
+
+
+
 
 
 
@@ -193,7 +202,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Product/read_one.php?id=" + id);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/read_one.php?id=" + id);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
@@ -217,7 +226,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Cart/addToCart.php?product=" +id);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" +id);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
@@ -238,7 +247,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Fav/addToFav.php?product=" +"20");
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Fav/addToFav.php?product=" +"20");
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();

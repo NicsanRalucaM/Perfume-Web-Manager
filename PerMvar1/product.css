@@ -131,14 +131,15 @@ body {
     align-content: center;
     justify-content: space-evenly;
     width: 100%;
-    color: gold;
+
     text-decoration: underline;
 }
 
-.all .ingredients h3 {
+.all .ingredients a {
     cursor: pointer;
+    color: gold;
     font-size: 130%;
-    font-family: 'Brush Script MT', cursive;
+    font-family: Garamond, serif;
 }
 
 .all .restall .notes {
@@ -209,7 +210,7 @@ body {
 }
 
 @media (max-width: 650px) {
-    .all .right .details .titlu, .all .right .details .description, .all .rest h1, .all .plus h2, .all .notes h2, .all .rest p, .all .ingredients h3, .all .restall .plus .prod .prod1 h1 {
+    .all .right .details .titlu, .all .right .details .description, .all .rest h1, .all .plus h2, .all .notes h2, .all .rest p, .all .ingredients a, .all .restall .plus .prod .prod1 h1 {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
 

@@ -5,7 +5,7 @@ class Product
 
 
     private $conn;
-    private $table_name = "product";
+    private $table_name = "products";
 
     public $id;
     public $name;

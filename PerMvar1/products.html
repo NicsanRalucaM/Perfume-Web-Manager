@@ -111,7 +111,7 @@
                         document.getElementById(clone.childNodes[13].id).src = "imagesProduct/" + a['records'][i].image_1;
 
                         // document.getElementById(clone.childNodes[17].id).src="imagesProduct/"+a['records'][i].image_1;
-                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager5/PerMvar1/product.html?id=" + a['records'][i].id;
+                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][i].id;
                         document.getElementById(clone.id).style.display = 'block';
                         node.appendChild(clone);
                         console.log(i);
@@ -122,7 +122,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Product/read.php");
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/read.php");
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
@@ -144,7 +144,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Cart/addToCart.php?product=" + id);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send();
 
@@ -165,7 +165,7 @@
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager5/API/Fav/addToFav.php?product=" + id);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Fav/addToFav.php?product=" + id);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
