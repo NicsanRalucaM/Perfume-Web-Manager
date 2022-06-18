@@ -44,7 +44,7 @@
 }
 
 .box-container .items .box img {
-    height:200px;
+    height: 200px;
     width: 250px;
     object-fit: contain;
     margin-bottom: 2rem;
@@ -65,11 +65,12 @@
     color: gold;
 }
 
+
 .box-container .items .box .fa-eye {
     position: absolute;
     top: 8%;
     height: 10%;
-    width:10%;
+    width: 10%;
     border-radius: 5px;
     text-align: center;
     right: 8%;
@@ -79,6 +80,42 @@
     background: #f3efef;
     cursor: pointer;
 }
+
+.box-container .row {
+    display: flex;
+    margin: 100px;
+    box-sizing: border-box;
+
+}
+
+.box-container .row .column {
+    flex: 33.33%;
+    width: 50px;
+    height: 50px;
+    background: white;
+
+
+}
+
+.box-container .row .column .nou hr {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.box-container .row .column p {
+    padding-top: 10px;
+    border: 2px solid gold;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+ #p1 p {
+    background-color: gold;
+}
+
 
 .box-container .items .box .fa-eye:hover {
     color: gold;
@@ -111,17 +148,20 @@
         margin-top: 10%;
         font-size: 60%;
     }
+
     #addCart {
         top: 50%;
-        padding:10px 10px;
-        font-size:30%;
+        padding: 10px 10px;
+        font-size: 30%;
     }
-    #addWish{
+
+    #addWish {
         border: 0px;
 
     }
-    #redict
-    { border: 0px;
+
+    #redict {
+        border: 0px;
 
     }
 
@@ -167,23 +207,23 @@
 }
 
 
-
 @media screen and (max-width: 850px) {
-    .box-container .items .box
-    {
+    .box-container .items .box {
         width: 180%;
     }
+
     #addCart {
         left: 50%;
         width: fit-content;
         font-size: 60%;
     }
-    #addWish{
+
+    #addWish {
 
         font-size: 60%;
     }
-    #redict
-    {
+
+    #redict {
 
         font-size: 60%;
     }
