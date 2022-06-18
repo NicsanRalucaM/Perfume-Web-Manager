@@ -11,7 +11,7 @@ $db = $database->getConnection();
 
 
 $cart = new itemCart($db);
-$cart->user=1;
+$cart->user= $_GET['id'];
 $stmt = $cart->readUser();
 
 if(true){

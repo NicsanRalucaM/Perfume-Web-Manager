@@ -44,8 +44,8 @@
 }
 
 .box-container .items .box img {
-    height: 10%;
-    width: 20%;
+    height:200px;
+    width: 250px;
     object-fit: contain;
     margin-bottom: 2rem;
 }

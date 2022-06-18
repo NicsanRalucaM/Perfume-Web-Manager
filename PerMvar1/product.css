@@ -7,12 +7,12 @@ body {
     position: relative;
     border-radius: 5px;
     margin-left: 10px;
-margin-right: 20px;
+    margin-right: 20px;
     margin-top: 30px;
     overflow: hidden;
     background: #ffffff;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-content: center;
     border-bottom: 3px solid black;
 
@@ -46,7 +46,6 @@ margin-right: 20px;
     text-align: left;
 
 }
-
 
 
 .all1 .right .details .titlu {
@@ -83,8 +82,9 @@ margin-right: 20px;
     padding-top: 20px;
     margin-bottom: 20px;
 }
-.all .right .details .some .prices #price{
-  padding-right: 40px;
+
+.all .right .details .some .prices #price {
+    padding-right: 40px;
     font-size: 20px;
 
 
@@ -93,7 +93,7 @@ margin-right: 20px;
 .all .right .details .some .cw {
     width: 100%;
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-content: center;
 }
 
@@ -241,19 +241,18 @@ margin-right: 20px;
 
     }
 }
-@media screen and (max-width: 650px)
-{
-    #title_details
-    {
+
+@media screen and (max-width: 650px) {
+    #title_details {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
-    #description_details
-    {
+
+    #description_details {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
 }
 
-    @media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .all .restall .plus .prod .prod1 {
         width: 100%;
         border: 1px solid black;

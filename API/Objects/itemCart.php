@@ -54,4 +54,17 @@ class itemCart
 
         return $stmt;
     }
+    function remove(){
+
+
+        $query = $this->conn->prepare("DELETE FROM " .$this->table_name . "  WHERE  id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+
+
+        return "post ok";
+    }
 }

@@ -19,7 +19,7 @@
 
 .box-container .box img {
     height: 20rem;
-    width: 250px;
+    width: 70%;
     object-fit: contain;
     margin-bottom: 2rem;
 }
