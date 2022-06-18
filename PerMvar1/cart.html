@@ -66,9 +66,17 @@
 <div class="box-container" id="box_cont">
     <div class="row">
         <div class="column" id="p1"><p>1</p>SHOPPING CART</div>
-        <div class="column"><div class="nou"><hr></div> </div>
+        <div class="column">
+            <div class="nou">
+                <hr>
+            </div>
+        </div>
         <div class="column"><p>2</p>ADDRESS</div>
-        <div class="column"><div class="nou"><hr></div> </div>
+        <div class="column">
+            <div class="nou">
+                <hr>
+            </div>
+        </div>
         <div class="column"><p>3</p>PLATĂ ȘI EXPEDIERE</div>
     </div>
     <p id="ased" onload="productss()"></p>
@@ -78,12 +86,35 @@
     <div class="items" id="item_det">
 
     </div>
+
     <div class="cart_details">
-        <div price_details>
-            <h1>0</h1>
+        <p><b>ORDER SUMMARY</b></p>
+        <div class="contai">
+            <div class="column"><h2>SUBTOTAL :</h2></div>
+            <div class="column"><h1 id="pret">0</h1></div>
 
         </div>
+        <div class="contai">
+            <div class="column"><h2>DELIVERY COST :</h2></div>
+            <div class="column"><h1>0$</h1></div>
+
+
+        </div>
+        <div class="contai">
+            <div class="column"><h2>TOTAL PAYMENT :</h2></div>
+            <div class="column"><h1 id="pret2"></h1></div>
+        </div>
+
     </div>
+
+<div class="btn_adr">
+    <button class="address" onclick="checkout.html" id="goAddress"> CONTINUE</button>
+
+
+</div>
+
+
+
 </div>
 
 <script>
@@ -98,15 +129,20 @@
                     <div class="box" name="box_item" id="box_det">
 
             <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish" onclick="addWish(${b.id})"></button>
-            <a href="${"http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id="+ b.id}" id="redict" class="fas fa-eye"></a>
-            <img src="${"imagesProduct/"+b.image_1}" id="imgg" alt="">
+            <a href="${"http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + b.id}" id="redict" class="fas fa-eye"></a>
+            <img src="${"imagesProduct/" + b.image_1}" id="imgg" alt="">
             <div class="flex">
                 <div class="name" id="abc"><b>${b.name}</b></div>
                 <div class="gen" id="gen"><b>${b.gen} perfume</b></div>
                 <div class="price" id="price_det"><span><b>${b.price} $</b></span><b></b></div>
             </div>
             <button type="submit" class="btn" name="add_to_cart" id="addCart" onclick="removeProduct(${item.id})">Remove</button>
-        </div>`;
+
+        </div>
+`;
+                    document.getElementById("pret").innerText = parseInt(document.getElementById("pret").innerText) + parseInt(b.price) + "$";
+                    document.getElementById("pret2").innerText = document.getElementById("pret").innerText;
+                    console.log(parseInt(b.price));
                 }
             }
         });
@@ -136,6 +172,7 @@
 
         xhr.send();
     }
+
     function addWish(id) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -155,6 +192,7 @@
 
         xhr.send();
     }
+
     function removeProduct(id) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
@@ -163,7 +201,7 @@
             if (this.readyState === 4) {
                 {
                     //document.getElementById("abc").innerText = "saluttyy";
-                    window.location.href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/cart.html";
+                    window.location.href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/cart.html";
 
                 }
             }
