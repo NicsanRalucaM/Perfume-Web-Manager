@@ -2,14 +2,16 @@
     display: flex;
     flex-flow: column wrap;
 }
+
 .box-container h1 {
     margin-top: 3.5%;
     text-align: center;
-    font-size: 160%;
+    font-size: 180%;
     font-family: Garamond, serif;
     color: gold;
 }
-.box-container p{
+
+.box-container p {
     text-align: center;
     color: black;
 }
@@ -17,8 +19,8 @@
 .box-container .items {
 
     align-content: center;
-    margin-left:20%;
-    margin-right:20%;
+    margin-left: 20%;
+    margin-right: 20%;
     padding: 30px;
     display: flex;
     flex-flow: column wrap;
@@ -30,7 +32,7 @@
     border-bottom: 1px solid black;
     border-bottom-color: gold;
     border-top-color: gold;
-    width: 100%;
+    width: 120%;
     position: relative;
     border-radius: .5rem;
     margin-top: 50px;
@@ -43,15 +45,15 @@
 
 .box-container .items .box img {
     height: 10%;
-    width: 30%;
+    width: 20%;
     object-fit: contain;
     margin-bottom: 2rem;
 }
 
 .box-container .items .box .fa-heart {
     position: absolute;
-    right:8%;
-    top: 10%;
+    right: 8%;
+    top: 25%;
     height: 10%;
     width: 10%;;
     font-size: 100%;
@@ -65,12 +67,16 @@
 
 .box-container .items .box .fa-eye {
     position: absolute;
-    top: 25%;
+    top: 8%;
     height: 10%;
-    width: 10%;
+    width:10%;
+    border-radius: 5px;
+    text-align: center;
     right: 8%;
+    border: 2px solid black;
     font-size: 100%;
     color: black;
+    background: #f3efef;
     cursor: pointer;
 }
 
@@ -80,62 +86,134 @@
 
 
 .box-container .items .box .flex {
-    width: 200px;
-    position: relative;
 
+    position: absolute;
+    top: 5%;
+    left: 30%;
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
 
 }
 
+@media screen and (max-width: 450px) {
+    #abc {
+        margin-top: 5%;
+        font-size: 80%;
+    }
+
+    #price_det {
+        margin-top: 20%;
+        font-size: 50%;
+    }
+
+    #gen {
+        margin-top: 10%;
+        font-size: 60%;
+    }
+    #addCart {
+        top: 50%;
+        padding:10px 10px;
+        font-size:30%;
+    }
+    #addWish{
+        border: 0px;
+
+    }
+    #redict
+    { border: 0px;
+
+    }
+
+}
+
 .box-container .items .box .flex .name {
+    margin-top: 20%;
+    margin-left: 10%;
     font-size: 18px;
+    font-family: Garamond, serif;
+}
+
+.box-container .items .box .flex .gen {
+
+    margin-left: 10%;
+    font-size: 14px;
+    color: grey;
     font-family: Garamond, serif;
 }
 
 .box-container .items .box .flex .price {
     text-align: right;
-    margin-top: 10px;
+    margin-top: 20%;
+    margin-left: 10%;
+
     font-size: 18px;
 
 
 }
 
 .box-container .items .btn {
-    padding: 18px 20px;
-    height: 50px;
-    position: relative;
-    left: 170px;
-    top: 70px;
+    padding: 20px 20px;
+    position: absolute;
+    top: 70%;
+    height: 10%;
+    width: 15%;
+    left: 30%;
     background-color: transparent;
     outline: none;
     border: 2px solid gold;
     font-weight: bold;
     cursor: pointer;
 }
+
+
+
+@media screen and (max-width: 850px) {
+    .box-container .items .box
+    {
+        width: 180%;
+    }
+    #addCart {
+        left: 50%;
+        width: fit-content;
+        font-size: 60%;
+    }
+    #addWish{
+
+        font-size: 60%;
+    }
+    #redict
+    {
+
+        font-size: 60%;
+    }
+}
+
 .box-container .cart_details {
     margin: auto;
     height: 200px;
     width: 90%;
     border: 1px solid black;
 }
-.box-container .cart_details .price_details h2{
+
+.box-container .cart_details .price_details h2 {
     margin-bottom: 10px;
     margin-left: 20%;
 }
-.box-container .cart_details .price_details h3{
+
+.box-container .cart_details .price_details h3 {
 
     text-align: left;
     font-size: 150%;
     margin-left: 10px;
     margin-bottom: 5px;
 }
-.box-container .cart_details .cart_details h4{
+
+.box-container .cart_details .cart_details h4 {
     border-top: 1px solid black;
     text-align: start;
     margin-top: 50px;
-    margin-left:10px ;
+    margin-left: 10px;
     margin-right: 800px;
     font-size: 150%;
 }
