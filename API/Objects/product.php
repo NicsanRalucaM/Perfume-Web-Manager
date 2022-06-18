@@ -17,6 +17,8 @@ class Product
     public $ingredient3;
     public $ingredient4;
     public $image_1;
+    public $gen;
+    public $anotimp;
 
     public function __construct($db)
     {
@@ -27,7 +29,7 @@ class Product
     {
 
         $query = "SELECT
-                 p.id, p.name, p.description, p.price, p.brand_id,p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4, p.image_1
+                 p.id, p.name, p.description, p.price, p.brand_id,p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4, p.image_1,p.gen,p.anotimp
             FROM
                 " . $this->table_name . " p";
 
@@ -43,7 +45,7 @@ class Product
     {
 
         $query = "SELECT
-                 p.id, p.name, p.description, p.price, p.brand_id, p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4,p.image_1
+                 p.id, p.name, p.description, p.price, p.brand_id, p.ingredient1,p.ingredient2,p.ingredient3,p.ingredient4,p.image_1,p.gen,p.anotimp
             FROM
                 " . $this->table_name . " p
                 
@@ -65,6 +67,8 @@ class Product
         $this->ingredient3 = $row['ingredient3'];
         $this->ingredient4 = $row['ingredient4'];
         $this->image_1 = $row['image_1'];
+        $this->gen=$row['gen'];
+        $this->anotimp=$row['anotimp'];
     }
     function readByName(){
         $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE name=:name");
@@ -84,6 +88,13 @@ class Product
     function readByBrandId(){
         $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE brand_id=:brand_id");
         $query->bindParam("brand_id", $this->brand_id, PDO::PARAM_STR);
+
+        $query->execute();
+        return $query;
+    }
+    function readByAnotimp(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE anotimp=:anotimp");
+        $query->bindParam("anotimp", $this->anotimp, PDO::PARAM_STR);
 
         $query->execute();
         return $query;

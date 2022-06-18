@@ -31,6 +31,8 @@ if ($product->name != null) {
         "ingredient3" => $product->ingredient3,
         "ingredient4" => $product->ingredient4,
         "image_1" => $product->image_1,
+        "gen"=>$product->gen,
+        "anotimp"=>$product->anotimp
 
     );
 

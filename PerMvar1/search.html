@@ -95,8 +95,14 @@
         if (a.length === 1) {
             findByIngredient(koopId);
             a = document.getElementsByName("box_item");
-            if(a.length===1)
+            if(a.length===1) {
                 findByBrand(koopId);
+                a = document.getElementsByName("box_item");
+                if (a.length === 1)
+                    findByAnotimp(koopId);
+            }
+
+
         }
 
 
@@ -189,7 +195,48 @@
 
         xhr.send();
     }
+    function findByAnotimp(input) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
 
+
+                    let a = JSON.parse(this.responseText);
+                    var i = 0;
+                    while (i < a['records'].length) {
+
+                        const node = document.getElementById("box_cont");
+                        const div = document.getElementById('box_det');
+                        const clone = div.cloneNode(true);
+
+                        console.log(clone.childNodes);
+
+                        document.getElementById(clone.childNodes[15].childNodes[1].id).innerText = a['records'][i].name;
+                        document.getElementById(clone.childNodes[15].childNodes[3].id).innerText = a['records'][i].price + " $";
+                        document.getElementById(clone.childNodes[13].id).src = "imagesProduct/" + a['records'][i].image_1;
+
+                        // document.getElementById(clone.childNodes[17].id).src="imagesProduct/"+a['records'][i].image_1;
+                        document.getElementById(clone.childNodes[11].id).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][i].id;
+                        document.getElementById(clone.id).style.display = 'block';
+                        node.appendChild(clone);
+
+                        i = i + 1;
+
+                    }
+
+                }
+            }
+        });
+
+
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByAnotimp.php?anotimp=" + input);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
     function findByBrand(input) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
