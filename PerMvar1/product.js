@@ -6,6 +6,7 @@ function set_data(id) {
             {
                 const a = JSON.parse(this.responseText);
                 document.getElementById("title_details").innerText = a.name;
+                document.getElementById("gen").innerText = a.gen+" perfume";
                 document.getElementById("img_details").src = "imagesProduct/" + a.image_1;
                 document.getElementById("description_details").innerText = a.description;
                 document.getElementById("price").innerText = "PRICE: " + a.price + " $";
@@ -23,6 +24,9 @@ function set_data(id) {
 
                 document.getElementById("ingredient4").innerText = a.ingredient4;
                 document.getElementById("ingredient4").href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input=" + a.ingredient4;
+                document.getElementById("anotimp").innerText = a.anotimp;
+
+                document.getElementById("anotimp").href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input=" + a.anotimp;
                 setRec(a.brand_id);
 
             }
