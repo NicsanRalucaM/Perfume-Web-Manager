@@ -7,7 +7,7 @@
 }
 
 .box-container .box {
-
+flex-basis: 24.2%;
     position: relative;
     border-radius: .5rem;
     padding: 70px 100px;
