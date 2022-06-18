@@ -2,51 +2,67 @@ body {
     font-family: "Book Antiqua";
 }
 
-.all {
-    padding-top: 0;
-    padding-bottom: 50px;
+.all1 {
+
+    position: relative;
+    border-radius: 5px;
+    margin-left: 10px;
+margin-right: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+    background: #ffffff;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
+    align-content: center;
+
 }
 
-.all .left {
-    flex-basis: 40%;
+.all1 .left {
+    flex-basis: 50%;
+    text-align: center;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    background: white;
+    color: white;
+
 }
 
-.all .left img {
-    width: 100%;
-    padding-left: 50px;
+.all1 .left img {
+    background: white;
+    height: 350px;
+    width: 300px;
+    align-content: center;
 }
 
-.all .left img:hover {
+.all1 .left img:hover {
     transform: scaleX(-1);
 }
 
-.all .right {
-    flex-basis: 60%;
-    text-align: right;
+.all1 .right {
+    flex-basis: 50%;
+    text-align: left;
+
 }
 
-.all .right .details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: center;
-    width: 100%;
-}
 
-.all .right .details .titlu {
+
+.all1 .right .details .titlu {
     width: 60%;
-    font-size: 100%;
-    padding: 20px;
+    font-size: 17px;
+    margin-left: 40px;
+
+    padding-bottom: 10px;
 }
 
-.all .right .details .description {
+.all .right .details .description #description_details {
     position: relative;
-    text-align: center;
-    width: 70%;
-    height: 30%;
+    margin-left: 30px;
+    align-content: center;
+    text-align: justify;
+    padding-right: 10px;
+
 }
 
 .all .right .details .some {
@@ -56,20 +72,28 @@ body {
 
 .all .right .details .some .prices {
     width: 100%;
-    text-align: center;
+    text-align: right;
+    background: #2c3e50;
+    color: white;
     padding-bottom: 20px;
     padding-top: 20px;
+    margin-bottom: 20px;
+}
+.all .right .details .some .prices #price{
+  padding-right: 40px;
+    font-size: 20px;
+
 }
 
 .all .right .details .some .cw {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    flex-wrap:wrap;
+    align-content: center;
 }
 
 .all .right .details .some button {
+    flex-basis: 50%;
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -175,8 +199,12 @@ body {
     width: 30%;
     text-align: center;
     padding: 3%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     justify-content: space-between;
-    border: 1px solid black;
+
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .all .restall .plus .prod .prod1 img {
@@ -201,8 +229,19 @@ body {
 
     }
 }
+@media screen and (max-width: 650px)
+{
+    #title_details
+    {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+    #description_details
+    {
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+}
 
-@media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
     .all .restall .plus .prod .prod1 {
         width: 100%;
         border: 1px solid black;
