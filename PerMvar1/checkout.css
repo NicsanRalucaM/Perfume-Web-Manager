@@ -1,0 +1,118 @@
+.box-container {
+    width: 90%;
+    height: 900px;
+    margin: auto;
+
+}
+.box-container h1{
+    text-align: center;
+    position: relative;
+    top: 15px;
+}
+.box-container .checkout {
+    height: 500px;
+    margin:20px;
+    position: relative;
+    top:50px;
+    background-color:aliceblue ;
+    gap: 10px;
+    border-radius: 5px;
+
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+}
+
+.box-container .row {
+    display: flex;
+    margin: 100px;
+    box-sizing: border-box;
+
+}
+
+.box-container .row .column {
+    flex: 33.33%;
+    width: 50px;
+    height: 50px;
+    background: white;
+
+
+}
+
+.box-container .row .column .nou hr {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.box-container .row .column p {
+    padding-top: 10px;
+    border: 2px solid gold;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+}
+#p1 p {
+    background-color: gold;
+}
+#p2 p {
+    background-color: gold;
+}
+
+.box-container .checkout .address{
+    position: relative;
+    top:50px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+
+}
+.box-container .checkout .user{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.box-container .checkout .address_det{
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #0e0e0e;
+    border-radius: 3px;
+}
+
+label {
+    margin-bottom: 10px;
+    margin-top: 50px;
+    display: block;
+}
+
+.icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+@media (max-width: 650px) {
+    .box-container .checkout {
+        margin: 50px;
+        height: 1000px;
+    }
+}
