@@ -9,12 +9,13 @@ body {
     font-size: 30px;
     text-align: center;
     margin: 3%;
+    color: gold;
 }
 
 .all {
 
 
-    height:auto;
+    height: auto;
     width: 80%;
     align-self: center;
     display: flex;
@@ -26,19 +27,20 @@ body {
     outline: 5px solid #CCC;
     border: 1px solid black;
     justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
 
 .all .left {
     flex-basis: 30%;
-    width: 30%;
-    height: 100%;
+    width: inherit;
     background: #d6dfe5;
     padding-left: 0%;
     padding-top: 20px;
     float: left;
     text-align: left;
     vertical-align: top;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
 
@@ -70,11 +72,12 @@ body {
     height: 70%;
     text-align: center;
 
-    background-color: #d6dfe5;
+    background-color: gold;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
+    color: grey;
 }
 
 .all .right #personal_data .data {
@@ -84,26 +87,38 @@ body {
     font-size: 20px;
 
 }
-.all .right  .orders{
+
+.all .right .orders {
     height: auto;
 
 
 }
-.all .right  .orders .order{
-    border: 1px solid;
-    width: 100%;
-    height: 200px;
+
+.all .right .orders .order {
+
+    width: auto;
     margin-top: 10px;
+    padding-bottom: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
+    background: rgb(2, 2, 51);
+    color: white;
 }
-.all .right  .orders .order  .titlu{
+
+.all .right .orders .order .titlu {
+    margin: 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+.all .right .orders .order a{
+    color: white;
+    margin-left: 20%;
+}
+
 .all .left ul {
     width: 95%;
 

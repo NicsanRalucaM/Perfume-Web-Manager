@@ -29,11 +29,9 @@ function dataFunction() {
 
 
                 document.getElementById("data").classList.add("active");
-                document.getElementById("wishs").classList.remove("active");
+
                 document.getElementById("order").classList.remove("active");
-                document.getElementById("password").classList.remove("active");
-                document.getElementById("address").classList.remove("active");
-                document.getElementById("signout").classList.remove("active");
+
             }
         }
     });
@@ -61,6 +59,7 @@ function iterate(item, index) {
             <h2>OrderId: ${item.id}</h2>
             <h2>Date: ${adr.time}</h2>
         </div>
+        <h3>Product list: </h3>
         <div class="order_items">
         <a id="${item.id}item1" href="" style="display: none"></a>
         <a id="${item.id}item2" href="" style="display: none"></a>
@@ -107,7 +106,7 @@ function setProd(id,i,nr){
                 {
                     a=JSON.parse(this.responseText);
                     document.getElementById(nr+"item"+i).style.display='block';
-                    document.getElementById(nr+"item"+i).innerText=a.name;
+                    document.getElementById(nr+"item"+i).innerText="> "+a.name;
                     document.getElementById(nr+"item"+i).href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id="+id;
                 }
             }
@@ -147,11 +146,8 @@ function orderFunction() {
     xhr.send();
 
 
-    document.getElementById("wishs").classList.remove("active");
+
     document.getElementById("data").classList.remove("active");
-    document.getElementById("password").classList.remove("active");
-    document.getElementById("address").classList.remove("active");
-    document.getElementById("signout").classList.remove("active");
     document.getElementById("order").classList.add("active");
 }
 
@@ -268,7 +264,7 @@ function getTitle() {
         if (this.readyState === 4) {
             {
 
-                document.getElementById("title_user").innerHTML = "Welcome, " + this.responseText + " !! ^^";
+                document.getElementById("title_user").innerHTML = "Welcome, " + this.responseText+"!";
             }
         }
     });
