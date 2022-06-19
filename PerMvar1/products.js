@@ -3,7 +3,7 @@ function iterate(item, index) {
        
         <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish" onclick="addWish(${item.id})"></button>
        
-        <img src="${"imagesProduct/" + item.image_1}" id="imgg" alt="">
+        <a href="${"http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + item.id}" ><img src="${"imagesProduct/" + item.image_1}" id="imgg" alt=""></a>
         <div class="flex">
             <div class="name" id="abc"><b>${item.name}</b></div>
             <div class="price" id="price_det"><span><b>${item.price + " $"}</b></span><b></b></div>
