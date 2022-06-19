@@ -1,20 +1,23 @@
 .box-container {
     width: 90%;
-    height: 900px;
+    height: 2000px;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
 }
-.box-container h1{
+
+.box-container h1 {
     text-align: center;
     position: relative;
-    top: 15px;
 }
+
 .box-container .checkout {
     height: 500px;
-    margin:20px;
+    margin: 20px;
     position: relative;
-    top:50px;
-    background-color:aliceblue ;
+    background-color: aliceblue;
     gap: 10px;
     border-radius: 5px;
 
@@ -33,9 +36,9 @@
 
 .box-container .row {
     display: flex;
-    margin: 100px;
-    box-sizing: border-box;
-
+    position: relative;
+    top: 0px;
+    margin: 0px;
 }
 
 .box-container .row .column {
@@ -62,16 +65,18 @@
     border-radius: 50%;
     display: inline-block;
 }
+
 #p1 p {
     background-color: gold;
 }
+
 #p2 p {
     background-color: gold;
 }
 
-.box-container .checkout .address{
+.box-container .checkout .address {
     position: relative;
-    top:50px;
+    top: 50px;
     margin-left: auto;
     margin-right: auto;
     flex-basis: 30%;
@@ -79,18 +84,20 @@
     flex-direction: column;
 
 }
-.box-container .checkout .user{
-    flex-basis: 30%;
-    display: flex;
-    flex-direction: column;
-}
-.box-container .checkout .address_det{
+
+.box-container .checkout .user {
     flex-basis: 30%;
     display: flex;
     flex-direction: column;
 }
 
-input[type=text] {
+.box-container .checkout .address_det {
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-container .checkout input[type=text] {
     width: 100%;
     margin-bottom: 20px;
     padding: 12px;
@@ -98,16 +105,110 @@ input[type=text] {
     border-radius: 3px;
 }
 
-label {
+.box-container .checkout label {
     margin-bottom: 10px;
     margin-top: 50px;
     display: block;
 }
 
-.icon-container {
+.box-container .checkout .icon-container {
     margin-bottom: 20px;
     padding: 7px 0;
     font-size: 24px;
+}
+
+.box-container .payment {
+    height: 500px;
+    margin: 20px;
+    position: relative;
+    top: 50px;
+    background-color: aliceblue;
+    gap: 10px;
+    border-radius: 5px;
+
+    border-top: 3px solid gold;
+    border-bottom: 3px solid gold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 8px;
+}
+
+.box-container .payment .card {
+    width: 30%;
+    position: relative;
+    left: 10%;
+
+}
+
+.box-container .payment .row {
+    flex-basis: 50%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 7%;
+
+}
+
+.box-container .payment .row .card_type {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.box-container .payment .row .card_data {
+    height: 70%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.box-container .payment input[type=text] {
+
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #0e0e0e;
+    border-radius: 3px;
+}
+
+.box-container .payment label {
+    margin-bottom: 10px;
+    margin-top: 50px;
+    display: block;
+}
+
+
+.box-container .payment .icon-container {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.box-container .payment .row .card_type .icon-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.box-container .payment .row .card_type .icon-container i {
+    margin: 1%;
+    width: 23%;
+    font-size: 200%;
 }
 
 @media (max-width: 650px) {
