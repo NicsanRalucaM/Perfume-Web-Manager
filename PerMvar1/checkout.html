@@ -78,27 +78,29 @@
         <div class="column " id="p2"><p>2</p>Billing details</div>
     </div>
     <h1>Billing Details</h1>
+    <h2 style="display: none" id="errormsg"></h2>
+
     <form id="form">
         <div class="checkout">
             <div class="user">
-                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Magda Sarmanta">
-                <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input type="text" id="email" name="email" placeholder="magdasarmanta@example.com">
+                <label for="fname"><i class="fa fa-user"></i> Full Name*</label>
+                <input type="text" id="fname" name="firstname" placeholder="Magda Sarmanta" required>
+                <label for="email"><i class="fa fa-envelope"></i> Email*</label>
+                <input type="email" id="email" name="email" placeholder="magdasarmanta@example.com" required>
 
             </div>
             <div class="address">
-                <label for="adr"><i class="fa fa-address-card"></i> Address</label>
-                <input type="text" id="adr" name="address" placeholder="Starda Principala Nr. 275">
-                <label for="city"><i class="fa fa-institution"></i> City</label>
-                <input type="text" id="city" name="city" placeholder="Iasi">
+                <label for="adr"><i class="fa fa-address-card"></i> Address*</label>
+                <input type="text" id="adr" name="address" placeholder="Starda Principala Nr. 275" required>
+                <label for="city"><i class="fa fa-institution"></i> City*</label>
+                <input type="text" id="city" name="city" placeholder="Iasi" required>
             </div>
             <div class="address_det">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="RO">
+                <label for="state">State*</label>
+                <input type="text" id="state" name="state" placeholder="RO" required>
 
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
+                <label for="zip">Zip*</label>
+                <input type="text" id="zip" name="zip" placeholder="10001" required>
             </div>
 
         </div>
@@ -107,12 +109,12 @@
 
     <div class="payment">
         <div class="card">
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="Magda Sarmanta">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <label for="cname">Name on Card*</label>
+            <input type="text" id="cname" name="cardname" placeholder="Magda Sarmanta" required>
+            <label for="ccnum">Credit card number*</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+            <label for="expmonth">Exp Month*</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="9" required>
         </div>
         <div class="row">
             <div class="card_type">
@@ -126,40 +128,95 @@
             </div>
             <div class="card_data">
                 <div class="card_details">
-                    <label for="expyear">Exp Year</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                    <label for="expyear">Exp Year*</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="2018" required>
                 </div>
                 <div class="card_details">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                    <label for="cvv">CVV*</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="352" required>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="btn_adr">
-        <button class="address" onclick="saveOrder()" id="goAddress"> CONTINUE</button>
+        <button class="address" onclick="checkFields()" id="goAddress"> CONTINUE</button>
     </div>
 
 </div>
 <script>
-    function saveAddress(){
+    function checkFields() {
+        const inputFeilds = document.querySelectorAll("input");
+
+        const validInputs = Array.from(inputFeilds).filter(input => input.value !== "");
+        console.log(validInputs.length);
+        console.log(document.getElementById("ccnum"));
+        if (validInputs.length !== 12) {
+            document.getElementById("errormsg").style.display = 'block';
+            document.getElementById("errormsg").innerText = "Please complete all fields !!";
+
+            window.scroll(0, 0);
+        } else if (!cardnumber(document.getElementById("ccnum")) || !exprY(document.getElementById("expyear"), document.getElementById("expmonth"))) {
+            document.getElementById("errormsg").style.display = 'block';
+            document.getElementById("errormsg").innerText = "Wrong data card";
+            window.scroll(0, 0);
+        } else if (!cvv(document.getElementById("cvv"))) {
+            document.getElementById("errormsg").style.display = 'block';
+            document.getElementById("errormsg").innerText = "Wrong data card";
+            window.scroll(0, 0);
+        } else {
+            saveOrder();
+        }
+
+
+    }
+
+    function exprY(input1, input2) {
+        var currentDate = new Date();
+        if (input1.value > currentDate.getFullYear())
+            return true;
+        else if (input2.value > currentDate.getMonth())
+            return true;
+        else
+            return false;
+
+    }
+
+    function cvv(input) {
+        if (input.value > 99 && input.value < 1000)
+            return true;
+        else
+            return false;
+    }
+
+    function cardnumber(inputtxt) {
+        var cardno1 = '4(?:[0-9]{12}|[0-9]{15})';
+        var cardno2 = '3[47][0-9]{13}';
+        var cardno3 = '3(?:0[0-5][0-9]{11}|[68][0-9]{12})';
+        var cardno4 = '5[1-5][0-9]{14}';
+        if (inputtxt.value.match(cardno1) || inputtxt.value.match(cardno2) || inputtxt.value.match(cardno3) || inputtxt.value.match(cardno4))
+            return true;
+        else
+            return false;
+    }
+
+    function saveAddress() {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         //document.getElementById("form").submit();
         var currentdate = new Date();
         var datetime = currentdate.getDate() + "/"
-            + (currentdate.getMonth()+1)  + "/"
+            + (currentdate.getMonth() + 1) + "/"
             + currentdate.getFullYear() + " @ "
             + currentdate.getHours() + ":"
             + currentdate.getMinutes() + ":"
-            + currentdate.getSeconds()+":"
-            +currentdate.getMilliseconds()
+            + currentdate.getSeconds() + ":"
+            + currentdate.getMilliseconds()
         ;
-        var adr=document.getElementById("adr").value;
-        var city=document.getElementById("city").value;
-        var zip=document.getElementById("zip").value;
-        var state=document.getElementById("state").value;
+        var adr = document.getElementById("adr").value;
+        var city = document.getElementById("city").value;
+        var zip = document.getElementById("zip").value;
+        var state = document.getElementById("state").value;
         console.log(datetime);
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
@@ -169,26 +226,28 @@
             }
         });
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Address/addAddress.php?address=" + adr+"&city="+city+"&zip="+zip+"&state="+state+"&time="+datetime);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Address/addAddress.php?address=" + adr + "&city=" + city + "&zip=" + zip + "&state=" + state + "&time=" + datetime);
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
     }
-    function saveOrder(){
-        var name=document.getElementById("fname").value;
-        var email=document.getElementById("email").value;
-        var adr=saveAddress();
+
+    function saveOrder() {
+        var name = document.getElementById("fname").value;
+        var email = document.getElementById("email").value;
+        var adr = saveAddress();
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         var a;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                  window.location.href="news.html";
+                    document.getElementById("form").submit();
+                    window.location.href = "news.html";
                 }
             }
         });
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Order/addOrder.php?name=" + name+"&email="+email+"&address="+adr+"&price="+"777"+"&product1=1&product2=2&product3=3");
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Order/addOrder.php?name=" + name + "&email=" + email + "&address=" + adr + "&price=" + "777" + "&product1=1&product2=2&product3=3");
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
