@@ -50,12 +50,14 @@
 
 .box-container .items .box .fa-heart {
     position: absolute;
-    right: 8%;
-    top: 25%;
+    right: 2%;
+    top: 6%;
     height: 10%;
     width: 10%;;
-    font-size: 100%;
-    border-radius: 4px;
+    font-size: 30px;
+    border: transparent;
+    background-color: transparent;
+    color: steelblue;
     cursor: pointer;
 }
 
@@ -69,16 +71,10 @@
 
 .box-container .items .box .fa-eye {
     position: absolute;
-    top: 8%;
-    height: 10%;
-    width: 10%;
-    border-radius: 5px;
-    text-align: center;
-    right: 8%;
-    border: 2px solid black;
-    font-size: 100%;
-    color: black;
-    background: #f3efef;
+    top: 80%;
+    right: 5%;
+    font-size: 30px;
+    color: grey;
     cursor: pointer;
 }
 
@@ -174,12 +170,12 @@
     }
 
     #gen {
-        margin-top: 10%;
+
         font-size: 60%;
     }
 
     #addCart {
-        top: 50%;
+
         padding: 10px 10px;
         font-size: 30%;
     }
@@ -251,12 +247,12 @@
     }
 
     #gen {
-        margin-top: 10%;
+
         font-size: 60%;
     }
 
     #addCart {
-        top: 50%;
+
         padding: 10px 10px;
         font-size: 30%;
     }
@@ -271,15 +267,7 @@
         font-size: 60%;
     }
 
-    #addWish {
 
-        font-size: 60%;
-    }
-
-    #redict {
-
-        font-size: 60%;
-    }
 }
 
 .contai {
@@ -357,7 +345,8 @@
     text-align: center;
     font-family: Garamond, serif;
 }
-.address a{
+
+.address a {
     color: gold;
 }
 
@@ -372,8 +361,8 @@
 }
 
 @media screen and (max-width: 650px) {
-    .btn_adr button{
-        font-size: 10%;
+    .btn_adr button {
+        font-size: 15px;
         width: auto;
     }
 
@@ -392,6 +381,15 @@
 
     .box-container .items .box img {
         height: 100px;
+    }
+    #addWish {
+
+        font-size: 100%;
+    }
+
+    #redict {
+
+        font-size: 100%;
     }
 }
 

@@ -1,10 +1,6 @@
 .box-container {
-    width: 90%;
-    height: 2000px;
-    margin: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    flex-flow: column wrap;
 
 }
 
@@ -12,6 +8,7 @@
     text-align: center;
     position: relative;
 }
+
 .box-container h2 {
     text-align: center;
     position: relative;
@@ -19,8 +16,9 @@
 }
 
 .box-container .checkout {
+    width: 80%;
     height: 400px;
-    margin: 20px;
+    margin: auto;
     position: relative;
     background-color: aliceblue;
     gap: 10px;
@@ -41,13 +39,13 @@
 
 .box-container .row {
     display: flex;
-    position: relative;
-    top: 0px;
-    margin: 0px;
+    margin: 6% 30%;
+    box-sizing: border-box;
+
 }
 
 .box-container .row .column {
-    flex: 33.33%;
+    flex: 50%;
     width: 50px;
     height: 50px;
     background: white;
@@ -58,6 +56,10 @@
 .box-container .row .column .nou hr {
     margin-top: 20px;
     text-align: center;
+}
+
+.box-container h1 {
+    margin: 20px;
 }
 
 .box-container .row .column p {
@@ -71,12 +73,34 @@
     display: inline-block;
 }
 
+
 #p1 p {
     background-color: gold;
 }
 
 #p2 p {
     background-color: gold;
+}
+
+@media screen and (max-width: 650px) {
+
+
+    .box-container .row .column p, .box-container .row .column h3 {
+        font-size: 75%
+    }
+
+
+    .box-container .row {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 13%;
+    }
+
+    .box-container h1 {
+        font-size: 100%
+    }
+
+
 }
 
 .box-container .checkout .address {
@@ -106,7 +130,7 @@
     top: 50px;
 }
 
-.box-container .checkout input[type=text],.box-container .checkout input[type=email],.box-container .checkout input[type=number]{
+.box-container .checkout input[type=text], .box-container .checkout input[type=email], .box-container .checkout input[type=number] {
     width: 100%;
     margin-bottom: 20px;
     padding: 12px;
@@ -127,8 +151,11 @@
 }
 
 .box-container .payment {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
     height: 500px;
-    margin: 20px;
+
     position: relative;
     top: 50px;
     background-color: aliceblue;
@@ -162,7 +189,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    right: 5%;
+    right: 2%;
 
 }
 
@@ -220,53 +247,92 @@
     font-size: 200%;
 }
 
-@media (max-width: 650px) {
-    .box-container{
+@media (max-width: 690px) {
+    .box-container {
 
     }
+
     .box-container .checkout {
-        margin: 50px;
+
         height: 800px;
         flex-direction: column;
     }
-    .box-container .checkout .user{
+
+    .box-container .checkout .user {
         margin: 0;
-        top:0;
+        top: 0;
         flex-basis: 30%;
     }
-    .box-container .checkout .address{
+
+    .box-container .checkout .address {
         margin: 0;
-        top:0;
+        top: 0;
         flex-basis: 30%;
     }
-    .box-container .checkout .address_det{
+
+    .box-container .checkout .address_det {
         margin: 0;
-        top:0;
+        top: 0;
         flex-basis: 30%;
     }
-    .box-container .payment{
+
+    .box-container .payment {
         flex-direction: column;
         height: 1000px;
     }
-    .box-container .payment .card{
+
+    .box-container .payment .card {
         width: 100%;
     }
-    .box-container .payment .row{
+
+    .box-container .payment .row {
         width: 100%;
         position: relative;
         right: 0;
         left: 10%;
     }
+
     .box-container .payment .row .card_type .icon-container i {
 
         font-size: 150%;
         flex-basis: 10%;
     }
 }
+
 @media (max-width: 400px) {
     .box-container .payment .row .card_type .icon-container i {
 
         font-size: 100%;
         flex-basis: 10%;
     }
+}
+
+.btn_adr {
+    text-align: right;
+    margin-top: 50px;
+    margin-right: 10%;
+    margin-bottom: 30px;
+
+
+}
+.btn_adr .address {
+
+    width: 200px;
+    background-color: white;
+    border: 2px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-weight: bold;
+    font-size: 25px;
+    color: gold;
+    cursor: pointer;
+    text-align: center;
+    font-family: Garamond, serif;
+}
+
+
+
+.address:hover {
+    color: #000;
+    opacity: 0.7;
 }
