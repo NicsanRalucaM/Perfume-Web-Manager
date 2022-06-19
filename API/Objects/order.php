@@ -1,4 +1,5 @@
 <?php
+
 class Order
 {
 
@@ -22,12 +23,15 @@ class Order
     public $price;
     public $email;
     public $name;
+
     public function __construct($db)
     {
         $this->conn = $db;
     }
-   public  function post(){
-        $query = $this->conn->prepare("INSERT INTO " .$this->table_name . "  (user,address,product1,product2,product3,price,name,email) values(:user,:address,:product1,:product2,:product3,:price,:name,:email)");
+
+    public function post()
+    {
+        $query = $this->conn->prepare("INSERT INTO " . $this->table_name . "  (user,address,product1,product2,product3,price,name,email) values(:user,:address,:product1,:product2,:product3,:price,:name,:email)");
         $query->bindParam("user", $this->user, PDO::PARAM_STR);
         $query->bindParam("address", $this->address, PDO::PARAM_STR);
         $query->bindParam("product1", $this->product1, PDO::PARAM_STR);
@@ -41,6 +45,47 @@ class Order
         $row = $query->fetch(PDO::FETCH_ASSOC);
 
         return "post ok";
+    }
+
+    function readOne()
+    {
+
+        $query = "SELECT
+               * FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.user =" . $this->user . "
+            LIMIT
+                0,1";
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $this->id = $row['id'];
+        $this->price = $row['price'];
+        $this->address = $row['address'];
+        $this->email = $row['email'];
+        $this->name = $row['name'];
+        $this->product1 = $row['product1'];
+        $this->product2 = $row['product2'];
+        $this->product3 = $row['product3'];
+        $this->product4 = $row['produc4'];
+        $this->product5 = $row['product5'];
+        $this->product6 = $row['product6'];
+        $this->product7 = $row['product7'];
+        $this->product8 = $row['product8'];
+        $this->product9 = $row['product9'];
+        $this->product10 = $row['product10'];
+
+    }
+    function read(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE user=:user");
+        $query->bindParam("user", $this->user, PDO::PARAM_STR);
+
+        $query->execute();
+        return $query;
     }
 
 }

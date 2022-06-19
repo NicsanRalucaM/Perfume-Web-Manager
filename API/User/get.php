@@ -29,7 +29,7 @@ if ($user->firstname != null) {
 
 
     http_response_code(200);
-    echo $user->firstname;
+    echo json_encode($product_arr);
 
 } else {
 

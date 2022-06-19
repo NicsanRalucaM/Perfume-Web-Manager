@@ -37,5 +37,27 @@ class Address
 
         return $row['id'];
     }
+    function read(){
+        $query = "SELECT* 
+            FROM
+                " . $this->table_name . " u
+                
+            WHERE
+                u.id =" . $this->id . "
+            LIMIT
+                0,1";
+
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $this->city = $row['city'];
+        $this->state = $row['state'];
+        $this->zip = $row['zip'];
+        $this->address = $row['address'];
+        $this->time = $row['time'];
+        $this->user = $row['user'];
+    }
 
 }
