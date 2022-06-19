@@ -78,7 +78,7 @@
         <div class="column " id="p2"><p>2</p>Billing details</div>
     </div>
     <h1>Billing Details</h1>
-    <form>
+    <form id="form">
         <div class="checkout">
             <div class="user">
                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
@@ -138,10 +138,64 @@
     </div>
 
     <div class="btn_adr">
-        <button class="address" onclick="payment.html" id="goAddress"> CONTINUE</button>
+        <button class="address" onclick="saveOrder()" id="goAddress"> CONTINUE</button>
     </div>
 
 </div>
+<script>
+    function saveAddress(){
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        //document.getElementById("form").submit();
+        var currentdate = new Date();
+        var datetime = currentdate.getDate() + "/"
+            + (currentdate.getMonth()+1)  + "/"
+            + currentdate.getFullYear() + " @ "
+            + currentdate.getHours() + ":"
+            + currentdate.getMinutes() + ":"
+            + currentdate.getSeconds()+":"
+            +currentdate.getMilliseconds()
+        ;
+        var adr=document.getElementById("adr").value;
+        var city=document.getElementById("city").value;
+        var zip=document.getElementById("zip").value;
+        var state=document.getElementById("state").value;
+        console.log(datetime);
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    return parseInt(this.responseText);
+                }
+            }
+        });
 
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Address/addAddress.php?address=" + adr+"&city="+city+"&zip="+zip+"&state="+state+"&time="+datetime);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+    }
+    function saveOrder(){
+        var name=document.getElementById("fname").value;
+        var email=document.getElementById("email").value;
+        var adr=saveAddress();
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        var a;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                  window.location.href="news.html";
+                }
+            }
+        });
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Order/addOrder.php?name=" + name+"&email="+email+"&address="+adr+"&price="+"777"+"&product1=1&product2=2&product3=3");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.send();
+
+    }
+
+
+</script>
 </body>
 </html>
