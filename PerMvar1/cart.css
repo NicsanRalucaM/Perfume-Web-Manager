@@ -35,7 +35,7 @@
     width: 130%;
     position: relative;
     border-radius: .5rem;
-    margin-top: 50px;
+    margin-top: 30px;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
@@ -45,7 +45,7 @@
 .box-container .items .box img {
     width: 20%;
 
-    margin:10px;
+    margin: 10px;
 }
 
 .box-container .items .box .fa-heart {
@@ -120,14 +120,15 @@
 }
 
 @media screen and (max-width: 650px) {
-    .box-container .items .box img
-    {
+    .box-container .items .box img {
         width: 20%;
     }
+
     .box-container .row .column p, .box-container .row .column h3 {
         font-size: 75%
     }
-    #your, .box-container .cart p{
+
+    #your, .box-container .cart p {
         font-size: 90%;
     }
 
@@ -138,10 +139,8 @@
     }
 
 
-
-    .box-container .items .box .flex
-    {
-        margini:10px;
+    .box-container .items .box .flex {
+        margini: 10px;
     }
 
 }
@@ -222,6 +221,9 @@
 
 }
 
+.box-container .cart .items {
+    margin-bottom: 50px;
+}
 
 .box-container .items .btn {
     padding: 20px 20px;
@@ -258,6 +260,7 @@
         padding: 10px 10px;
         font-size: 30%;
     }
+
     .box-container .items .box {
         width: 180%;
     }
@@ -310,6 +313,7 @@
 
 
 .box-container .cart_details {
+
     margin: auto;
     width: 80%;
     overflow: hidden;
@@ -323,6 +327,8 @@
 }
 
 .box-container .cart_details .summary p {
+    margin-top: 25px;
+    margin-left: 5px;
     text-align: left;
     font-size: 170%;
     color: gold;
@@ -330,48 +336,61 @@
 
 .btn_adr {
     text-align: right;
-    margin-right: 5%;
-    margin-bottom: 5%;
+    margin-top: 20px;
+    margin-right: 10%;
+    margin-bottom: 30px;
+
 
 }
 
 .address {
-    width: auto;
-    background-color: transparent;
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    border: 2px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     outline: none;
-    border: 2px solid grey;
     font-weight: bold;
-    font-size: 20px;
-    color: grey;
+    font-size: 25px;
+    color: white;
     cursor: pointer;
-    text-align: right;
+    text-align: center;
     font-family: Garamond, serif;
+}
+.address a{
+    color: gold;
+}
+
+.address a:hover {
+    color: #000;
+    opacity: 0.7;
 }
 
 .btn_adr button {
+    margin-bottom: 20px;
 
 }
 
 @media screen and (max-width: 650px) {
-.btn_adr {
-text-align: left;
-}
-    .box-container .cart
-    {
+    .btn_adr button{
+        font-size: 10%;
+        width: auto;
+    }
+
+    .box-container .cart {
         width: 100%;
     }
-    .box-container .items .box
-    {
+
+    .box-container .items .box {
         width: 180%;
     }
 
-    .box-container .cart_details
-    {
+    .box-container .cart_details {
         width: 80%;
         font-size: 60%;
     }
-    .box-container .items .box img
-    {
+
+    .box-container .items .box img {
         height: 100px;
     }
 }

@@ -64,10 +64,11 @@
 
 </div>
 <div class="box-container" id="box_cont">
+    <div class="cart">
     <p id="ased" onload="productss()"></p>
     <h1>YOUR FAVORITE PRODUCTS</h1>
     <div class="items" id="item_det">
-
+    </div>
     </div>
     </div>
 
@@ -82,7 +83,7 @@
                     document.getElementById("item_det").innerHTML += `
                     <div class="box" name="box_item" id="box_det">
 
-            <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish" onclick="addWish(${b.id})"></button>
+            <button class="fas fa-shopping-bag" type="submit" name="add_to_wishlist" id="addWish" onclick="addProduct(${b.id})"></button>
             <a href="${"http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + b.id}" id="redict" class="fas fa-eye"></a>
             <img src="${"imagesProduct/" + b.image_1}" id="imgg" alt="">
             <div class="flex">
@@ -115,6 +116,11 @@
             if (this.readyState === 4) {
                 {
                     a = JSON.parse(this.responseText);
+                    if(a['records'].length==0)
+                        document.getElementById("item_det").innerHTML += `
+                        <h1>You don't have any favorite products yet</h1>`;
+                    else
+
                     a['records'].forEach(iterate);
                 }
             }
@@ -127,24 +133,24 @@
         xhr.send();
     }
 
-    function addWish(id) {
+    function addProduct(id) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         var a;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                    //document.getElementById("abc").innerText = "saluttyy";
+                    // mesaj de confiremare sau ceva cazuri NUU UITATIIIIDESTEPTELOR
 
                 }
             }
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Fav/addToFav.php?product=" + id);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
         xhr.setRequestHeader("Content-Type", "application/json");
-
         xhr.send();
+
     }
 
     function removeProduct(id) {

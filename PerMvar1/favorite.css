@@ -32,25 +32,23 @@
     border-bottom: 1px solid black;
     border-bottom-color: gold;
     border-top-color: gold;
-    width: 120%;
+    width: 130%;
     position: relative;
     border-radius: .5rem;
-    margin-top: 50px;
+    margin-top: 30px;
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     flex-flow: row wrap;
-
 }
 
 .box-container .items .box img {
-    height: 200px;
-    width: 250px;
-    object-fit: contain;
-    margin-bottom: 2rem;
+    width: 20%;
+
+    margin: 10px;
 }
 
-.box-container .items .box .fa-heart {
+.box-container .items .box .fa-shopping-bag {
     position: absolute;
     right: 8%;
     top: 25%;
@@ -61,10 +59,13 @@
     cursor: pointer;
 }
 
-.box-container .items .box .fa-heart:hover {
+.box-container .items .box .fa-shopping-bag:hover {
     color: gold;
 }
 
+.box-container .cart {
+    margin-top: 20px;
+}
 
 .box-container .items .box .fa-eye {
     position: absolute;
@@ -83,13 +84,13 @@
 
 .box-container .row {
     display: flex;
-    margin: 100px;
+    margin: 6% 30%;
     box-sizing: border-box;
 
 }
 
 .box-container .row .column {
-    flex: 33.33%;
+    flex: 50%;
     width: 50px;
     height: 50px;
     background: white;
@@ -113,8 +114,31 @@
     display: inline-block;
 }
 
+
 #p1 p {
     background-color: gold;
+}
+
+@media screen and (max-width: 650px) {
+    .box-container .items .box img {
+        width: 20%;
+    }
+
+    .box-container .row .column p, .box-container .row .column h3 {
+        font-size: 75%
+    }
+
+    .box-container .row {
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-bottom: 13%;
+    }
+
+
+    .box-container .items .box .flex {
+        margini: 10px;
+    }
+
 }
 
 
@@ -126,7 +150,7 @@
 .box-container .items .box .flex {
 
     position: absolute;
-    top: 5%;
+    top: 10%;
     left: 30%;
     display: flex;
     flex-flow: column wrap;
@@ -141,7 +165,7 @@
     }
 
     #price_det {
-        margin-top: 20%;
+
         font-size: 50%;
     }
 
@@ -151,26 +175,31 @@
     }
 
     #addCart {
-        top: 50%;
+
         padding: 10px 10px;
         font-size: 30%;
     }
 
     #addWish {
-        border: 0px;
+        border: 0;
 
     }
 
     #redict {
-        border: 0px;
+        border: 0;
 
     }
 
 }
+@media screen and (max-width: 650px) {
+    .box-container .cart h1 {
+        font-size: 100%;
+    }
+}
 
 .box-container .items .box .flex .name {
-    margin-top: 20%;
-    margin-left: 10%;
+    margin-top: 20px;
+    margin-left: 10px;
     font-size: 18px;
     font-family: Garamond, serif;
 }
@@ -185,12 +214,16 @@
 
 .box-container .items .box .flex .price {
     text-align: right;
-    margin-top: 20%;
+
     margin-left: 10%;
 
     font-size: 18px;
 
 
+}
+
+.box-container .cart .items {
+    margin-bottom: 50px;
 }
 
 .box-container .items .btn {
@@ -207,16 +240,30 @@
     cursor: pointer;
 }
 
-
 @media screen and (max-width: 850px) {
+    #abc {
+        margin-top: 5%;
+
+    }
+
+    #price_det {
+
+    }
+
+    #gen {
+        margin-top: 10%;
+
+    }
+
     .box-container .items .box {
         width: 180%;
     }
 
     #addCart {
-        left: 50%;
+
         width: fit-content;
         font-size: 60%;
+        padding: 10px 10px;
     }
 
     #addWish {
@@ -230,6 +277,59 @@
     }
 }
 
+
+.box-container .cart_details {
+
+    margin: auto;
+    width: 80%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.box-container .cart_details .summary {
+    height: 50px;
+
+}
+
+.box-container .cart_details .summary p {
+    margin-top: 25px;
+    margin-left: 5px;
+    text-align: left;
+    font-size: 170%;
+    color: gold;
+}
+
+.btn_adr {
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 10%;
+    margin-bottom: 20px;
+
+
+}
+
+
+@media screen and (max-width: 650px) {
+
+
+    .box-container .cart {
+        width: 100%;
+    }
+
+    .box-container .items .box {
+        width: 180%;
+    }
+
+    .box-container .cart_details {
+        width: 80%;
+        font-size: 60%;
+    }
+
+    .box-container .items .box img {
+        height: 100px;
+    }
+}
 
 
 

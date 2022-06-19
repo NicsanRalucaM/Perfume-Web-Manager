@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="column"><p>2</p>
-            <h3>ADDRESS, PAYMENT AND SHIPPING</h3></div>
+            <h3>BILLING DETAILS</h3></div>
     </div>
     <div class="cart">
         <p id="ased" onload="productss()"></p>
@@ -105,12 +105,13 @@
             </div>
 
         </div>
-
         <div class="btn_adr">
-            <button class="address" onclick="checkout.html" id="goAddress"> CONTINUE</button>
+            <button class="address"  id="goAddress"><a id="address" href="">CONTINUE</a> </button>
 
 
         </div>
+
+
 
     </div>
 </div>
@@ -137,10 +138,12 @@
             <button type="submit" class="btn" name="add_to_cart" id="addCart" onclick="removeProduct(${item.id})">Remove</button>
 
         </div>
+
 `;
                     document.getElementById("pret").innerText = parseInt(document.getElementById("pret").innerText) + parseInt(b.price) + "$";
                     document.getElementById("pret2").innerText = document.getElementById("pret").innerText;
                     console.log(parseInt(b.price));
+                    document.getElementById("address").href="checkout.html";
                 }
             }
         });
@@ -159,6 +162,10 @@
             if (this.readyState === 4) {
                 {
                     a = JSON.parse(this.responseText);
+                    if(a['records'].length==0)
+                        document.getElementById("item_det").innerHTML += `
+                        <h1>You still have no products in your cart</h1>`;
+                    else
                     a['records'].forEach(iterate);
                 }
             }
