@@ -37,4 +37,34 @@ class itemFav
         $row = $query->fetch(PDO::FETCH_ASSOC);
         return $row['nr'];
     }
+    function readUser()
+    {
+
+        $query = "SELECT
+                 p.id, p.user, p.product
+            FROM
+                " . $this->table_name . " p
+                where
+               p.user =" . $this->user;
+
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
+    function remove(){
+
+
+        $query = $this->conn->prepare("DELETE FROM " .$this->table_name . "  WHERE  id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+
+
+        return "post ok";
+    }
 }
