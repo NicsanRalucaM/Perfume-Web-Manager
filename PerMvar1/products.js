@@ -57,25 +57,41 @@ function productss() {
 
 window.onload = productss();
 
-function addProduct(id) {
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    var a;
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            {
-                // mesaj de confiremare sau ceva cazuri NUU UITATIIIIDESTEPTELOR
+ function addProduct(id) {
+     var xhr = new XMLHttpRequest();
+     xhr.withCredentials = true;
+     xhr.addEventListener("readystatechange", function () {
+         if (this.readyState === 4) {
+             {
+                 const a = JSON.parse(this.responseText);
 
-            }
-        }
-    });
+                 if (a != null) {
+                     var xhr = new XMLHttpRequest();
+                     xhr.withCredentials = true;
 
+                     xhr.addEventListener("readystatechange", function () {
+                         if (this.readyState === 4) {
+                             const b = JSON.parse(this.responseText);
+                             console.log(b);
+                             window.location.reload();
+                         }
+                     });
 
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send();
+                     xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/decreasesStock.php?product=" + id);
+                     xhr.setRequestHeader("Content-Type", "application/json");
 
-}
+                     xhr.send();
+                 }
+
+             }
+         }
+     });
+
+     xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
+     xhr.setRequestHeader("Content-Type", "application/json");
+     xhr.send();
+
+ }
 
 function addWish(id) {
     var xhr = new XMLHttpRequest();
