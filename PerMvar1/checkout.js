@@ -9,6 +9,7 @@ function checkFields() {
     if (validInputs.length !== 12) {
         document.getElementById("errormsg").style.display = 'block';
         document.getElementById("errormsg").innerText = "Please complete all fields !!";
+        window.scroll(0, 0);
 
         window.scroll(0, 0);
     } else if (!cardnumber(document.getElementById("ccnum")) || !exprY(document.getElementById("expyear"), document.getElementById("expmonth"))) {
@@ -20,7 +21,9 @@ function checkFields() {
         document.getElementById("errormsg").innerText = "Wrong data card";
         window.scroll(0, 0);
     } else {
+
         checkOrder();
+
     }
 
 
@@ -56,28 +59,73 @@ function cardnumber(inputtxt) {
 }
 
 function checkOrder() {
-    if (getCookie('id') != null)
-    {saveOrder();
-        removeFromCart();}
-    else
+    if (getCookie('id') != null) {
+
+        checkItemsStock();
+
+    } else
         window.location.href = "login.html";
 }
-function removeFromCart()
-{
-    var id=getCookie("id");
+
+function removeFromCart() {
+    var id = getCookie("id");
     var xhr4 = new XMLHttpRequest();
     xhr4.withCredentials = true;
     xhr4.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             window.location.href = "news.html";
-        }});
+        }
+    });
     xhr4.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/removeByUserId.php?user=" + id);
     xhr4.setRequestHeader("Content-Type", "application/json");
     xhr4.send();
 
 }
 
+function decreasesStock(id) {
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            const b = JSON.parse(this.responseText);
+
+
+        }
+    });
+
+    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/decreasesStock.php?product=" + id);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.send();
+
+
+}
+function checkItemsStock()
+{
+    var xhr4 = new XMLHttpRequest();
+    xhr4.withCredentials = true;
+    xhr4.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            a=JSON.parse(this.responseText);
+            if(a==0)
+             saveOrder();
+            else
+            {
+                document.getElementById("errormsg").style.display = 'block';
+                document.getElementById("errormsg").innerText = "Out of stock! Rechoose the products !!";
+                window.scroll(0, 0);
+            }
+        }
+    });
+    xhr4.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/readValid.php?id="+getCookie('id'));
+    xhr4.setRequestHeader("Content-Type", "application/json");
+    xhr4.send();
+}
+
 function saveOrder() {
+
     var name = document.getElementById("fname").value;
     var email = document.getElementById("email").value;
     var items = [10];
@@ -112,8 +160,11 @@ function saveOrder() {
                     if (this.readyState === 4) {
                         {
                             b = JSON.parse(this.responseText);
-                            for (var j = 0; j < b['records'].length; j++)
+                            for (var j = 0; j < b['records'].length; j++) {
                                 items[j] = b['records'][j].product;
+                                decreasesStock(items[j]);
+
+                            }
 
                             var xhr = new XMLHttpRequest();
                             xhr.withCredentials = true;
@@ -121,7 +172,7 @@ function saveOrder() {
                             xhr.addEventListener("readystatechange", function () {
                                 if (this.readyState === 4) {
                                     {
-
+                                        removeFromCart();
                                     }
                                 }
                             });

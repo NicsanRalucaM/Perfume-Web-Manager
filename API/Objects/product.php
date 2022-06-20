@@ -130,6 +130,15 @@ class Product
         $stmt->execute();
         return $stmt->rowCount();
     }
+    function getStock()
+    {
+        $query= $this->conn->prepare("SELECT stoc as nr from " .$this->table_name . " where id = :id");
+        $query->bindParam("id",$this->id,PDO::PARAM_STR);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row['nr'];
+    }
 
 }
 

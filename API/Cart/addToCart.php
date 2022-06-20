@@ -12,11 +12,17 @@ $db = $database->getConnection();
 
 
 $item = new itemCart($db);
+$product = new Product($db);
 $item->product = $_GET['product'];
-$item->user=$_COOKIE['id'];
-$stmt = $item->post();
+// $item->user = $_GET['user'];
+$product->id = $_GET['product'];
+$item->user = $_COOKIE['id'];
+if ($item->count() < 10) {
+    if ($item->getProdCurCount() <= $product->getStock() - 1) {
+        $stmt = $item->post();
+        echo json_encode($stmt);
+    } else
+        echo "stock empty";
 
-
-echo json_encode($stmt);
-
-
+}else
+    echo "limit 10 products";

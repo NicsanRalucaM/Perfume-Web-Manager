@@ -53,6 +53,7 @@ class Brand
         $this->image = $row['image'];
 
     }
+
     function readByName()
     {
 
@@ -62,7 +63,8 @@ class Brand
         $query->execute();
         $row = $query->fetch(PDO::FETCH_ASSOC);
 
-        $this->id = $row['id'];
+        if ($row != null)
+            $this->id = $row['id'];
 
     }
 }

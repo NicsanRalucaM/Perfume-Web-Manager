@@ -74,16 +74,16 @@ function iterate(item, index) {
 </div>
     </div>
     `;
-                setProd(item.product1,1,item.id);
-                setProd(item.product2,2,item.id);
-                setProd(item.product3,3,item.id);
-                setProd(item.product4,4,item.id);
-                setProd(item.product5,5,item.id);
-                setProd(item.product6,6,item.id);
-                setProd(item.product7,7,item.id);
-                setProd(item.product8,8,item.id);
-                setProd(item.product9,9,item.id);
-                setProd(item.product10,10,item.id);
+                setProd(item.product1, 1, item.id);
+                setProd(item.product2, 2, item.id);
+                setProd(item.product3, 3, item.id);
+                setProd(item.product4, 4, item.id);
+                setProd(item.product5, 5, item.id);
+                setProd(item.product6, 6, item.id);
+                setProd(item.product7, 7, item.id);
+                setProd(item.product8, 8, item.id);
+                setProd(item.product9, 9, item.id);
+                setProd(item.product10, 10, item.id);
             }
 
         }
@@ -95,19 +95,19 @@ function iterate(item, index) {
 
 
 }
-function setProd(id,i,nr){
-    if(id!=0)
-    {
+
+function setProd(id, i, nr) {
+    if (id != 0) {
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         var a;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                    a=JSON.parse(this.responseText);
-                    document.getElementById(nr+"item"+i).style.display='block';
-                    document.getElementById(nr+"item"+i).innerText="> "+a.name;
-                    document.getElementById(nr+"item"+i).href="http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id="+id;
+                    a = JSON.parse(this.responseText);
+                    document.getElementById(nr + "item" + i).style.display = 'block';
+                    document.getElementById(nr + "item" + i).innerText = "> " + a.name;
+                    document.getElementById(nr + "item" + i).href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + id;
                 }
             }
         });
@@ -128,14 +128,16 @@ function orderFunction() {
         if (this.readyState === 4) {
             {
                 var orders = JSON.parse(this.responseText);
-                var length = orders['records'].length;
-                document.getElementById("right").innerHTML = `
+
+                if (orders != null) {
+                    var length = orders['records'].length;
+                    document.getElementById("right").innerHTML = `
                 <div class="orders" id="orders"> 
                 <h1>You have ${length} comands</h1>
                 </div>
                 `;
-                orders['records'].forEach(iterate);
-
+                    orders['records'].forEach(iterate);
+                }
             }
         }
     });
@@ -144,7 +146,6 @@ function orderFunction() {
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.send();
-
 
 
     document.getElementById("data").classList.remove("active");
@@ -161,7 +162,7 @@ function getTitle() {
         if (this.readyState === 4) {
             {
 
-                document.getElementById("title_user").innerHTML = "Welcome, " + this.responseText+"!";
+                document.getElementById("title_user").innerHTML = "Welcome, " + this.responseText + "!";
             }
         }
     });
@@ -172,13 +173,14 @@ function getTitle() {
     xhr.send();
 
 }
- function checkUser(){
-    if(getCookie('id')==null)
-        window.location.href="login.html";
+
+function checkUser() {
+    if (getCookie('id') == null)
+        window.location.href = "login.html";
     else
         getTitle();
 
 }
 
-window.onload =checkUser();
+window.onload = checkUser();
 

@@ -29,6 +29,17 @@ class itemFav
 
         return "post ok";
     }
+    function verifExist()
+    {
+        $query= $this->conn->prepare("SELECT count(*) as nr from " .$this->table_name . " where product = :product and user=:user");
+        $query->bindParam("product",$this->product,PDO::PARAM_STR);
+        $query->bindParam("user",$this->user,PDO::PARAM_STR);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row['nr'];
+    }
+
     function  count(){
         $query= $this->conn->prepare("SELECT count(*) as nr from " .$this->table_name . " where user = :user");
         $query->bindParam("user",$this->user,PDO::PARAM_STR);
@@ -37,6 +48,7 @@ class itemFav
         $row = $query->fetch(PDO::FETCH_ASSOC);
         return $row['nr'];
     }
+
     function readUser()
     {
 

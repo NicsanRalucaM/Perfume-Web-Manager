@@ -164,6 +164,7 @@ body {
 
     }
 
+
     .all {
         height: auto;
         width: 80%;
@@ -194,7 +195,7 @@ body {
 
     .all .right {
         flex-basis: 100%;
-        width: 50%;
+        width: 100%;
 
     }
 
@@ -207,7 +208,11 @@ body {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 300));
 
     }
+.all .right .orders .order .titlu h2,.all .right .orders  h1
+{
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 300));
 
+}
 
     .all .left ul {
 

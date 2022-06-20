@@ -10,11 +10,13 @@ include_once '../Objects/product.php';
 $database = new Database();
 $db = $database->getConnection();
 
-$product=new Product($db);
-$product->id=$_GET['product'];
-$stmt = $product->decreasesStock();
-
-
-echo $stmt;
+$product = new Product($db);
+$product->id = $_GET['product'];
+if ($product->getStock() == 0)
+    echo 0;
+else {
+    $stmt = $product->decreasesStock();
+    echo $stmt;
+}
 
 
