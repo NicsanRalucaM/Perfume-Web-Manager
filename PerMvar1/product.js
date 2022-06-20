@@ -153,6 +153,7 @@ function setCom() {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             a = JSON.parse(this.responseText);
+            if(a['records'].length!=0)
             a['records'].forEach(iterate);
         }
     });
