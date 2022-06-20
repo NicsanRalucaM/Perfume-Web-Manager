@@ -20,7 +20,7 @@ function getItems() {
         });
 
 
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/read.php?id=" + 1);
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/read.php?id=" + getCookie('id'));
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();

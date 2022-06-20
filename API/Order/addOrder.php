@@ -25,6 +25,6 @@ $order->product8 = $_GET['product8'];
 $order->product9 = $_GET['product9'];
 $order->product10 = $_GET['product10'];
 $order->address = $_GET['address'];
-$order->user=1;//$_COOKIE['id'];
+$order->user=$_COOKIE['id'];
 $stmt = $order->post();
 echo $stmt;

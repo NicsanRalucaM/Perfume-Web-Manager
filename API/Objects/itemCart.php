@@ -67,4 +67,15 @@ class itemCart
 
         return "post ok";
     }
+    function removeByUser()
+    {
+        $sql = "DELETE FROM " . $this->table_name . "  WHERE  user=:user";
+        // Prepare statement
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam("user", $this->user, PDO::PARAM_STR);
+
+        $stmt->execute();
+        return $stmt->rowCount();
+
+    }
 }

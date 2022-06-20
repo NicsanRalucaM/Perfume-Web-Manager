@@ -12,7 +12,7 @@ $db = $database->getConnection();
 
 $item = new itemFav($db);
 $item->id = $_GET['id'];
-$item->user=1;//$_COOKIE['id'];
+$item->user=$_COOKIE['id'];
 $stmt = $item->remove();
 echo $stmt;
 

@@ -13,7 +13,7 @@ $db = $database->getConnection();
 
 $item = new itemCart($db);
 $item->product = $_GET['product'];
-$item->user=1;//$_COOKIE['id'];
+$item->user=$_COOKIE['id'];
 $stmt = $item->post();
 
 

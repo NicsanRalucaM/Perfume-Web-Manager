@@ -12,7 +12,7 @@ $db = $database->getConnection();
 
 
 $item = new itemFav($db);
-$item->user =6;// $_COOKIE['id'];
+$item->user = $_COOKIE['id'];
 $stmt = $item->count();
 echo $stmt;
 
