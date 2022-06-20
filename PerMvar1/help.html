@@ -27,7 +27,7 @@
         <div class="wrapper">
             <div class="searchBar">
                 <input id="searchQueryInput" name="searchQueryInput" placeholder="Search" type="text" value=""/>
-                <button id="searchQuerySubmit" name="searchQuerySubmit" type="submit">
+                <button id="searchQuerySubmit" name="searchQuerySubmit" type="submit" onclick="search()">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
@@ -132,6 +132,7 @@
         </div>
     </div>
 </footer>
+<script src="search.js"></script>
 <script src="checkCookie.js"></script>
 <script>
     window.onload = checkLogin();

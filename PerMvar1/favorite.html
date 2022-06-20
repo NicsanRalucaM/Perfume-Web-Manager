@@ -26,7 +26,7 @@
         <div class="wrapper">
             <div class="searchBar">
                 <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Search" value=""/>
-                <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+                <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit" onclick="search()">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
@@ -84,6 +84,7 @@
         </div>
     </div>
 </div>
+<script src="search.js"></script>
 <script src="checkCookie.js"></script>
 <script>
     window.onload = checkFav();
