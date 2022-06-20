@@ -15,8 +15,11 @@ function set_data(id) {
                 document.getElementById("img_details").src = "imagesProduct/" + a.image_1;
                 document.getElementById("description_details").innerText = a.description;
                 document.getElementById("price").innerText = "PRICE: " + a.price + " $";
-                document.getElementById("addToCart").addEventListener("click", addProduct);
-                document.getElementById("addToFav").addEventListener("click", addWish);
+                if (parseInt(a.stoc) != 0) {
+                    document.getElementById("addToCart").addEventListener("click", addProduct);
+                    document.getElementById("addToFav").addEventListener("click", addWish);
+                } else
+                    document.getElementById("stoc").innerText = "The product is no longer in stock";
 
 
                 document.getElementById("ingredient1").innerText = a.ingredient1;
@@ -50,6 +53,26 @@ function addProduct() {
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
             {
+                const a = JSON.parse(this.responseText);
+
+                if (a != null) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.withCredentials = true;
+
+                    xhr.addEventListener("readystatechange", function () {
+                        if (this.readyState === 4) {
+                            const b = JSON.parse(this.responseText);
+                            console.log(b);
+                            window.location.reload();
+                        }
+                    });
+
+                    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/decreasesStock.php?product=" + koopId);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+
+                    xhr.send();
+                }
+
             }
         }
     });
@@ -112,9 +135,10 @@ function setRec(brand_id) {
     setCom();
 
 }
-function iterate(item,index){
 
-        document.getElementById("com_afis").innerHTML += `       
+function iterate(item, index) {
+
+    document.getElementById("com_afis").innerHTML += `       
         <div class="com">
         <h3>${item.name}:</h3>
         <p>${item.comment}</p>
@@ -123,13 +147,14 @@ function iterate(item,index){
 
 
 }
-function setCom(){
+
+function setCom() {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
     var a;
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            a=JSON.parse(this.responseText);
+            a = JSON.parse(this.responseText);
             a['records'].forEach(iterate);
         }
     });
@@ -140,23 +165,24 @@ function setCom(){
     xhr.send();
 
 }
-function save(){
-    var name=document.getElementById("fname").value;
-    var comment=document.getElementById("fcomment").value;
+
+function save() {
+    var name = document.getElementById("fname").value;
+    var comment = document.getElementById("fcomment").value;
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
     var a;
     xhr.addEventListener("readystatechange", function () {
         if (this.readyState === 4) {
-            document.getElementById("fname").value="";
-            document.getElementById("fcomment").value="";
-          window.location.reload();
+            document.getElementById("fname").value = "";
+            document.getElementById("fcomment").value = "";
+            window.location.reload();
 
 
         }
     });
 
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Comment/addComment.php?product=" + koopId+"&name="+name+"&comment="+comment);
+    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Comment/addComment.php?product=" + koopId + "&name=" + name + "&comment=" + comment);
     xhr.setRequestHeader("Content-Type", "application/json");
 
     xhr.send();

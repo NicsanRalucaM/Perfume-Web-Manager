@@ -90,6 +90,14 @@
 
 }
 
+.box-container .box .flex .stoc {
+    text-align: left;
+    margin-left: 5%;
+    font-size: 12px;
+    color: red;
+
+
+}
 .box-container .btn {
     font-size: 20px;
     font-weight: bold;

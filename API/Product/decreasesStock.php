@@ -4,19 +4,17 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 include_once '../Config/database.php';
-include_once '../Objects/itemCart.php';
+
 include_once '../Objects/product.php';
 
 $database = new Database();
 $db = $database->getConnection();
 
-
-$item = new itemCart($db);
-$item->product = $_GET['product'];
-$item->user=1;//$_COOKIE['id'];
-$stmt = $item->post();
+$product=new Product($db);
+$product->id=$_GET['product'];
+$stmt = $product->decreasesStock();
 
 
-echo json_encode($stmt);
+echo $stmt;
 
 

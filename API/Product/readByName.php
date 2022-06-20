@@ -36,6 +36,7 @@ if(true){
             "price" => $price,
             "brand_id" => $brand_id,
             "image_1"=>$image_1,
+            "stoc"=>$stoc
 
         );
 
