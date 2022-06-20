@@ -230,7 +230,111 @@ body {
     width: 100%;
     text-align: center;
 }
+.all_com{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-top: 5%;
+    padding-left: 5%;
+    font-size: 120%;
+}
+.all_com h2{
+    font-family: "Book Antiqua";
+    margin-bottom: 10px;
 
+}
+.all_com .com_afis{
+    padding-top: 10px;
+    padding-bottom: 50px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin:auto;
+}
+.all_com .com_afis .com{
+    height: 100px;
+    background-color: #d4e5ee;
+     padding-left: 3px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.all_com .com_afis .com h3{
+    padding-left: 5%;
+    margin-bottom: 5px;
+}
+.all_com .com_afis .com p{
+    padding-left: 7%;
+
+}
+
+.all_com  #form .comment {
+    padding-top: 10px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.all_com #form .comment .user input[type=text]{
+    padding: 12px;
+    border: 1px solid #0e0e0e;
+    border-radius: 3px;
+    width: 30%;
+}
+.all_com #form .comment .user{
+    width: 80%;
+    margin-left: 16.5%;
+    margin-bottom: 20px;
+}
+.all_com #form .comment .com_text{
+    width: 80%;
+    margin-left: 16.5%;
+    margin-bottom: 20px;
+}
+#fcomment
+{text-align: left;
+    height: 200px;
+    width: 100%;
+}
+.all_com #form .comment .btn{
+    margin: auto;
+    padding-bottom: 20px;
+    position: relative;
+    left:7%;
+
+}
+#btn_s
+{
+    width: 200px;
+    background-color: white;
+    border: 2px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-weight: bold;
+    font-size: 25px;
+    color: gold;
+    cursor: pointer;
+    text-align: center;
+    font-family: Garamond, serif;
+}
+
+#btn_s:hover {
+    color: #000;
+    opacity: 0.7;
+}
+
+
+.all_com #form .comment .com_text input[text]{
+
+    padding: 12px;
+    border: 1px solid #0e0e0e;
+    border-radius: 3px;
+}
 @media screen and (max-width: 600px) {
     .all .restall .plus .prod {
         flex-direction: column;
@@ -249,6 +353,10 @@ body {
 
     #description_details {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+    }
+    .all_com .com_afis .com{
+        font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
+
     }
 }
 

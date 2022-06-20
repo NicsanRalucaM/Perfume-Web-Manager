@@ -1,3 +1,8 @@
+var baseUrl = (window.location).href;
+var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+window.onload = set_data(koopId);
+
+
 function set_data(id) {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
@@ -6,7 +11,7 @@ function set_data(id) {
             {
                 const a = JSON.parse(this.responseText);
                 document.getElementById("title_details").innerText = a.name;
-                document.getElementById("gen").innerText = a.gen+" perfume";
+                document.getElementById("gen").innerText = a.gen + " perfume";
                 document.getElementById("img_details").src = "imagesProduct/" + a.image_1;
                 document.getElementById("description_details").innerText = a.description;
                 document.getElementById("price").innerText = "PRICE: " + a.price + " $";
@@ -38,9 +43,6 @@ function set_data(id) {
     xhr.send();
 }
 
-var baseUrl = (window.location).href;
-var koopId = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-window.onload = set_data(koopId);
 
 function addProduct() {
     var xhr = new XMLHttpRequest();
@@ -105,6 +107,58 @@ function setRec(brand_id) {
 
     xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByBrandId.php?brand_id=" + brand_id);
     xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send();
+
+    setCom();
+
+}
+function iterate(item,index){
+
+        document.getElementById("com_afis").innerHTML += `       
+        <div class="com">
+        <h3>${item.name}:</h3>
+        <p>${item.comment}</p>
+        </div>
+        `;
+
+
+}
+function setCom(){
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    var a;
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            a=JSON.parse(this.responseText);
+            a['records'].forEach(iterate);
+        }
+    });
+
+    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Comment/readByProductId.php?product=" + koopId);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.send();
+
+}
+function save(){
+    var name=document.getElementById("fname").value;
+    var comment=document.getElementById("fcomment").value;
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+    var a;
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            document.getElementById("fname").value="";
+            document.getElementById("fcomment").value="";
+          window.location.reload();
+
+
+        }
+    });
+
+    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Comment/addComment.php?product=" + koopId+"&name="+name+"&comment="+comment);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
     xhr.send();
 
 }
