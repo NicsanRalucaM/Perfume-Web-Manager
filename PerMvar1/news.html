@@ -42,8 +42,10 @@
                     <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
                     <li><a href="cart.html"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
                     <li><a href="favorite.html"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
-                    <li><a href="login.html">Login<i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                    <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="" onclick="deleteCookie()" id="logout" style="display: none">Logout<i
+                            class="fas fa-sign-out-alt"></i></a></li>
+
                 </ul>
             </nav>
         </div>
@@ -54,7 +56,7 @@
     <div class="row">
         <div class="column"><a class="active" href="news.html"><b>NEWS</b></a></div>
         <div class="column"><a href="products.html"><b>PERFUMES</b></a></div>
-        <div class="column"><a href="topbar.css"><b>BRANDS</b></a></div>
+        <div class="column"><a href="brand.html"><b>BRANDS</b></a></div>
         <div class="column"><a href="about.html"> <b>ABOUT</b></a></div>
     </div>
 </div>
@@ -72,59 +74,52 @@
 
 <div class="flex-container">
     <div class="flex-item-left">
-        <img id="img1" src=""  alt="parf">
+        <img id="img1" src="#" alt="parf">
     </div>
 
     <div class="flex-item-right">
-        <p><b></b><br>
-        <h2 id="title1"></h2>
-
 
         <br>
+        <h2 id="title1">Titlu1</h2>
         <br>
-        <h4 id="desc1"></h4>
-        </p>
         <br>
+        <h4 id="desc1">descriere1</h4>
 
+        <br>
         <button id="btn1" class="common-btn">See More</button>
     </div>
 </div>
 <div class="flex-container_r">
     <div class="flex-item-left">
         <div class="text2">
-            <p>
-            <h2 id="title2"></h2>
-
+            <h2 id="title2">Titlu2</h2>
             <br>
             <br>
-            <h3 id="desc2"></h3>
-            </p>
+            <h3 id="desc2">descriere2</h3>
             <br>
-            <button id="btn2"  onclick="" class="common-btn">See More</button>
+            <button id="btn2" onclick="" class="common-btn">See More</button>
         </div>
     </div>
     <div class="flex-item-right">
 
         <div class="img2">
-            <img id="img2" src="" alt="parf">
+            <img id="img2" src="#" alt="parf">
         </div>
     </div>
 </div>
 <div class="flex-container">
-    <div class="flex-item-left3"><img id="img3" src="" alt="parf"></div>
+    <div class="flex-item-left3"><img id="img3" src="#" alt="parf"></div>
     <div class="flex-item-right3">
-        <p><b></b><br>
-        <h2 id="title3"></h2>
-
+        <br>
+        <h2 id="title3">titlu3</h2>
         <br>
         <br>
-        <h4 id="desc3"></h4>
-        </p>
+        <h4 id="desc3">descriere3</h4>
         <br>
-
         <button id="btn3" class="common-btn">See More</button>
     </div>
 </div>
+
 
 <footer>
     <div class="row_f">
@@ -151,12 +146,15 @@
                     INFORMATION
                     <br/>
                     <a style="color: #ffffff;" href="about.html">About Us</a>
+                    <br>
+                    <a style="color: #ffffff;" href="help.html"> <i class="fa fa-question-circle"
+                                                                    aria-hidden="true"></i>FAQ</a>
                 </p>
             </div>
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="news.js"></script>
+<script src="news.js"></script>
 </body>
 
 </html>

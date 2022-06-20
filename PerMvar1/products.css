@@ -1,6 +1,7 @@
 .box-container {
 
     margin-left: 1%;
+    margin-bottom: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -208,4 +209,8 @@
         margin-left: 5%;
         flex-basis: 40%;
     }
+}
+footer
+{
+    margin-top: 20%;
 }

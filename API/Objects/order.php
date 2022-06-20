@@ -31,12 +31,19 @@ class Order
 
     public function post()
     {
-        $query = $this->conn->prepare("INSERT INTO " . $this->table_name . "  (user,address,product1,product2,product3,price,name,email) values(:user,:address,:product1,:product2,:product3,:price,:name,:email)");
+        $query = $this->conn->prepare("INSERT INTO " . $this->table_name . "  (user,address,product1,product2,product3,product4,product5,product6,product7,product8,product9,product10,price,name,email) values(:user,:address,:product1,:product2,:product3,:product4,:product5,:product6,:product7,:product8,:product9,:product10,:price,:name,:email)");
         $query->bindParam("user", $this->user, PDO::PARAM_STR);
         $query->bindParam("address", $this->address, PDO::PARAM_STR);
         $query->bindParam("product1", $this->product1, PDO::PARAM_STR);
         $query->bindParam("product2", $this->product2, PDO::PARAM_STR);
         $query->bindParam("product3", $this->product3, PDO::PARAM_STR);
+        $query->bindParam("product4", $this->product4, PDO::PARAM_STR);
+        $query->bindParam("product5", $this->product5, PDO::PARAM_STR);
+        $query->bindParam("product6", $this->product6, PDO::PARAM_STR);
+        $query->bindParam("product7", $this->product7, PDO::PARAM_STR);
+        $query->bindParam("product8", $this->product8, PDO::PARAM_STR);
+        $query->bindParam("product9", $this->product9, PDO::PARAM_STR);
+        $query->bindParam("product10", $this->product10, PDO::PARAM_STR);
         $query->bindParam("price", $this->price, PDO::PARAM_STR);
         $query->bindParam("name", $this->name, PDO::PARAM_STR);
         $query->bindParam("email", $this->email, PDO::PARAM_STR);

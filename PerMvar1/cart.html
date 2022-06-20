@@ -43,8 +43,9 @@
                     <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
                     <li><a class="active" href="cart.html"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
                     <li><a href="favorite.html"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
-                    <li><a href="login.html">Login <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                    <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="" onclick="deleteCookie()" id="logout" style="display: none">Logout<i
+                            class="fas fa-sign-out-alt"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -101,20 +102,52 @@
             </div>
             <div class="contai">
                 <div class="column"><h2>TOTAL PAYMENT :</h2></div>
-                <div class="column"><h1 id="pret2"></h1></div>
+                <div class="column"><h1 id="pret2">.</h1></div>
             </div>
 
         </div>
         <div class="btn_adr">
-            <button class="address"  id="goAddress"><a id="address" href="">CONTINUE</a> </button>
-
-
+            <div class="address" id="goAddress"><a id="address" href="">CONTINUE</a></div>
         </div>
-
-
-
+        <div class="footer">
+            <footer>
+                <div class="row_f">
+                    <div class="col">
+                        <div class="col1">
+                            <p>
+                                <br/>Contact to Us Now !<br/>
+                                <br/>
+                                CONTACT
+                                <br/>
+                                <br/>
+                                PerMvibes<br/>
+                                <br/>
+                                info@PerMvibes.com<br/>
+                                +31 (0) 85 800 02 32
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col2">
+                            <p><br/>About Us !<br/>
+                                <br/>
+                                <br/><br/>
+                                INFORMATION
+                                <br/>
+                                <a style="color: #ffffff;" href="about.html">About Us</a>
+                                <br>
+                                <a style="color: #ffffff;" href="help.html"> <i class="fa fa-question-circle"
+                                                                                aria-hidden="true"></i>FAQ</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     </div>
+
 </div>
+
 
 <script>
     function iterate(item, index) {
@@ -143,7 +176,7 @@
                     document.getElementById("pret").innerText = parseInt(document.getElementById("pret").innerText) + parseInt(b.price) + "$";
                     document.getElementById("pret2").innerText = document.getElementById("pret").innerText;
                     console.log(parseInt(b.price));
-                    document.getElementById("address").href="checkout.html";
+                    document.getElementById("address").href = "checkout.html";
                 }
             }
         });
@@ -156,17 +189,18 @@
     }
 
     function getItems() {
+        checkLogin();
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
                     a = JSON.parse(this.responseText);
-                    if(a['records'].length==0)
+                    if (a['records'].length == 0)
                         document.getElementById("item_det").innerHTML += `
                         <h1>You still have no products in your cart</h1>`;
                     else
-                    a['records'].forEach(iterate);
+                        a['records'].forEach(iterate);
                 }
             }
         });
@@ -217,6 +251,37 @@
         xhr.setRequestHeader("Content-Type", "application/json");
 
         xhr.send();
+    }
+
+    window.onload=checkLogin();
+    function checkLogin() {
+        var id = getCookie('id');
+        console.log("initial=" + id);
+        if (id != null) {
+            document.getElementById("login").style.display = 'none';
+            document.getElementById("logout").style.display = 'block';
+        }
+    }
+
+    function deleteCookie() {
+        const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
+        window.location.href = "news.html";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return null;
     }
 
 

@@ -71,12 +71,14 @@
     flex: 60%;
 }
 
-.flex-item-left #img1{
+.flex-item-left #img1 {
     width: 80%;
 }
 
-.flex-item-right .img2 #img2
-{width: 100%;}
+.flex-item-right .img2 #img2 {
+    width: 100%;
+}
+
 @media (max-width: 650px) {
     .flex-item-left #img1, .flex-item-right .img2 #img2, .flex-item-left3 #img3 {
         width: 100%;
@@ -137,8 +139,8 @@
     .flex-container_r {
         flex-direction: column-reverse;
     }
-    .flex-item-left .text2,.flex-item-right3,.flex-item-right
-    {
+
+    .flex-item-left .text2, .flex-item-right3, .flex-item-right {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
     }
 }

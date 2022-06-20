@@ -40,6 +40,7 @@
 }
 
 .flex-item-left {
+    text-align: center;
     padding: 10px;
     flex: 40%;
 }
@@ -55,7 +56,9 @@
 }
 
 .flex-item-right {
-    margin-top: 80px;
+    margin: auto;
+    padding-right: 20%;
+text-align: justify;
     flex: 60%;
     font-family: Garamond, serif;
     font-size: 20px;
@@ -65,11 +68,15 @@
     display: flex;
     flex-direction: row;
     font-size: 30px;
+    margin-bottom: 5%;
 }
 
 .flex-item-left_r {
-    padding: 10px;
-    flex: 70%;
+    padding-left: 20%;
+    padding-right: 10%;
+    margin-top: 30px;
+    text-align: justify;
+    flex: 60%;
     font-family: Garamond, serif;
     font-size: 20px;
 }
@@ -85,8 +92,8 @@
 
 
 .flex-item-right_r {
-    margin-top: 80px;
-    flex: 30%;
+    margin:auto;
+    flex: 40%;
     font-family: Garamond, serif;
     font-size: 20px;
 }

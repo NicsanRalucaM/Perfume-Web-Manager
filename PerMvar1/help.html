@@ -43,9 +43,10 @@
                     <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
                     <li><a href="cart.html"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
                     <li><a href="favorite.html"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
-                    <li><a href="login.html">Login <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a class="active" href="help.html"><i aria-hidden="true" class="fa fa-question-circle"></i></a>
-                    </li>
+                    <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="" onclick="deleteCookie()" id="logout" style="display: none">Logout<i
+                            class="fas fa-sign-out-alt"></i></a></li>
+
                 </ul>
             </nav>
         </div>
@@ -112,12 +113,45 @@
                     <br/><br/>
                     INFORMATION
                     <br/>
-                    <a href="about.html" style="color: #ffffff;">About Us</a>
+                    <a style="color: #ffffff;" href="about.html">About Us</a>
+                    <br>
+                    <a style="color: #ffffff;" href="help.html"> <i class="fa fa-question-circle" aria-hidden="true"></i>FAQ</a>
                 </p>
             </div>
-
         </div>
-
     </div>
 </footer>
+<script>
+    window.onload=checkLogin();
+    function checkLogin() {
+        var id = getCookie('id');
+        console.log("initial=" + id);
+        if (id != null) {
+            document.getElementById("login").style.display = 'none';
+            document.getElementById("logout").style.display = 'block';
+        }
+    }
+
+    function deleteCookie() {
+        const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
+        window.location.href = "news.html";
+    }
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for (let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return null;
+    }
+</script>
 </body>
+</html>
