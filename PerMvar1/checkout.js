@@ -57,9 +57,24 @@ function cardnumber(inputtxt) {
 
 function checkOrder() {
     if (getCookie('id') != null)
-        saveOrder();
+    {saveOrder();
+        removeFromCart();}
     else
         window.location.href = "login.html";
+}
+function removeFromCart()
+{
+    var id=getCookie("id");
+    var xhr4 = new XMLHttpRequest();
+    xhr4.withCredentials = true;
+    xhr4.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+            window.location.href = "news.html";
+        }});
+    xhr4.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/removeByUserId.php?user=" + id);
+    xhr4.setRequestHeader("Content-Type", "application/json");
+    xhr4.send();
+
 }
 
 function saveOrder() {
@@ -106,7 +121,7 @@ function saveOrder() {
                             xhr.addEventListener("readystatechange", function () {
                                 if (this.readyState === 4) {
                                     {
-                                        //window.location.href = "news.html";
+
                                     }
                                 }
                             });

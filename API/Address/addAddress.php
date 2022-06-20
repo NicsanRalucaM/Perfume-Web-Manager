@@ -16,6 +16,6 @@ $address->state=$_GET['state'];
 $address->city=$_GET['city'];
 $address->zip=$_GET['zip'];
 $address->time=$_GET['time'];
-$address->user=1;//$_COOKIE['id'];
+$address->user=$_COOKIE['id'];
 $stmt = $address->post();
 echo $stmt;
