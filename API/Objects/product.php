@@ -100,6 +100,15 @@ class Product
         $query->execute();
         return $query;
     }
+    function readByBrandIdRec()
+    {
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE brand_id=:brand_id and id!=:id LIMIT 0,3");
+        $query->bindParam("brand_id", $this->brand_id, PDO::PARAM_STR);
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        return $query;
+    }
 
     function readByAnotimp()
     {

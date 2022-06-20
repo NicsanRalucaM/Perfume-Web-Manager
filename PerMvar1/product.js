@@ -101,6 +101,15 @@ function addWish() {
     xhr.send();
 }
 
+function iterateRec(item, index) {
+    document.getElementById("prod_rec").innerHTML += `
+    <div class="prod1" >
+                    <h1>${item.name}</h1>
+                    <a href="${"http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + item.id}" ><img src="${"imagesProduct/" + item.image_1}" id="imgg" alt=""></a>
+                </div>
+    `;
+}
+
 function setRec(brand_id) {
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
@@ -109,27 +118,15 @@ function setRec(brand_id) {
             {
                 var a = JSON.parse(this.responseText);
                 let length = a['records'].length;
-
-                document.getElementById("titlu_rec1").innerText = a['records'][0].name;
-                document.getElementById("titlu_rec2").innerText = a['records'][1].name;
-                document.getElementById("titlu_rec3").innerText = a['records'][2].name;
-                document.getElementById("img1").src = "imagesProduct/" + a['records'][0].image_1;
-                document.getElementById("img2").src = "imagesProduct/" + a['records'][1].image_1;
-                document.getElementById("img3").src = "imagesProduct/" + a['records'][2].image_1;
-                document.getElementById("prod1").onclick = function () {
-                    location.href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][0].id;
-                };
-                document.getElementById("prod2").onclick = function () {
-                    location.href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][1].id;
-                };
-                document.getElementById("prod3").onclick = function () {
-                    location.href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + a['records'][2].id;
-                };
+                if(length!=0)
+                a['records'].forEach(iterateRec);
+                else
+                    document.getElementById("rec_title").innerText="There are no other recommendations";
             }
         }
     });
 
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByBrandId.php?brand_id=" + brand_id);
+    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/readByBrandIdRec.php?brand_id=" + brand_id+"&id="+koopId);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send();
 
