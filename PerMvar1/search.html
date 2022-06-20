@@ -129,7 +129,15 @@
                 a = document.getElementsByName("box_item");
                 if (a.length === 0)
                     findByAnotimp(koopId);
+                a = document.getElementsByName("box_item");
             }
+        }
+        if(a.length==0)
+        {
+            document.getElementById("box_cont").innerHTML =`
+            <div class="not_found"> 0 results for this search </div>
+            `
+
         }
     }
 
