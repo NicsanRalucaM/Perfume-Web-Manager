@@ -96,6 +96,18 @@ nav ul li a {
     text-transform: uppercase;
 }
 
+nav ul li button{
+
+    color: black;
+    font-size: 17px;
+    padding: 7px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+}
+
 nav a.active, nav a:hover {
     background-color: #d6dfe5;
     border-radius: 30px;
@@ -154,6 +166,13 @@ nav a.active, nav a:hover {
         color: white;
         font-size: 8px;
         width: 10px;
+    }
+    nav ul li #logout{
+        color: white;
+        font-size: 8px;
+        width: 10px;
+        border: 0;
+        background: transparent;
     }
 
     a:hover, a.active {

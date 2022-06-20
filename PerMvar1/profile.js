@@ -152,110 +152,6 @@ function orderFunction() {
 }
 
 
-function wishsFunction() {
-
-
-    document.getElementById("order").classList.remove("active");
-    document.getElementById("data").classList.remove("active");
-    document.getElementById("password").classList.remove("active");
-    document.getElementById("address").classList.remove("active");
-    document.getElementById("signout").classList.remove("active");
-    document.getElementById("wishs").classList.add("active");
-}
-
-function passwordFunction() {
-
-
-    document.getElementById("wishs").classList.remove("active");
-    document.getElementById("data").classList.remove("active");
-    document.getElementById("order").classList.remove("active");
-    document.getElementById("address").classList.remove("active");
-    document.getElementById("signout").classList.remove("active");
-    document.getElementById("password").classList.add("active");
-
-}
-
-function signoutFunction() {
-
-
-    document.getElementById("wishs").classList.remove("active");
-    document.getElementById("data").classList.remove("active");
-    document.getElementById("password").classList.remove("active");
-    document.getElementById("address").classList.remove("active");
-    document.getElementById("order").classList.remove("active");
-    document.getElementById("signout").classList.add("active");
-
-}
-
-function addressFunction() {
-    document.getElementById("signout").classList.remove("active");
-    document.getElementById("wishs").classList.remove("active");
-    document.getElementById("data").classList.remove("active");
-    document.getElementById("password").classList.remove("active");
-    document.getElementById("order").classList.remove("active");
-    document.getElementById("address").classList.add("active");
-
-}
-
-function get_firstname(str) {
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            {
-                document.getElementById("firstname").innerHTML = this.responseText;
-            }
-        }
-    });
-
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/User/get_FirstName.php?id=" + str);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.send();
-
-}
-
-function get_lastname(str) {
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            {
-                document.getElementById("lastname").innerHTML = this.responseText;
-            }
-        }
-    });
-
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/User/get_LastName.php?id=" + str);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.send();
-
-}
-
-function getEmail(str) {
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            {
-                document.getElementById("email").innerHTML = this.responseText;
-            }
-        }
-    });
-
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/User/getEmail.php?id=" + str);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.send();
-}
-
 function getTitle() {
     checkLogin();
     var xhr = new XMLHttpRequest();
@@ -276,50 +172,13 @@ function getTitle() {
     xhr.send();
 
 }
+ function checkUser(){
+    if(getCookie('id')==null)
+        window.location.href="login.html";
+    else
+        getTitle();
 
-window.onload = getTitle();
-
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-function checkLogin() {
-    var id = getCookie('id');
-    console.log("initial=" + id);
-    if (id != null) {
-        document.getElementById("login").style.display = 'none';
-        document.getElementById("logout").style.display = 'block';
-    }
 }
 
-function deleteCookie() {
-    const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
-    window.location.href = "news.html";
-}
+window.onload =checkUser();
 
-function getCookie(cname) {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let ca = decodedCookie.split(';');
-    for (let i = 0; i <ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return null;
-}

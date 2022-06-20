@@ -42,12 +42,23 @@
 
                 </label>
                 <ul>
-                    <li><a href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
-                    <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
-                    <li><a href="cart.html"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
-                    <li><a href="favorite.html"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
-                    <li><a href="login.html">Login <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="help.html"><i class="fa fa-question-circle" aria-hidden="true"></i></a></li>
+                    <li><a class="active" href="news.html" ><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li>
+                        <button id="my_account" onclick="checkCookieAccount()"><i class="fa fa-fw fa-user"></i>My
+                            Account
+                        </button>
+                    </li>
+                    <li>
+                        <button id="cart" onclick="checkCookieCart()"><i class="fa fa-fw fa-shopping-bag"></i></button>
+                    </li>
+                    <li>
+                        <button id="fav" onclick="checkCookieWishs()"><i class="fa fa-fw fa-heart"></i> Wishs</button>
+                    </li>
+                    <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li>
+                        <button onclick="deleteCookie()" id="logout" style="display: none">Logout<i
+                                class="fas fa-sign-out-alt"></i></button>
+                    </li>
                 </ul>
 
             </nav>
@@ -196,7 +207,9 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript" src="product.js"></script>
+<script  src="checkCookie.js"></script>
+<script  src="product.js"></script>
+
 </body>
 
 </html>

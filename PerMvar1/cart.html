@@ -39,13 +39,23 @@
                     <i class="fas fa-bars"></i>
                 </label>
                 <ul>
-                    <li><a href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
-                    <li><a href="profile.html"><i class="fa fa-fw fa-user"></i>My Account</a></li>
-                    <li><a class="active" href="cart.html"><i class="fa fa-fw fa-shopping-bag"></i> </a></li>
-                    <li><a href="favorite.html"><i class="fa fa-fw fa-heart"></i> Wishs </a></li>
+                    <li><a href="news.html" ><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li>
+                        <button id="my_account" onclick="checkCookieAccount()"><i class="fa fa-fw fa-user"></i>My
+                            Account
+                        </button>
+                    </li>
+                    <li>
+                        <button id="cart"  style="background: white" onclick="checkCookieCart()"><i class="fa fa-fw fa-shopping-bag"></i></button>
+                    </li>
+                    <li>
+                        <button id="fav" onclick="checkCookieWishs()"><i class="fa fa-fw fa-heart"></i> Wishs</button>
+                    </li>
                     <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="" onclick="deleteCookie()" id="logout" style="display: none">Logout<i
-                            class="fas fa-sign-out-alt"></i></a></li>
+                    <li>
+                        <button onclick="deleteCookie()" id="logout" style="display: none">Logout<i
+                                class="fas fa-sign-out-alt"></i></button>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -109,183 +119,10 @@
         <div class="btn_adr">
             <div class="address" id="goAddress"><a id="address" href="">CONTINUE</a></div>
         </div>
-        <div class="footer">
-            <footer>
-                <div class="row_f">
-                    <div class="col">
-                        <div class="col1">
-                            <p>
-                                <br/>Contact to Us Now !<br/>
-                                <br/>
-                                CONTACT
-                                <br/>
-                                <br/>
-                                PerMvibes<br/>
-                                <br/>
-                                info@PerMvibes.com<br/>
-                                +31 (0) 85 800 02 32
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="col2">
-                            <p><br/>About Us !<br/>
-                                <br/>
-                                <br/><br/>
-                                INFORMATION
-                                <br/>
-                                <a style="color: #ffffff;" href="about.html">About Us</a>
-                                <br>
-                                <a style="color: #ffffff;" href="help.html"> <i class="fa fa-question-circle"
-                                                                                aria-hidden="true"></i>FAQ</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
     </div>
-
 </div>
 
-
-<script>
-    function iterate(item, index) {
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-                    b = JSON.parse(this.responseText);
-                    document.getElementById("item_det").innerHTML += `
-                    <div class="box" name="box_item" id="box_det">
-
-            <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish" onclick="addWish(${b.id})"></button>
-            <a href="${"http://localhost:63342/Perfume-Web-Manager/PerMvar1/product.html?id=" + b.id}" id="redict" class="fas fa-eye"></a>
-            <img src="${"imagesProduct/" + b.image_1}" id="imgg" alt="">
-            <div class="flex">
-                <div class="name" id="abc"><b>${b.name}</b></div>
-                <div class="gen" id="gen"><b>${b.gen} perfume</b></div>
-                <div class="price" id="price_det"><span><b>${b.price} $</b></span><b></b></div>
-            </div>
-            <button type="submit" class="btn" name="add_to_cart" id="addCart" onclick="removeProduct(${item.id})">Remove</button>
-
-        </div>
-
-`;
-                    document.getElementById("pret").innerText = parseInt(document.getElementById("pret").innerText) + parseInt(b.price) + "$";
-                    document.getElementById("pret2").innerText = document.getElementById("pret").innerText;
-                    console.log(parseInt(b.price));
-                    document.getElementById("address").href = "checkout.html";
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/read_one.php?id=" + item.product);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-    }
-
-    function getItems() {
-        checkLogin();
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-                    a = JSON.parse(this.responseText);
-                    if (a['records'].length == 0)
-                        document.getElementById("item_det").innerHTML += `
-                        <h1>You still have no products in your cart</h1>`;
-                    else
-                        a['records'].forEach(iterate);
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/read.php?id=" + 1);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-    }
-
-    function addWish(id) {
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        var a;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-                    //document.getElementById("abc").innerText = "saluttyy";
-
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Fav/addToFav.php?product=" + id);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-    }
-
-    function removeProduct(id) {
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        var a;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                {
-                    //document.getElementById("abc").innerText = "saluttyy";
-                    window.location.href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/cart.html";
-
-                }
-            }
-        });
-
-
-        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/removeFromCart.php?id=" + id);
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        xhr.send();
-    }
-
-    window.onload=checkLogin();
-    function checkLogin() {
-        var id = getCookie('id');
-        console.log("initial=" + id);
-        if (id != null) {
-            document.getElementById("login").style.display = 'none';
-            document.getElementById("logout").style.display = 'block';
-        }
-    }
-
-    function deleteCookie() {
-        const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
-        window.location.href = "news.html";
-    }
-
-    function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for (let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return null;
-    }
-
-
-    window.onload = getItems();
-</script>
+<script src="checkCookie.js"></script>
+<script src="cart.js"></script>
 </body>
 </html>

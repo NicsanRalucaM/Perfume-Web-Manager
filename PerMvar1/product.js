@@ -4,6 +4,7 @@ window.onload = set_data(koopId);
 
 
 function set_data(id) {
+    checkLogin();
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
     xhr.addEventListener("readystatechange", function () {
