@@ -1,8 +1,7 @@
-
- function iterate(item, index) {
+function iterate(item, index) {
     console.log(item.stoc);
-    if(parseInt(item.stoc)!=0)
-    {document.getElementById("box_cont").innerHTML += ` <div class="box" name="box_item" id="box_det" >
+    if (parseInt(item.stoc) != 0) {
+        document.getElementById("box_cont").innerHTML += ` <div class="box" name="box_item" id="box_det" >
        
         <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish" onclick="addWish(${item.id})"></button>
        
@@ -13,9 +12,8 @@
         </div>
         <div class="btn"  name="add_to_cart" id="addCart" onclick="addProduct(${item.id})">Add to cart
        </div>
-    </div>`;}
-    else
-    {
+    </div>`;
+    } else {
         document.getElementById("box_cont").innerHTML += ` <div class="box" name="box_item" id="box_det" >
        
         <button class="fas fa-heart" type="submit" name="add_to_wishlist" id="addWish" onclick=""></button>
@@ -57,41 +55,29 @@ function productss() {
 
 window.onload = productss();
 
- function addProduct(id) {
-     var xhr = new XMLHttpRequest();
-     xhr.withCredentials = true;
-     xhr.addEventListener("readystatechange", function () {
-         if (this.readyState === 4) {
-             {
-                 const a = JSON.parse(this.responseText);
+function addProduct(id) {
+    if (getCookie('id') != null) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    const a = JSON.parse(this.responseText);
 
-                 if (a != null) {
-                     var xhr = new XMLHttpRequest();
-                     xhr.withCredentials = true;
+                    if (a != null) {
 
-                     xhr.addEventListener("readystatechange", function () {
-                         if (this.readyState === 4) {
-                             const b = JSON.parse(this.responseText);
-                             console.log(b);
-                             window.location.reload();
-                         }
-                     });
+                    }
 
-                     xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/decreasesStock.php?product=" + id);
-                     xhr.setRequestHeader("Content-Type", "application/json");
+                }
+            }
+        });
 
-                     xhr.send();
-                 }
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send();
+    }
 
-             }
-         }
-     });
-
-     xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + id);
-     xhr.setRequestHeader("Content-Type", "application/json");
-     xhr.send();
-
- }
+}
 
 function addWish(id) {
     var xhr = new XMLHttpRequest();

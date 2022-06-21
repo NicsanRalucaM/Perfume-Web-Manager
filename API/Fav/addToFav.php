@@ -13,7 +13,12 @@ $db = $database->getConnection();
 $item = new itemFav($db);
 $item->product = $_GET['product'];
 $item->user=$_COOKIE['id'];
-$stmt = $item->post();
-echo $stmt;
+echo ($item->verifExist());
+if($item->verifExist()==0) {
+    $stmt = $item->post();
+    echo $stmt;
+}
+else
+    echo "already exists";
 
 

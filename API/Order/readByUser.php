@@ -21,7 +21,7 @@ $stmt=$order->read();
 if (true) {
 
     $orders_arr=array();
-    $orderss_arr["records"]=array();
+    $orders_arr["records"]=array();
 
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){

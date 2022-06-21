@@ -49,38 +49,26 @@ function set_data(id) {
 
 
 function addProduct() {
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            {
-                const a = JSON.parse(this.responseText);
+    if (getCookie('id') != null) {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                {
+                    const a = JSON.parse(this.responseText);
 
-                if (a != null) {
-                    var xhr = new XMLHttpRequest();
-                    xhr.withCredentials = true;
+                    if (a != null) {
 
-                    xhr.addEventListener("readystatechange", function () {
-                        if (this.readyState === 4) {
-                            const b = JSON.parse(this.responseText);
-                            console.log(b);
-                            window.location.reload();
-                        }
-                    });
+                    }
 
-                    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Product/decreasesStock.php?product=" + koopId);
-                    xhr.setRequestHeader("Content-Type", "application/json");
-
-                    xhr.send();
                 }
-
             }
-        }
-    });
+        });
 
-    xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + koopId);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.send();
+        xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Cart/addToCart.php?product=" + koopId);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send();
+    }
 
 }
 

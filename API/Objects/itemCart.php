@@ -29,6 +29,15 @@ class itemCart
 
         return "post ok";
     }
+    function getProdCurCount(){
+        $query= $this->conn->prepare("SELECT count(*) as nr from " .$this->table_name . " where user = :user and product=:product");
+        $query->bindParam("user",$this->user,PDO::PARAM_STR);
+        $query->bindParam("product",$this->product,PDO::PARAM_STR);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row['nr'];
+    }
     function  count(){
         $query= $this->conn->prepare("SELECT count(*) as nr from " .$this->table_name . " where user = :user");
         $query->bindParam("user",$this->user,PDO::PARAM_STR);
@@ -36,6 +45,19 @@ class itemCart
 
         $row = $query->fetch(PDO::FETCH_ASSOC);
         return $row['nr'];
+    }
+    function readDistinct(){
+        $query = "SELECT
+                 count(*) as nr,p.product as id
+            FROM
+                " . $this->table_name . " p where p.user=". $this->user . " group by p.product";
+
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+       return $stmt;
+
     }
     function readUser()
     {
