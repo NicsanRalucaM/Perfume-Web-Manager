@@ -34,6 +34,7 @@ if(true){
             "id" => $id,
             "name" => $name,
             "brand_id" => $brand_id,
+            "price" => $price,
             "stoc" => $stoc,
             "brand" => $brand->getName(),
             "nr" => $order->readProductsVal()
