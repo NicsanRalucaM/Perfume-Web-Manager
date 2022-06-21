@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.container .titlu{
+    width:100%;
+    text-align: center;
+    margin-top: 5%;
+    padding-bottom: 30px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.container  .continut  #tb{
+
+
+    margin:auto;
+    width: 80%;
+    border:1px solid black;
+    border-collapse: collapse;
+
+
+}
+.container  .continut  #tb_brand{
+
+
+    margin:auto;
+    width: 80%;
+    border: 1px solid white;
+    border-collapse: collapse;
+    background-color: #96D4D4;
+
+
+
+}
+.container  .continut  #tb_brand td,.container  .continut  #tb_brand th{
+    border: 1px solid white;
+    border-collapse: collapse;
+    background-color: #96D4D4;
+}
+.container  .continut  #tb #nr{
+    width: 10%;
+    border:1px solid black;
+    border-collapse: collapse;
+
+}
+.container  .continut  #tb #name{
+    width: 40%;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.container  .continut  #tb #brand{
+    width: 40%;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.container  .continut  #tb #nr{
+    width: 10%;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.container  .continut  #tb #stock{
+    width: 10%;
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.container  .continut  td{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+.container  .continut .tabel .row2{
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+    border-bottom:1px solid black;
+
+
+}

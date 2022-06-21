@@ -130,6 +130,20 @@ class Product
         $stmt->execute();
         return $stmt->rowCount();
     }
+    function getName(){
+        $query = $this->conn->prepare("SELECT name FROM $this->table_name WHERE id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        return $row['name'];
+    }
+    function readBrandName()
+    {
+
+    }
+
 
 }
 

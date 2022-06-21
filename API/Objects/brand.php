@@ -31,7 +31,17 @@ class Brand
 
         return $stmt;
     }
+    function getName()
+    {
+        $query = $this->conn->prepare("SELECT name FROM $this->table_name WHERE id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
 
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        return $row['name'];
+
+    }
     function readOne()
     {
 

@@ -23,6 +23,7 @@ class Order
     public $price;
     public $email;
     public $name;
+    public $val;
 
     public function __construct($db)
     {
@@ -93,6 +94,150 @@ class Order
 
         $query->execute();
         return $query;
+    }
+    function readProductsVal(){
+        $query = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product1 =" . $this->val . "
+           GROUP BY p.product1
+           ";
+        $query2 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product2 =" . $this->val . "
+           GROUP BY p.product2
+           ";
+        $query3= "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product3 =" . $this->val . "
+           GROUP BY p.product3
+           ";
+        $query4 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product4 =" . $this->val . "
+           GROUP BY p.product4
+           ";
+        $query5 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product5 =" . $this->val . "
+           GROUP BY p.product5
+           ";
+        $query6 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product6 =" . $this->val . "
+           GROUP BY p.product6
+           ";
+        $query7 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product7 =" . $this->val . "
+           GROUP BY p.product7
+           ";
+        $query8 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product8 =" . $this->val . "
+           GROUP BY p.product8
+           ";
+        $query9 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product9 =" . $this->val . "
+           GROUP BY p.product9
+           ";
+        $query10 = "SELECT
+               COUNT(*) as val FROM
+                " . $this->table_name . " p
+                
+            WHERE
+                p.product10 =" . $this->val . "
+           GROUP BY p.product10
+           ";
+        $sum=0;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query2);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query3);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query4);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query5);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query6);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query7);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query8);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query9);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        $stmt = $this->conn->prepare($query10);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+        $sum=$sum+$row['val'];
+
+        return $sum;
     }
 
 }

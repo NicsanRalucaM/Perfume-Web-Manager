@@ -58,4 +58,10 @@ class User
         $this->email = $row['email'];
 
     }
+    function getId()
+    {
+        $query = $this->conn->prepare("SELECT id as user_id,firstname as user_firstname,lastname as user_lastname FROM $this->table_name " );
+        $query->execute();
+        return $query;
+    }
 }
