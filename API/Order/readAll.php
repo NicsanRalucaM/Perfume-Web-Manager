@@ -8,6 +8,7 @@ include_once '../Objects/user.php';
 include_once '../Objects/product.php';
 include_once '../Objects/brand.php';
 include_once '../Objects/order.php';
+include_once '../Objects/address.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -15,6 +16,7 @@ $db = $database->getConnection();
 $brand = new Brand($db);
 $user = new User($db);
 $order = new Order($db);
+$address1 = new Address($db);
 
 $productt1 = new Product($db);
 $productt2 = new Product($db);
@@ -35,16 +37,12 @@ $ord=array();
 while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
     extract($row);
     $order->user = $user_id;
-    $ord=array(
-        "firstName"=>$user_firstname,
-        "lastName"=>$user_lastname);
-
 
     $stmt = $order->read();
     if (true) {
 
         $ords = array();
-        $ords["orders"] = array();
+
 
 
 
@@ -52,6 +50,16 @@ while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
 
             extract($row);
             $productt1->id=$product1;
+            $productt2->id=$product2;
+            $productt3->id=$product3;
+            $productt4->id=$product4;
+            $productt5->id=$product5;
+            $productt6->id=$product6;
+            $productt7->id=$product7;
+            $productt8->id=$product8;
+            $productt9->id=$product9;
+            $productt10->id=$product10;
+            $address1->id=$address;
 
             $order_item = array(
                 "id_comanda" => $id,
@@ -65,14 +73,22 @@ while ($row = $stmt2->fetch(PDO::FETCH_ASSOC)) {
                 "p7" => $productt7->getName(),
                 "p8" => $productt8->getName(),
                 "p9" => $productt9->getName(),
-                "p10" => $productt10->getName()
+                "p10" => $productt10->getName(),
+                "price"=>$price,
+                "time"=>$address1->getDate()
 
 
             );
 
-            $ords["orders"][] = $order_item;
+            $ords[] = $order_item;
         }
-        $ord[3]=$ords;
+        $ord=array(
+            "id"=>$user_id,
+            "firstName"=>$user_firstname,
+            "lastName"=>$user_lastname,
+
+            "orders"=>$ords);
+
 
 
     }

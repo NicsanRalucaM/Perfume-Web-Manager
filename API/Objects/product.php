@@ -148,6 +148,38 @@ class Product
         if($row!=null)
             return $row['name'];
     }
+    function getPrice(){
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+            return $row['price'];
+    }
+    function getAnotimpId(){
+        $query = $this->conn->prepare("SELECT anotimp FROM $this->table_name WHERE id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        if($row!=null)
+            return $row['anotimp'];
+    }
+    function getAnotimp()
+    {
+        $query = "SELECT
+            DISTINCT p.anotimp as anotimp
+            FROM
+                " . $this->table_name . " p";
+
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->execute();
+
+        return $stmt;
+    }
 
 }
 

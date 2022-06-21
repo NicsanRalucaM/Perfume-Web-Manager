@@ -30,7 +30,8 @@ if(true){
             "id" => $id,
             "user" => $user,
             "product" => $product,
-           
+            "price" => $price
+
 
         );
 

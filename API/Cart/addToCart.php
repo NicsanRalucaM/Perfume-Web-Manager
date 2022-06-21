@@ -17,8 +17,11 @@ $item->product = $_GET['product'];
 // $item->user = $_GET['user'];
 $product->id = $_GET['product'];
 $item->user = $_COOKIE['id'];
+
+$item->price=$product->getPrice();
+
 if ($item->count() < 10) {
-    if ($item->getProdCurCount() <= $product->getStock() - 1) {
+    if ($item->getProdCurCount() <= $product->getStock()) {
         $stmt = $item->post();
         echo json_encode($stmt);
     } else

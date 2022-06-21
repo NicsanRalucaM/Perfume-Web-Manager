@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include_once 'config.php';
+include_once '../API/Config/database.php';
 
 $database = new Database();
 $db = $database->getConnection();

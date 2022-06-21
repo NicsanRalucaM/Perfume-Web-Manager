@@ -32,6 +32,7 @@ if(true){
         $product_item=array(
             "id" => $id,
             "name" => $name,
+            "price" => $price,
             "brand_id" => $brand_id,
             "stoc" => $stoc,
             "brand" => $brand->getName(),

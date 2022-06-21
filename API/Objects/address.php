@@ -1,4 +1,5 @@
 <?php
+
 class Address
 {
 
@@ -13,14 +14,16 @@ class Address
     public $state;
     public $zip;
     public $time;
+
     public function __construct($db)
     {
         $this->conn = $db;
     }
-    public function  post()
+
+    public function post()
     {
 
-        $query = $this->conn->prepare("INSERT INTO " .$this->table_name .  "  ( user, address,city,state,zip,time) values(:user,:address,:city,:state,:zip,:time)");
+        $query = $this->conn->prepare("INSERT INTO " . $this->table_name . "  ( user, address,city,state,zip,time) values(:user,:address,:city,:state,:zip,:time)");
         $query->bindParam("user", $this->user, PDO::PARAM_STR);
         $query->bindParam("address", $this->address, PDO::PARAM_STR);
         $query->bindParam("city", $this->city, PDO::PARAM_STR);
@@ -37,7 +40,9 @@ class Address
 
         return $row['id'];
     }
-    function read(){
+
+    function read()
+    {
         $query = "SELECT* 
             FROM
                 " . $this->table_name . " u
@@ -60,4 +65,17 @@ class Address
         $this->user = $row['user'];
     }
 
+    function getDate()
+    {
+        $query = $this->conn->prepare("SELECT * FROM $this->table_name WHERE id=:id");
+        $query->bindParam("id", $this->id, PDO::PARAM_STR);
+
+        $query->execute();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+
+        if ($row != null)
+            return  $row['time'];
+
+    }
 }
+

@@ -131,6 +131,7 @@ function saveOrder() {
     var items = [10];
     var adresa;
     let id = getCookie("id");
+    var val_order=0;
 
     var xhr3 = new XMLHttpRequest();
     xhr3.withCredentials = true;
@@ -162,10 +163,13 @@ function saveOrder() {
                             b = JSON.parse(this.responseText);
                             for (var j = 0; j < b['records'].length; j++) {
                                 items[j] = b['records'][j].product;
+                                val_order=val_order+parseInt(b['records'][j].price);
+                                //console.log(parseInt(b['records'][j].price));
                                 decreasesStock(items[j]);
 
-                            }
 
+                            }
+                           // console.log(val_order);
                             var xhr = new XMLHttpRequest();
                             xhr.withCredentials = true;
                             var a;
@@ -176,7 +180,7 @@ function saveOrder() {
                                     }
                                 }
                             });
-                            xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Order/addOrder.php?name=" + name + "&email=" + email + "&address=" + adresa + "&price=" + "777" + "&product1=" + items[0] + "&product2=" + items[1] + "&product3=" + items[2] + "&product4=" + items[3] + "&product5=" + items[4] + "&product6=" + items[5] + "&product7=" + items[6] + "&product8=" + items[7] + "&product9=" + items[8] + "&product10=" + items[9]);
+                            xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Order/addOrder.php?name=" + name + "&email=" + email + "&address=" + adresa + "&price=" + val_order + "&product1=" + items[0] + "&product2=" + items[1] + "&product3=" + items[2] + "&product4=" + items[3] + "&product5=" + items[4] + "&product6=" + items[5] + "&product7=" + items[6] + "&product8=" + items[7] + "&product9=" + items[8] + "&product10=" + items[9]);
                             xhr.setRequestHeader("Content-Type", "application/json");
 
                             xhr.send();
@@ -197,7 +201,6 @@ function saveOrder() {
     xhr3.setRequestHeader("Content-Type", "application/json");
 
     xhr3.send();
-    console.log(adresa);
 
 
 }

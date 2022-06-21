@@ -9,6 +9,7 @@ class itemCart
     public $id;
     public $user;
     public $product;
+    public $price;
 
 
     public function __construct($db)
@@ -18,9 +19,10 @@ class itemCart
     function post(){
 
 
-        $query = $this->conn->prepare("INSERT INTO " .$this->table_name . "  ( user, product) values(:user,:product)");
+        $query = $this->conn->prepare("INSERT INTO " .$this->table_name . "  ( user, product,price) values(:user,:product,:price)");
         $query->bindParam("user", $this->user, PDO::PARAM_STR);
         $query->bindParam("product", $this->product, PDO::PARAM_STR);
+        $query->bindParam("price", $this->price, PDO::PARAM_STR);
 
         $query->execute();
         $row = $query->fetch(PDO::FETCH_ASSOC);
@@ -63,7 +65,7 @@ class itemCart
     {
 
         $query = "SELECT
-                 p.id, p.user, p.product
+                 *
             FROM
                 " . $this->table_name . " p
                 where

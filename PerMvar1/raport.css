@@ -65,6 +65,11 @@
     border:1px solid black;
     border-collapse: collapse;
 }
+.container  .continut  #tb #price{
+    width: 10%;
+    border:1px solid black;
+    border-collapse: collapse;
+}
 .container  .continut  td{
     border:1px solid black;
     border-collapse: collapse;
@@ -77,3 +82,50 @@
 
 
 }
+.container .continut  #tb{
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+}
+.container .continut #tb .tabele{
+    width: 80%;
+    margin: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid black;
+    background-color: #96D4D4;
+    padding: 10px;
+}
+.container .continut #tb .tabele td,th{
+    border: 1px solid white;
+    border-collapse: collapse;
+    background-color: #96D4D4;
+}
+container{
+    display: flex;
+    flex-direction: column;
+}
+.container .bott{
+    height: 50px;
+    width: 100%;
+}
+.container .bott .butns{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    width: 60%;
+    text-align: center;
+
+}
+.container .bott .butns .btn{
+    width: 15%;
+    height:40px;
+    cursor: pointer;
+    background-color: #96D4D4;
+    border:2px solid white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
