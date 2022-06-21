@@ -130,6 +130,15 @@ class Product
         $stmt->execute();
         return $stmt->rowCount();
     }
+    function getStock()
+    {
+        $query= $this->conn->prepare("SELECT stoc as nr from " .$this->table_name . " where id = :id");
+        $query->bindParam("id",$this->id,PDO::PARAM_STR);
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        return $row['nr'];
+    }
     function getName(){
         $query = $this->conn->prepare("SELECT name FROM $this->table_name WHERE id=:id");
         $query->bindParam("id", $this->id, PDO::PARAM_STR);
@@ -137,13 +146,8 @@ class Product
         $query->execute();
         $row = $query->fetch(PDO::FETCH_ASSOC);
         if($row!=null)
-        return $row['name'];
+            return $row['name'];
     }
-    function readBrandName()
-    {
-
-    }
-
 
 }
 
