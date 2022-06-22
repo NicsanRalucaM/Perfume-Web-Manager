@@ -10,7 +10,10 @@
     font-family: Garamond, serif;
     color: gold;
 }
-
+.stoc
+{
+    color: red;
+}
 .box-container p {
     text-align: center;
     color: black;

@@ -1,7 +1,7 @@
 function checkCookieAccount()
 {
     var id=getCookie('id');
-    if(id==null)
+    if(id==null||id==0)
         window.location.href="login.html";
     else
         window.location.href="profile.html";
@@ -10,7 +10,7 @@ function checkCookieAccount()
 function checkCookieWishs()
 {
     var id=getCookie('id');
-    if(id==null)
+    if(id==null||id==0)
         window.location.href="login.html";
     else
         window.location.href="favorite.html";
@@ -19,7 +19,7 @@ function checkCookieWishs()
 function checkCookieCart()
 {
     var id=getCookie('id');
-    if(id==null)
+    if(id==null||id==0)
         window.location.href="login.html";
     else
         window.location.href="cart.html";
@@ -43,7 +43,7 @@ function getCookie(cname) {
 function checkLogin() {
     var id = getCookie('id');
     console.log("initial=" + id);
-    if (id != null) {
+    if (id != null&& id!=0) {
         document.getElementById("login").style.display = 'none';
         document.getElementById("logout").style.display = 'block';
     }

@@ -96,16 +96,20 @@ nav ul li a {
     text-transform: uppercase;
 }
 
-nav ul li button{
+nav ul li button {
 
     color: black;
     font-size: 17px;
     padding: 7px 10px;
-    border-radius: 3px;
+    border-radius: 30px;
     text-transform: uppercase;
     cursor: pointer;
     border: 0;
     background: transparent;
+}
+
+button {
+    font-family: Garamond, serif;
 }
 
 nav a.active, nav a:hover {
@@ -138,11 +142,17 @@ nav a.active, nav a:hover {
     nav ul li a {
         font-size: 16px;
     }
+
+
 }
 
 @media screen and (max-width: 650px) {
     .checkbtn {
         display: block;
+    }
+
+    #my_account, #cart,#fav {
+        font-size: 8px;
     }
 
     ul {
@@ -159,7 +169,7 @@ nav a.active, nav a:hover {
         display: block;
         margin: 5px 0;
         line-height: 10px;
-       
+
     }
 
     nav ul li a {
@@ -167,8 +177,9 @@ nav a.active, nav a:hover {
         font-size: 8px;
         width: 10px;
     }
-    nav ul li #logout{
-        color: white;
+
+    nav ul li #logout {
+        color: black;
         font-size: 8px;
         width: 10px;
         border: 0;
@@ -209,19 +220,22 @@ nav a.active, nav a:hover {
 @media screen and (max-width: 650px) {
     .column {
         width: 100%;
-        
+
     }
+
     .column a {
         font-size: calc(16px + (24 - 16) * (100vw - 400px) / (650 - 400));
-        
+
     }
-    
+
 }
+
 @media screen and (max-width: 250px) {
-.col a
-    {
-       font-size: 5px;
-    }}
+    .col a {
+        font-size: 5px;
+    }
+}
+
 .topbar {
     text-align: center;
     background-color: #f6f6f6;
