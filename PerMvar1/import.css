@@ -1,0 +1,39 @@
+
+* {
+    box-sizing: border-box;
+
+}
+.container
+{
+
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box
+ {
+    background-color: hsla(201, 100%, 6%, 0.6);
+    padding: 50px 30px;
+    width: 50%;
+
+
+}
+.container .box .input
+{
+    display: flex;
+    flex-direction: column;
+}
+.container .box .input .import
+{
+    text-align: right;
+}
+.container .box .input .import .btn,.container .box .input .import .file_label
+{
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}

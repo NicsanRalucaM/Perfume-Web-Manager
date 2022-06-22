@@ -46,7 +46,7 @@ class User
     function readData()
     {
 
-        $query = $this->conn->prepare("SELECT * FROM users WHERE id=:id");
+        $query = $this->conn->prepare("SELECT * FROM  $this->table_name  WHERE id=:id");
         $query->bindParam("id", $this->id, PDO::PARAM_STR);
 
         $query->execute();
