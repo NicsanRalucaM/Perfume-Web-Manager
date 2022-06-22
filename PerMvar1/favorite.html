@@ -128,8 +128,8 @@
             if (this.readyState === 4) {
                 {
                     b = JSON.parse(this.responseText);
-                    if(parseInt(b.stoc)!=0)
-                    {document.getElementById("item_det").innerHTML += `
+                    if (parseInt(b.stoc) != 0) {
+                        document.getElementById("item_det").innerHTML += `
                     <div class="box" name="box_item" id="box_det">
 
             <button class="fas fa-shopping-bag" type="submit" name="add_to_wishlist" id="addWish" onclick="addProduct(${b.id})"></button>
@@ -143,9 +143,8 @@
             <button type="submit" class="btn" name="add_to_cart" id="addCart" onclick="removeProduct(${item.id})">Remove</button>
 
         </div>
-`;}
-                    else
-                    {
+`;
+                    } else {
                         document.getElementById("item_det").innerHTML += `
                     <div class="box" name="box_item" id="box_det">
 
@@ -181,7 +180,6 @@
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-                    // mesaj de confiremare sau ceva cazuri NUU UITATIIIIDESTEPTELOR
 
                 }
             }

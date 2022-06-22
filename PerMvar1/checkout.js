@@ -5,18 +5,24 @@ function checkFields() {
 
     const validInputs = Array.from(inputFeilds).filter(input => input.value !== "");
     console.log(validInputs.length);
-    console.log(document.getElementById("ccnum"));
+    console.log(document.getElementById("ccnum").value);
     if (validInputs.length !== 12) {
         document.getElementById("errormsg").style.display = 'block';
         document.getElementById("errormsg").innerText = "Please complete all fields !!";
         window.scroll(0, 0);
 
         window.scroll(0, 0);
-    } else if (!cardnumber(document.getElementById("ccnum")) || !exprY(document.getElementById("expyear"), document.getElementById("expmonth"))) {
+    } else if(!validateEmail(document.getElementById("email").value)){
+        document.getElementById("errormsg").style.display = 'block';
+        document.getElementById("errormsg").innerText = "Wrong email";
+        window.scroll(0, 0);
+    }
+    else if (!cardnumber(document.getElementById("ccnum")) || !exprY(document.getElementById("expyear"), document.getElementById("expmonth"))) {
         document.getElementById("errormsg").style.display = 'block';
         document.getElementById("errormsg").innerText = "Wrong data card";
         window.scroll(0, 0);
     } else if (!cvv(document.getElementById("cvv"))) {
+
         document.getElementById("errormsg").style.display = 'block';
         document.getElementById("errormsg").innerText = "Wrong data card";
         window.scroll(0, 0);
@@ -31,9 +37,9 @@ function checkFields() {
 
 function exprY(input1, input2) {
     var currentDate = new Date();
-    if (input1.value > currentDate.getFullYear())
+    if (parseInt(input1.value) > currentDate.getFullYear())
         return true;
-    else if (input2.value > currentDate.getMonth())
+    else if (parseInt(input2.value) > currentDate.getMonth()&&parseInt(input2.value)<=12)
         return true;
     else
         return false;
@@ -41,7 +47,7 @@ function exprY(input1, input2) {
 }
 
 function cvv(input) {
-    if (input.value > 99 && input.value < 1000)
+    if (parseInt(input.value) > 99 && parseInt(input.value) < 1000)
         return true;
     else
         return false;
@@ -201,6 +207,9 @@ function saveOrder() {
     xhr3.setRequestHeader("Content-Type", "application/json");
 
     xhr3.send();
-
-
+}
+function validateEmail(email)
+{
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
 }

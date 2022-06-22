@@ -12,403 +12,473 @@
 
 <body>
 
-    <h1>PerMvibes</h1>
+<h1>PerMvibes</h1>
 
-    <ol>
-        <li>
-            <a href="#authors">Autori</a>
-        </li>
-        <li>
-            <a href="#introduction"> Introducere</a>
-            <ol>
-                <li><a href="#purpose"> Țel</a></li>
-                <li><a href="#conventions"> Convenții</a></li>
-                <li><a href="#intended-audience">Public țintă</a></li>
-                <li><a href="#productScope"> Scopul produsului</a></li>
-                <li><a href="#references">Referinţe</a></li>
-            </ol>
-        </li>
-        <li>
-            <a href="#generalDescription"> Descriere generală</a>
-            <ol>
-                <li><a href="#productPerspective"> Perspectiva produsului</a></li>
-                <li><a href="#productFunctions"> Funcționalitățile produsului</a></li>
-                <li><a href="#classesAndCharacteristics">Categorii de utilizatori</a></li>
-                <li><a href="#operationEnvironment">Mediu de operare</a></li>
-                <li><a href="#designConstrains"> Design și constrângeri de implementare</a></li>
-                <li><a href="#userDocumentation">Documentație pentru utilizator</a></li>
-            </ol>
-        </li>
-        <li>
-            <a href="#externalRequirements"> Cerințe externe</a>
-            <ol>
-                <li><a href="#userInterface"> Interfață utilizator</a></li>
-                <li><a href="#softwareInterface"> Interfață software</a></li>
-                <li><a href="#communicationInterface"> Interfață de comunicare</a></li>
-            </ol>
-        </li>
-        <li>
-            <a href="#functionalRequirements">Cerințe funcționale</a>
-            <ol>
-                <li><a href="#register">Inregistrare</a></li>
-                <li><a href="#login">Autentificare</a></li>
+<ol>
+    <li>
+        <a href="#authors">Autori</a>
+    </li>
+    <li>
+        <a href="#introduction"> Introducere</a>
+        <ol>
+            <li><a href="#purpose"> Țel</a></li>
+            <li><a href="#conventions"> Convenții</a></li>
+            <li><a href="#productScope"> Scopul produsului</a></li>
+            <li><a href="#references">Referinţe</a></li>
+        </ol>
+    </li>
+    <li>
+        <a href="#generalDescription"> Descriere generală</a>
+        <ol>
+            <li><a href="#productPerspective"> Perspectiva produsului</a></li>
+            <li><a href="#productFunctions"> Funcționalitățile produsului</a></li>
+            <li><a href="#classesAndCharacteristics">Categorii de utilizatori</a></li>
+            <li><a href="#operationEnvironment">Mediu de operare</a></li>
+            <li><a href="#designConstrains"> Design și constrângeri de implementare</a></li>
+            <li><a href="#userDocumentation">Documentație pentru utilizator</a></li>
+        </ol>
+    </li>
+    <li>
+        <a href="#externalRequirements"> Cerințe externe</a>
+        <ol>
+            <li><a href="#userInterface"> Interfață utilizator</a></li>
+            <li><a href="#softwareInterface"> Interfață software</a></li>
+            <li><a href="#communicationInterface"> Interfață de comunicare</a></li>
+        </ol>
+    </li>
+    <li>
+        <a href="#functionalRequirements">Cerințe funcționale</a>
+        <ol>
+            <li><a href="#register">Inregistrare</a></li>
+            <li><a href="#login">Autentificare</a></li>
+            <li><a href="#search">Căutarea unui produs după un atribut</a></li>
+            <li><a href="#cart">Salvarea produsului în coș</a></li>
+            <li><a href="#fav">Salvarea produsului în secțiunea de favorite</a></li>
+            <li><a href="#order">Plasarea unei comenzi</a></li>
+            <li><a href="#comm">Vizualizarea și adăuarea unui comentariu</a></li>
+            <li><a href="#orderUser">Vizualizarea comenzilor date</a></li>
 
-            </ol>
-        </li>
-        <li>
-            <a href="#nonfunctionalRequirements">Cerințe nonfuncționale</a>
-            <ol>
-                <li><a href="#safety">Cerințe de siguranță</a></li>
-                <li><a href="#security">Cerințe de securitate</a></li>
-            </ol>
-        </li>
-        <li>
-            <a href="#bibliography">Referinţe bibliografice</a>
-        </li>
-    </ol>
-    <article id="article" typeof="schema:ScholarlyArticle" resource="#">
-        <section id="authors" typeof="sa:AuthorsList">
-            <h2>Autori</h2>
-            <ol>
-                <li property="schema:author" typeof="sa:ContributorRole">
-                    <a property="schema:author" href="#" typeof="schema:Person">
-                        <span property="schema:giveName">Nicșan </span>
-                        <span property="schema:familyName">Raluca-Maria</span>
-                    </a>
-                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
-                        <a property="schema:email" href="ralucanicsan@yahoo.com"
-                            title="corresponding author">&#9993;</a>
-                    </sup>
-                </li>
+        </ol>
+    </li>
+    <li>
+        <a href="#nonfunctionalRequirements">Cerințe nonfuncționale</a>
+        <ol>
+            <li><a href="#safety">Cerințe de siguranță</a></li>
+            <li><a href="#security">Cerințe de securitate</a></li>
+        </ol>
+    </li>
+    <li>
+        <a href="#bibliography">Referinţe bibliografice</a>
+    </li>
+</ol>
+<article id="article" typeof="schema:ScholarlyArticle" resource="#">
+    <section id="authors" typeof="sa:AuthorsList">
+        <h2>Autori</h2>
+        <ol>
+            <li property="schema:author" typeof="sa:ContributorRole">
+                <a property="schema:author" href="#" typeof="schema:Person">
+                    <span property="schema:giveName">Nicșan </span>
+                    <span property="schema:familyName">Raluca-Maria</span>
+                </a>
+                <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                    <a property="schema:email" href="ralucanicsan@yahoo.com"
+                       title="corresponding author">&#9993;</a>
+                </sup>
+            </li>
 
-                <li property="schema:author" typeof="sa:ContributorRole">
-                    <a property="schema:author" href="#" typeof="schema:Person">
-                        <span property="schema:giveName">Rusu</span>
-                        <span property="schema:familyName">Magdalena</span>
-                    </a>
-                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
-                        <a property="schema:email" href="rusumagda3002@gmail.com"
-                            title="corresponding author">&#9993;</a>
-                    </sup>
-                </li>
-            </ol>
-        </section>
-        <section typeof="sa:ScholarlyArticle" role="doc-introduction">
-            <h2 id="introduction">Introducere</h2>
-            <h3 id="purpose">Țel</h3>
-            <p>
-                PerMvibes este o aplicație web prin intermediul căreia se pot vizualiza și cumpăra diferite parfumuri.
-                Produsele pot fi vizualizate atât de utilizatorii autentificați, cât și de cei care nu doresc să-și
-                creeze
-                un cont.
-            </p>
+            <li property="schema:author" typeof="sa:ContributorRole">
+                <a property="schema:author" href="#" typeof="schema:Person">
+                    <span property="schema:giveName">Rusu</span>
+                    <span property="schema:familyName">Magdalena</span>
+                </a>
+                <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                    <a property="schema:email" href="rusumagda3002@gmail.com"
+                       title="corresponding author">&#9993;</a>
+                </sup>
+            </li>
+        </ol>
+    </section>
+    <section typeof="sa:ScholarlyArticle" role="doc-introduction">
+        <h2 id="introduction">Introducere</h2>
+        <h3 id="purpose">Țel</h3>
+        <p>
+            PerMvibes este o aplicație web prin intermediul căreia se pot vizualiza și cumpăra diferite parfumuri.
+            Produsele pot fi vizualizate atât de utilizatorii autentificați, cât și de cei care nu doresc să-și
+            creeze
+            un cont.
+        </p>
 
-            <h3 id="conventions">Convenții</h3>
-            <p>
-                Aplicația dorește să minimizeze efortul utlizatorului de a accesa produsele de interes. Astfel, pe
-                pagina
-                principală, utlizatorul găsește top 3 parfumuri ale ultimelor colecții, având posibilitatea de a accesa
-                oricare dintre ele. De asemenea, în
-                cadrul paginei de descriere a unui produs, utilizatorul găsește informații detaliate referitoare la
-                prețul,
-                valabilitatea stocului,
-                ingredientele sale componente, aspecte legate de colecția din care face parte cât și sugestia a altor 3
-                produse cu care se găsesc aspecte
-                comune.
+        <h3 id="conventions">Convenții</h3>
+        <p>
+            Aplicația dorește să minimizeze efortul utlizatorului de a accesa produsele de interes. Astfel, pe
+            pagina
+            principală, utlizatorul găsește top 3 parfumuri ale ultimelor colecții, având posibilitatea de a accesa
+            oricare dintre ele. De asemenea, în
+            cadrul paginei de descriere a unui produs, utilizatorul găsește informații detaliate referitoare la
+            prețul,
+            valabilitatea stocului,
+            ingredientele sale componente, aspecte legate de colecția din care face parte cât și sugestia a altor 3
+            produse cu care se găsesc aspecte
+            comune.
 
 
-            </p>
+        </p>
 
-            <h3 id="intended-audience">Public țintă </h3>
-            <p>
-                Acest document este destinat utilizatorului, întrucât cuprinde aspecte referitoare la principalele
-                funcționalități ale aplicației și
-                la maniera de interacțiune cu interfața pentru utilizator, pentru a ușura utilizarea aplicației.
-            </p>
+        <h3 id="productScope">Scopul produsului</h3>
+        <p>
+            Produsul are scopul de a furniza un mediu facil și plăcut, în care utilizatorul se poate informa despre
+            parfumurile
+            dorite, ingredientele sale cât și despre povestea colecțiilor din care fac parte. Site-ul urmărește atât
+            componenta funcțională cât și cea a interfeței,
+            oferind utilizatorului o experiență cât mai plăcută de navigare.
+        </p>
 
-            <h3 id="productScope">Scopul produsului</h3>
-            <p>
-                Produsul are scopul de a furniza un mediu facil și plăcut, în care utilizatorul se poate informa despre
-                parfumurile
-                dorite, ingredientele sale cât și despre povestea colecțiilor din care fac parte. Site-ul urmărește atât
-                componenta funcțională cât și cea a interfeței,
-                oferind utilizatorului o experiență cât mai plăcută de navigare.
-            </p>
+        <h3 id="references">Referinţe</h3>
+        <p>
+            Pentru a crea un site cu o interfață cât mai utilă pentru utilizator, am documentat căteva site-uri
+            utile a căror link se regăsește mai jos:
+        </p>
+        <ol>
+            <li><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></li>
+            <li><a href="https://www.w3schools.com/css/">https://www.w3schools.com/css/</a></li>
+            <li><a
+                    href="https://www.w3schools.com/css/">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css</a>
+            </li>
 
-            <h3 id="references">Referinţe</h3>
-            <p>
-                Pentru a crea un site cu o interfață cât mai utilă pentru utilizator, am documentat căteva site-uri
-                utile a căror link se regăsește mai jos:
-            </p>
-            <ol>
-                <li><a href="https://www.geeksforgeeks.org/">https://www.geeksforgeeks.org/</a></li>
-                <li><a href="https://www.w3schools.com/css/">https://www.w3schools.com/css/</a></li>
-                <li><a
-                        href="https://www.w3schools.com/css/">https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css</a>
-                </li>
+        </ol>
 
-            </ol>
+    </section>
+    <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
+        <h2 id="generalDescription">Descriere generală</h2>
 
-        </section>
-        <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
-            <h2 id="generalDescription">Descriere generală</h2>
+        <h3 id="productPerspective">Perspectiva produsului</h3>
+        <p>
+            PerMvibes este un site de parfumuri online care acceptă o serie de funcții pentru clientul care este
+            ori logat, ori un simplu vizitator. Făcând o comparație cu un alt astfel de provider (i.e. Sephora),
+            PerMvibes devine
+            o opțiune viabilă când vine vorba de cumpărarea unui parfum, oferind utilizatorului o viziune mai largă
+            asupra diferitelor tipuri de parfumuri .
+        </p>
+        <h3 id="productFunctions"> Funcționalitățile produsului</h3>
+        <p>
+            Site-ul dispune de multiple opțiuni care îți vin în ajutor când dorești să achiziționezi un parfum. În
+            primul rând, ai opțiunea de a căuta parfuml dorit după nume, un
+            ingredient pe care vrei să îl aibă, după brand sau după sezonul al cărui miros vrei să ți-l imprime. În
+            cazul în care are nelămuriri după citirea descrierii, vizitatorul
+            poate lăsa un comentariu cu o anumită întrebare sau un review. Mai mult decât atât, utilizatorul își poate
+            face
+            un cont, iar prin intermediul său poate adăuga 10 produse în coș pentru a le comanda sau le poate salva în
+            secțiunea de favorite.
+            Fiecare utilizator își poate vedea comenzile date în secțiunea MyAccount.
+            Administratorul aplicatiei are posibilitatea de a accesa rapoarte referitoare la stocul existent și situația
+            vânzărilor
+            în funcție de brand, sezon și comenzile utilizatorilor, cât și să facă import/export de date CSV.
+        </p>
 
-            <h3 id="productPerspective">Perspectiva produsului</h3>
-            <p>
-                PerMvibes este un site de parfumuri online care acceptă o serie de funcții pentru clientul care este
-                ori logat, ori un simplu vizitator. Făcând o comparație cu un alt astfel de provider (i.e. Sephora),
-                PerMvibes devine
-                o opțiune viabilă când vine vorba de cumpărarea unui parfum, oferind utilizatorului o viziune mai largă
-                asupra diferitelor tipuri de parfumuri .
-            </p>
-            <h3 id="productFunctions"> Funcționalitățile produsului</h3>
-            <p>
+        <h3 id="classesAndCharacteristics">Categorii de utilizatori</h3>
+        <p>
+            Aplicația este destinată, în principal, utilizatorilor care doresc să achiziționeze un
+            parfum sau oricărei persoane ce are acces la Internet și un browser web. Se presupune că utilizatorul
+            este
+            suficient de familiarizat cu un computer pentru a opera browserul, tastatura și mouse-ul și este capabil
+            să navigheze către, de la și în interiorul site-urilor web simple.
+        </p>
 
-            </p>
+        <h3 id="operationEnvironment">Mediu de operare</h3>
+        <p>
+            Fiind o aplicatie Web, PerMvibes este scalabilă în orice browser ce rulează HTML, CSS,JS, neținând cont
+            de o versiune anume a sistemului de operare a device-ului pe care rulează aplicația.
+        </p>
+        <h3 id="designConstrains"> Design și constrângeri de implementare</h3>
+        <p>
+            PerMvibes este o aplicație prin intermediul căreia îți poți alege și achiziționa parfumul preferat. Cu toate
+            acestea, site-ul vine
+            și cu câteva limitări. Astfel, utilizatorul poate comanda maxim 10 produse într-o singură comandă. De
+            asemenea, pe pagina unui produs
+            în secțiunea de produse recomandate, în care apar alte produse din aceeași categorie există o limitare de
+            maxim 3 produse recomandate.
+            Precum și în secțiunea de comentarii, unde apar ultimele 5.
+        </p>
 
-            <h3 id="classesAndCharacteristics">Categorii de utilizatori</h3>
-            <p>
-                Aplicația este destinată, în principal, utilizatorilor care doresc să achiziționeze un
-                parfum sau oricărei persoane ce are acces la Internet și un browser web. Se presupune că utilizatorul
-                este
-                suficient de familiarizat cu un computer pentru a opera browserul, tastatura și mouse-ul și este capabil
-                să navigheze către, de la și în interiorul site-urilor web simple.
-            </p>
+        <h3 id="userDocumentation">Documentație pentru utilizator</h3>
+        <p>
+            Secțiunea "FAQ" a site-ului este gândită pentru a răspunde utilizatorului la cele mai frecvente
+            întrebări
+            pe care acesta
+            le poate avea în ceeea ce privește interacțiunea cu aplicația. Întrebările din secțiune sunt selectate
+            dintre intrebările frecvente
+            ale utilizatorilor, iar modalitatea lor de afișare oferă utilizatorului o navigare rapidă și o
+            identificare
+            exactă a soluțiilor la majoritatea problemelor sau
+            neclarităților pe care le poate avea în ceea ce privește interacțiunea cu site-ul.
+        </p>
+    </section>
+    <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
+        <h2 id="externalRequirements"> Cerințe externe</h2>
 
-            <h3 id="operationEnvironment">Mediu de operare</h3>
-            <p>
-                Fiind o aplicatie Web, PerMvibes este scalabilă în orice browser ce rulează HTML, CSS, neținând cont
-                de o versiune anume a sistemului de operare a device-ului pe care rulează aplicația.
-            </p>
-            <h3 id="designConstrains"> Design și constrângeri de implementare</h3>
-            <p>
+        <h3 id="userInterface">Interfață utilizator</h3>
+        <p>PerMvibes poate fi folosită atât pe ecrane mari cât și pe browserul
+            telefonului al carui ecran este de dimensiuni mai reduse, iar datorită design-ului responsive calitatea
+            interfaței nu este afectată.
+            Tematica site-ului este una cât mai naturală, în note de albastru și gold, încercând să ofere un
+            sentiment însuflețit,
+            plin de viață și energie, dinamic, intens și puternic.</p>
+        <p>Interfața aplicației este simplă. Pentru a creea layout-ul, fiecare pagină s-a structurat folosind flex,
+            deoarece este util în amplasarea elementelor în pagină. </p>
+        <p>Bara dublă de navigare este un element din interfață care este comun tuturor paginilor din aplicație, și
+            de aceea are propriul css, astfel încât orice modificare făcută asupra ei să se aplice simultan tuturor
+            paginilor .
+            Prima bară conține
+            logo-ul aplicației, urmat de bara de căutare care va interoga baza de date și un meniu minimalist în
+            partea dreaptă care
+            conține butonul pentru pagina principala , pagina contului , a coșului de cumpărături, a listei cu
+            produse favorite, pagina de LOGIN, reprezentate și de icon-uri specifice.
+            <img src="Interfata/bara.png" alt="navbar1">
+            Dacă site-ul este accesat de pe browserul unui device care are dimenisuni mai mici de 650px meniul se
+            ascunde după o iconiță poziționată în partea dreaptă a bării.
+            Acesta este afișat vertical în partea stângă peste elementele din pagină,
+            prin apăsarea pe icon-ul care are în spate o casetă de selectare. De
+            asemenea, se redimensionează și bara de căutare și logo-ul.
+            A doua bară reprezintă meniul principal al site-ului care face legatura cu paginile: NEWS, PERFUMES,
+            BRANDS și ABOUT. În momentul în care dimensiunea display-ului scade sub 650px, aceasta bară
+            își schimbă modul de afișare, coloanele poziționându-se de aceasta dată una sub alta.
 
-            </p>
+        </p>
+        <p>
+            De asemenea, un alt element din interfață comun paginilor site-ului este subsolul, care la fel ca și
+            bara
+            dublă de navigare are un css propriu.
+            Acesta reprezintă, de fapt, un rând împărțit în două coloane, ce conțin informațiile de contactare sau o
+            legătură către pagina ABOUT US. Acest element este și el la rândul lui creat astfel ca dupa anumite
+            dimensiuni să se redimensioneze în așa fel încăt să aibă un aspect plăcut pe orice tip de device.
+            Acest lucru s-a realizat folosind flex, inițial de tip row ca dupa ce dimensiunea scade de 650px să se
+            transforme in flex-column.
+            <img src="Interfata/subsol.png" alt="subsol">
+        </p>
+        <h4>Pagina principala</h4>
+        <p>
+            Pagina principală, care este totodată și pagina de NEWS, are în deschidere un video ales în conformitate
+            cu tematica și spectrul de culori folosit.
+        </p>
+        <p>
+            Următoarea parte din pagină este realizată folosind flex și conține cele mai noi 3 parfumuri. Aceasta
+            este formată din 3 rânduri împărțite la rândul lor în două coloane. În cele două coloane se află o
+            imagine a produsului și o mică descriere care să stărnească curiozitatea posibilului cumpărator, precum
+            și un buton care să-i permită utilizatorului să ajungă direct la pagina produsului pentru a
+            vedea mai multe detalii.
+        </p>
+        <img src="Interfata/HomePage1.png" alt="img1">
+        <img src="Interfata/HomePage2.png" alt="img2">
+        <h4>Pagina unui produs</h4>
+        <p>Pagina produsului are scopul de a prezenta informații, aspecte ale parfumului într-un mod cât mai clar și
+            ușor de interceptat de către utilizator.
+            Astfel, prin intermediul flexului pagina este împărțită în 3 secțiuni principale.
+        </p>
+        <p>
+            Partea de sus conține două dintre ele, ca și cum ar fi un tabel cu două coloane. În partea stângă este
+            pusă
+            poza produsului.
+            Iar partea dreaptă conține: numele, drescrierea și cele două butoane de adăugare în coș sau în lista de
+            favorite.
+            Butoanele au colțurile rotunde, iar culoarea de background este o nuanță de albastru, în conformitate cu
+            restul aplicației, textul din interior fiind completat de câte o iconiță specifică.
+        </p>
+        <p>
+            A treia parte conține restul informațiilor, începând prin prezentarea a 4 ingrediente componente de
+            bază,
+            fiecare dintre ele putând fi accesate,
+            în ideea că site-ul va afișa toate parfumurile care au în componența lor ingredientul respectiv.
+            Imediat după sunt afișate alte 3 parfumuri care se aseamănă cu produsul curent, având același brand de
+            proveniență.
+            În final este pusă secțiunea de comentarii.
+        </p>
 
-            <h3 id="userDocumentation">Documentație pentru utilizator</h3>
-            <p>
-                Secțiunea "FAQ" a site-ului este gândită pentru a răspunde utilizatorului la cele mai frecvente
-                întrebări
-                pe care acesta
-                le poate avea în ceeea ce privește interacțiunea cu aplicația. Întrebările din secțiune sunt selectate
-                dintre intrebările frecvente
-                ale utilizatorilor, iar modalitatea lor de afișare oferă utilizatorului o navigare rapidă și o
-                identificare
-                exactă a soluțiilor la majoritatea problemelor sau
-                neclarităților pe care le poate avea în ceea ce privește interacțiunea cu site-ul.
-            </p>
-        </section>
-        <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
-            <h2 id="externalRequirements"> Cerințe externe</h2>
+        <img src="Interfata/product.png" alt="img3">
+        <img src="Interfata/product2.png" alt="img4">
+        <h4>Pagina de About</h4>
+        <p>
+            Pagina de About are scopul de oferi utilizatorului o descriere a ceea ce este PerMvibes într-un mod cât
+            mai clar.
+        </p>
+        <p>
+            Aceasta este divizată în mai multe părți folosind flex.
+            Prima parte conține o imagine, aleasă în ton cu spectrul de culori folosit pentru site, unde se află și
+            titlul paginii ABOUT US.
+            Următoarele doua părți, imparțite ambele în doua coloane, conțin o imagina specifică unui site de
+            parfumuri, o descriere generală căt și una mai detaliată a PerMvibes, precum și un buton care să permită
+            utilizatorului să meargă la pagina cu produse pentru a incepe cumpăraturile.
 
-            <h3 id="userInterface">Interfață utilizator</h3>
-            <p>PerMvibes poate fi folosită atât pe ecrane mari cât și pe browserul
-                telefonului al carui ecran este de dimensiuni mai reduse, iar datorită design-ului responsive calitatea
-                interfaței nu este afectată.
-                Tematica site-ului este una cât mai naturală, în note de albastru și gold, încercând să ofere un
-                sentiment însuflețit,
-                plin de viață și energie, dinamic, intens și puternic.</p>
-            <p>Interfața aplicației este simplă. Pentru a creea layout-ul, fiecare pagină s-a structurat folosind flex,
-                deoarece este util în amplasarea elementelor în pagină. </p>
-            <p>Bara dublă de navigare este un element din interfață care este comun tuturor paginilor din aplicație, și
-                de aceea are propriul css, astfel încât orice modificare făcută asupra ei să se aplice simultan tuturor
-                paginilor .
-                Prima bară conține
-                logo-ul aplicației, urmat de bara de căutare care va interoga baza de date și un meniu minimalist în
-                partea dreaptă care
-                conține butonul pentru pagina principala , pagina contului , a coșului de cumpărături, a listei cu
-                produse favorite, pagina de LOGIN și
-                HELP, reprezentate și de icon-uri specifice.
-                <img src="Interfata/navbar1.png" alt="navbar1">
-                Dacă site-ul este accesat de pe browserul unui device care are dimenisuni mai mici de 650px meniul se
-                ascunde după o iconiță poziționată în partea dreaptă a bării.
-                Acesta este afișat vertical în partea stângă peste elementele din pagină,
-                prin apăsarea pe icon-ul care are în spate o casetă de selectare. De
-                asemenea, se redimensionează și bara de căutare și logo-ul.
-                A doua bară reprezintă meniul principal al site-ului care face legatura cu paginile: NEWS, PERFUMES,
-                BRANDS, COLLECTIONS și ABOUT. În momentul în care dimensiunea display-ului scade sub 650px, aceasta bară
-                își schimbă modul de afișare, coloanele poziționându-se de aceasta dată una sub alta.
-                <img src="Interfata/navbar2.png" alt="navbar2">
-            </p>
-            <p>
-                De asemenea, un alt element din interfață comun paginilor site-ului este subsolul, care la fel ca și
-                bara
-                dublă de navigare are un css propriu.
-                Acesta reprezintă, de fapt, un rând împărțit în două coloane, ce conțin informațiile de contactare sau o
-                legătură către pagina ABOUT US. Acest element este și el la rândul lui creat astfel ca dupa anumite
-                dimensiuni să se redimensioneze în așa fel încăt să aibă un aspect plăcut pe orice tip de device.
-                Acest lucru s-a realizat folosind flex, inițial de tip row ca dupa ce dimensiunea scade de 650px să se
-                transforme in flex-column.
-                <img src="Interfata/subsol.png" alt="subsol">
-            </p>
-            <h4>Pagina principala</h4>
-            <p>
-                Pagina principală, care este totodată și pagina de NEWS, are în deschidere un video ales în conformitate
-                cu tematica și spectrul de culori folosit.
-            </p>
-            <p>
-                Următoarea parte din pagină este realizată folosind flex și conține cele mai noi 3 parfumuri. Aceasta
-                este formată din 3 rânduri împărțite la rândul lor în două coloane. În cele două coloane se află o
-                imagine a produsului și o mică descriere care să stărnească curiozitatea posibilului cumpărator, precum
-                și un buton care să-i permită utilizatorului să ajungă direct la pagina produsului pentru a
-                vedea mai multe detalii.
-            </p>
-            <img src="Interfata/HomePage1.png" alt="img1">
-            <img src="Interfata/HomePage2.png" alt="img2">
-            <h4>Pagina unui produs</h4>
-            <p>Pagina produsului are scopul de a prezenta informații, aspecte ale parfumului într-un mod cât mai clar și
-                ușor de interceptat de către utilizator.
-                Astfel, prin intermediul flexului pagina este împărțită în 3 secțiuni principale.
-            </p>
-            <p>
-                Partea de sus conține două dintre ele, ca și cum ar fi un tabel cu două coloane. În partea stângă este
-                pusă
-                poza produsului.
-                Iar partea dreaptă conține: numele, drescrierea și cele două butoane de adăugare în coș sau în lista de
-                favorite.
-                Butoanele au colțurile rotunde, iar culoarea de background este o nuanță de albastru, în conformitate cu
-                restul aplicației, textul din interior fiind completat de câte o iconiță specifică.
-            </p>
-            <p>
-                A treia parte conține restul informațiilor, începând prin prezentarea a 4 ingrediente componente de
-                bază,
-                fiecare dintre ele putând fi accesate,
-                în ideea că site-ul va afișa toate parfumurile care au în componența lor ingredientul respectiv.
-                Imediat după sunt afișate alte 3 parfumuri care se aseamănă cu produsul curent, având aspecte comune
-                precum,
-                colecția de provenieință sau componența.
-            </p>
+        </p>
+        <img src="Interfata/About22.png" alt="img6">
+        <img src="Interfata/About11.png" alt="img5">
 
-            <img src="Interfata/product.png" alt="img3">
-            <img src="Interfata/product2.png" alt="img4">
-            <h4>Pagina de About</h4>
-            <p>
-                Pagina de About are scopul de oferi utilizatorului o descriere a ceea ce este PerMvibes într-un mod cât
-                mai clar.
-            </p>
-            <p>
-                Aceasta este divizată în mai multe părți folosind flex.
-                Prima parte conține o imagine, aleasă în ton cu spectrul de culori folosit pentru site, unde se află și
-                titlul paginii ABOUT US.
-                Următoarele doua părți, imparțite ambele în doua coloane, conțin o imagina specifică unui site de
-                parfumuri, o descriere generală căt și una mai detaliată a PerMvibes, precum și un buton care să permită
-                utilizatorului să meargă la pagina cu produse pentru a incepe cumpăraturile.
 
-            </p>
-            <img src="Interfata/About11.png" alt="img5">
-            <img src="Interfata/About22.png" alt="img6">
-            <img src="Interfata/About33.png" alt="img7">
-            <h4>Pagina de Help</h4>
-            <p>Pagina de Help conține o serie de întrebări frecvente pe care utlizatorii le-ar putea avea, în legătură
-                cu
-                operațiile de bază pe care le pot face în cadrul aplicației. Pentru un aspect mai captivat în
-                completarea
-                informațiilor, chiar la inceputul paginei au fost amplasate 3 poze sugestive ideii de HELP.</p>
-            <img src="Interfata/Help.png" alt="img7">
-            <h4>Pagina de Login</h4>
-            <p>Conține un titlu ~WELCOME~, un form de Login și un buton de pt a da submit pentru data introdusă ca input
-                ~Sign In~.
-                Ele fiind băgate într-un container, care face la rândul lui din întregul container al paginii, pentru a
-                cărui fundal a fost aleasă o poză în concordanță cu tematica aleasă.Pentru a nu tăia din imaginea
-                aleasă,
-                background-ul containerului
-                secundar este făcut transparent specificând o culoare de albastru prin hsla.
-            </p>
-            <img src="Interfata/Login.png" alt="img8">
-            <h3 id="softwareInterface">Interfață software</h3>
-            <p>
-                Aplicația va dispune de o conectare la o bază de date relațională: MySQL, pentru
-                a realiza anumie acțiuni ale utilizatorului ( înregistrare,
-                autentificare) și pentru gestionarea produselor.
-            </p>
-            <h3 id="communicationInterface">Interfață de comunicare</h3>
-            <p>
-            </p>
-        </section>
-        <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
-            <h2 id="functionalRequirements">Cerințe funcționale</h2>
+        <h4>Pagina de Help</h4>
+        <p>Pagina de Help conține o serie de întrebări frecvente pe care utlizatorii le-ar putea avea, în legătură
+            cu
+            operațiile de bază pe care le pot face în cadrul aplicației. Pentru un aspect mai captivat în
+            completarea
+            informațiilor, chiar la inceputul paginei au fost amplasate 3 poze sugestive ideii de HELP.</p>
+        <img src="Interfata/Help.png" alt="img7">
+        <h4>Pagina de Login</h4>
+        <p>Conține un titlu ~WELCOME~, un form de Login și un buton de pt a da submit pentru data introdusă ca input
+            pentru cei care vor să se conecteze ca useri cu drepturi de administrator
+            și unul pentru cei care vor să acceseze aplicația în mod normal.
+            ~Sign In~.
+            Ele fiind băgate într-un container, care face la rândul lui din întregul container al paginii, pentru a
+            cărui fundal a fost aleasă o poză în concordanță cu tematica aleasă.Pentru a nu tăia din imaginea
+            aleasă,
+            background-ul containerului
+            secundar este făcut transparent specificând o culoare de albastru prin hsla.
+        </p>
+        <img src="Interfata/login.png" alt="login">
+        <h3 id="softwareInterface">Interfață software</h3>
+        <p>
+            Aplicația va dispune de o conectare la o bază de date relațională: phpMyAdmin, pentru
+            a realiza anumie acțiuni ale utilizatorului ( înregistrare,
+            autentificare) și pentru gestionarea produselor.
+        </p>
+        <h3 id="communicationInterface">Interfață de comunicare</h3>
+        <p>
+        </p>
+    </section>
+    <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
+        <h2 id="functionalRequirements">Cerințe funcționale</h2>
+        <h3 id="register">Înregistrare</h3>
+        <p>
+            Utilizatorii care doresc opțiunile de a salva un produs în coș, favorite sau de a plasa o comanda, sunt
+            nevoiți
+            să se înregistreze și să se autentifice folosind credentialele lor unice. Datele oferite vor fi
+            trimise
+            prin intermediul unei cereri de tip "POST" realizată de
+            către formularul de înregistrare, doar după ce au fost validate corespunzător.
+        </p>
+        <h3 id="login">Autentificare</h3>
 
-        </section>
+        <p>Utilizatorii care dețin un cont se pot autentifica pe pagina de "login" în care
+            trebuie să-și introducă numele de utilizator(sau adresa de email) și parola. Datele
+            introduse de către utilizator vor fi trimise printr-o cerere a formularului.</p>
+        <h3 id="search">Căutarea unui produs după un atribut</h3>
+        <p>
+            Această funcționalitate permite oricărui utilizator (autentificat sau nu) să găsească o gamă de produse
+            bazată pe un atribut specificat. Căutarea se face pe filtre de nume, brand, sezon și ingrediente.
+            Datele
+            introduse de către utilizator vor fi trimise printr-o cerere.
+        </p>
+        <h3 id="cart">Salvarea produsului în coș</h3>
+        <p>
+            Aceasta este una dintre funcționalitățile de bază ale ale aplicației. Utilizatorul logat poate salva
+            în coșul de cumpărături produsele disponibile în stoc.
+        </p>
+        <h3 id="fav">Salvarea produsului în secțiunea de favorite</h3>
+        <p>
+            Utilizatorul logat poate salva
+            în secțiunea de favorite o singura dată un produs care se află în stoc.
+        </p>
+        <h3 id="order">Plasarea unei comenzi </h3>
+        <p>
+            Opțiunea de plasare a unei comenzi apare în momentul în care utilizatorul are în coș cel puțin un produs.
+            Acesta trebuie să completeze un form cu datele referitoare la adresă și plată. Datele sunt verificate,
+            după validarea datelor se trimite comanda. În cazul unor date invalide îi sunt afișate mesaje de eroare în
+            care sunt semnalate problemele referitoare la completarea formularului sau dacă între timp
+            stocul produselor alese a fost epuizat.
+        </p>
 
-        <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
+        <h3 id="comm">Vizualizarea si adăugarea unui comentariu</h3>
+        <p>
+            Pe pagina unui produs, utilizatorul(autentificat sau nu) poate vizualiza ultimele 5 comentarii lăsate sau poate adăuga el un
+            comentariu.
+        </p>
+        <h3 id="orderUser">Vizualizarea comenzilor date</h3>
+        <p>
+            Utilizatorul poate vizualiza comenzile date în secțiunea de MyAccount, unde apar informatii despre
+            data în care a fost plastă comanda, produsele care au fost comandate și id-ul ei.
+        </p>
+    </section>
 
-            <h2 id="nonfunctionalRequirements">Cerințe nonfuncționale</h2>
-            <h3 id="safety">Cerințe de siguranță</h3>
-            <p>
-            </p>
-            <h3 id="security">Cerințe de securitate </h3>
-            <p>
-            </p>
-        </section>
-        <section typeof="sa:ReferenceList" id="referinte" role="doc-bibliography">
-            <h2 id="bibliography">Referințe bibliografice</h2>
 
-            <ol>
-                <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="Scholarly-html1"
-                    resource="https://w3c.github.io/scholarly-html/">
-                    <cite property="schema:name">
-                        <a href="https://w3c.github.io/scholarly-html/">Scholarly HTML</a>
-                    </cite>, de
-                    <span property="schema:author" typeof="schema:Person">
+    <section typeof="sa:MaterialsAndMethods" role="doc-chapter">
+
+        <h2 id="nonfunctionalRequirements">Cerințe nonfuncționale</h2>
+        <h3 id="safety">Cerințe de siguranță</h3>
+        <p>
+            PerMvibes este un produs sigur. O problemă care ar putea apărea ar fi legată de
+            pierderea informațiilor din baza de date folosită, însă probabilitatea de a se întampla
+            acest lucru este foarte mică.
+        </p>
+        <h3 id="security">Cerințe de securitate </h3>
+        <p>
+            Aplicația este protejată împotriva atacurilor de tip SQL-injection
+        </p>
+    </section>
+    <section typeof="sa:ReferenceList" id="referinte" role="doc-bibliography">
+        <h2 id="bibliography">Referințe bibliografice</h2>
+
+        <ol>
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="Scholarly-html1"
+                resource="https://w3c.github.io/scholarly-html/">
+                <cite property="schema:name">
+                    <a href="https://w3c.github.io/scholarly-html/">Scholarly HTML</a>
+                </cite>, de
+                <span property="schema:author" typeof="schema:Person">
                         <span property="schema:givenName">Tzviya</span>
                         <span property="schema:aditionalName">Wiley</span>
                         <span property="schema:familiyName">Siegman</span>
 
                     </span>&amp;
-                    <span property="schema:author" typeof="schema:Person">
+                <span property="schema:author" typeof="schema:Person">
                         <span property="schema:givenName">Robin</span>
                         <span property="schema:familiyName">Berjon</span>
                     </span>
-                </li>
-                <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="Scholarly-html2"
-                    resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">
-                    <cite property="schema:name">
-                        <a href="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">What is
-                            Scholarly HTML?</a>
-                    </cite>, de
-                    <span property="schema:author" typeof="schema:Person">
+            </li>
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="Scholarly-html2"
+                resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">
+                <cite property="schema:name">
+                    <a href="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">What is
+                        Scholarly HTML?</a>
+                </cite>, de
+                <span property="schema:author" typeof="schema:Person">
                         <span property="schema:givenName">Robin</span>
                         <span property="schema:familiyName">Berjon</span>
 
                     </span>&amp;
-                    <span property="schema:author" typeof="schema:Person">
+                <span property="schema:author" typeof="schema:Person">
                         <span property="schema:givenName">Sebastien</span>
                         <span property="schema:familiyName">Ballesteros</span>
                     </span>
-                </li>
-                <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="busaco1"
-                    resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
+            </li>
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="busaco1"
+                resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
                     <span property="schema:author" typeof="schema:Person">
                         <span property="schema:givenName">Sabin</span>
                         <span property="schema:aditionalName">Corneliu</span>
                         <span property="schema:familiyName">Buraga</span>
                     </span>,
-                    <cite property="schema:name">
-                        <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
-                            Site-ul disciplinei "Tehnologii Web"
-                        </a> parte a
-                        <span typeof="schema:Organization" resource="https://www.uaic.ro">
+                <cite property="schema:name">
+                    <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
+                        Site-ul disciplinei "Tehnologii Web"
+                    </a> parte a
+                    <span typeof="schema:Organization" resource="https://www.uaic.ro">
                             <a href="https://www.uaic.ro">
                                 <span property="schema:name">UAIC</span>
                             </a>
                         </span>
-                    </cite>
-                </li>
+                </cite>
+            </li>
 
-                <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="busaco2"
-                    resource="https://www.w3schools.com">
-                    <cite property="schema:name">
-                        <a href="https://www.w3schools.com">
-                            W3School
-                        </a>
-                    </cite>
-                </li>
-            </ol>
+            <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="busaco2"
+                resource="https://www.w3schools.com">
+                <cite property="schema:name">
+                    <a href="https://www.w3schools.com">
+                        W3School
+                    </a>
+                </cite>
+            </li>
+        </ol>
 
 
-
-        </section>
-    </article>
+    </section>
+</article>
 </body>
 
 </html>

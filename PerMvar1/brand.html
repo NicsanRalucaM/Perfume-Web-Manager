@@ -41,30 +41,26 @@
 
                 </label>
                 <ul>
-                    <ul>
-                        <li><a href="news.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a></li>
-                        <li>
-                            <button id="my_account" onclick="checkCookieAccount()"><i class="fa fa-fw fa-user"></i>My
-                                Account
-                            </button>
-                        </li>
-                        <li>
-                            <button id="cart" onclick="checkCookieCart()"><i class="fa fa-fw fa-shopping-bag"></i>
-                            </button>
-                        </li>
-                        <li>
-                            <button id="fav" onclick="checkCookieWishs()"><i class="fa fa-fw fa-heart"></i> Wishs
-                            </button>
-                        </li>
-                        <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
-                        <li>
-                            <button onclick="deleteCookie()" id="logout" style="display: none">Logout<i
-                                    class="fas fa-sign-out-alt"></i></button>
-                        </li>
-                    </ul>
-
+                    <li><a href="news.html" class="active"><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li>
+                        <button id="my_account" onclick="checkCookieAccount()"><i class="fa fa-fw fa-user"></i>My
+                            Account
+                        </button>
+                    </li>
+                    <li>
+                        <button id="cart" onclick="checkCookieCart()"><i class="fa fa-fw fa-shopping-bag"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button id="fav" onclick="checkCookieWishs()"><i class="fa fa-fw fa-heart"></i> Wishs
+                        </button>
+                    </li>
+                    <li><a href="login.html" id="login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                    <li>
+                        <button onclick="deleteCookie()" id="logout" style="display: none">Logout<i
+                                class="fas fa-sign-out-alt"></i></button>
+                    </li>
                 </ul>
-
             </nav>
         </div>
     </div>
@@ -135,22 +131,17 @@
         xhr.addEventListener("readystatechange", function () {
             if (this.readyState === 4) {
                 {
-
-
                     let a = JSON.parse(this.responseText);
                     for (let i = 0; i < a['records'].length; i++) {
                         const node = document.getElementById("container");
                         const div = document.getElementById('box');
                         const clone = div.cloneNode(true);
                         clone.id = "box";
-                        console.log(clone.childNodes);
-
+                        //console.log(clone.childNodes);
                         node.appendChild(clone);
-
                         document.getElementById(clone.id).style.display = "block";
                         document.getElementById(clone.childNodes[1].firstChild.id).src = a["records"][i].image;
                         document.getElementById("href").href = "http://localhost:63342/Perfume-Web-Manager/PerMvar1/search.html?input=" + a["records"][i].name;
-
 
                     }
                 }
@@ -158,11 +149,9 @@
         });
         xhr.open("GET", "http://localhost:63342/Perfume-Web-Manager/API/Brand/read.php");
         xhr.setRequestHeader("Content-Type", "application/json");
-
         xhr.send();
         return a;
     }
-
 </script>
 
 </body>

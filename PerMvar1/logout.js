@@ -10,7 +10,7 @@ function checkLogin() {
 function deleteCookie() {
     // const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/news.html`));
     document.cookie = 'id=; Max-Age=-99999999;';
-    console.log("helooo");
+   // console.log("helooo");
    // window.location.href = "news.html";
     //window.reload();
 }

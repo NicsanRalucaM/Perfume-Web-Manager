@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Progress Report</title>
+    <meta name="author" content=" Nicșan Raluca-Maria, Rusu Magdalena">
+    <link rel="stylesheet" href="doc.css">
+
+</head>
+
+<body>
+
+<h1>PerMvibes</h1>
+
+<ol>
+    <li>
+        <a href="#authors"> <span>1 </span>Autori</a>
+    </li>
+    <li>
+        <a href="#introduction"> <span>2 </span>Introducere</a>
+    </li>
+    <li>
+        <a href="#progress"> <span>3 </span>Pașii intermediari dezvoltarii proiectului</a>
+        <ol>
+            <li><a href="#front"><span>3.1 </span>Frontend</a></li>
+            <li><a href="#back"><span>3.2 </span>Backend</a></li>
+        </ol>
+    </li>
+    <li>
+        <a href="#management"> <span>3 </span>Sistemul de management al codului sursă</a>
+    </li>
+    <li>
+        <a href="#bibliography"><span>7. </span>Referinţe bibliografice</a>
+    </li>
+</ol>
+<article id="article" typeof="schema:ScholarlyArticle" resource="#">
+    <section id="authors" typeof="sa:AuthorsList">
+        <h2>Autori</h2>
+        <ol>
+            <li property="schema:author" typeof="sa:ContributorRole">
+                <a property="schema:author" href="#" typeof="schema:Person">
+                    <span property="schema:giveName">Nicșan </span>
+                    <span property="schema:familyName">Raluca-Maria</span>
+                </a>
+                <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                    <a property="schema:email" href="ralucanicsan@yahoo.com"
+                       title="corresponding author">&#9993;</a>
+                </sup>
+            </li>
+
+            <li property="schema:author" typeof="sa:ContributorRole">
+                <a property="schema:author" href="#" typeof="schema:Person">
+                    <span property="schema:giveName">Rusu</span>
+                    <span property="schema:familyName">Magdalena</span>
+                </a>
+                <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                    <a property="schema:email" href="rusumagda3002@gmail.com"
+                       title="corresponding author">&#9993;</a>
+                </sup>
+            </li>
+        </ol>
+    </section>
+    <section typeof="sa:ScholarlyArticle" role="doc-introduction">
+        <h2 id="introduction"><span>2. </span>Introducere</h2>
+        <p>
+            PerMvibes este o aplicație web prin intermediul căreia se pot vizualiza și cumpăra diferite parfumuri.
+            Produsele pot fi vizualizate atât de utilizatorii autentificați, cât și de cei care nu doresc să-și creeze
+            un cont.Aplicația dorește să minimizeze efortul utlizatorului de a accesa produsele de interes. Astfel, pe
+            pagina principală, utlizatorul găsește top 3 parfumuri ale ultimelor colecții, având posibilitatea de a
+            accesa oricare dintre ele. De asemenea, în cadrul paginii de descriere a unui produs, utilizatorul găsește
+            informații detaliate referitoare la prețul, valabilitatea stocului, ingredientele sale componente, aspecte
+            legate de colecția din care face parte cât și sugestia a altor 3 produse cu care se găsesc aspecte comune.
+        </p>
+    </section>
+    <section typeof="sa:ScholarlyArticle" role="doc-chapter">
+        <h2 id="progress"><span>3. </span>Pașii intermediari dezvoltarii proiectului</h2>
+
+        <h3 id="front"><span>3.1 </span>Frontend</h3>
+        <ul>
+            <li>
+                Primul pas a constat în a ne documenta cu privire la tehnologiile ce trebuiau să fie folosite (i.e.
+                HTML, CSS)
+                pentru a efectua prima componentă a proiectului.
+            </li>
+
+            <li>
+                Pas cu pas am încercat să formatăm, pe rand, mai multe pagini, încercând diverse
+                layout-uri/culori pentru a observa care se potrivesc mai bine.
+                Una dintre primele pagini stucturate a fost cea de home, în care ne-am gândit atât la design,
+                cât și la funcționalitățile viitoare pe care trebuie
+                să le oferim utilizatorului. Astfel, am adoptat un design cât mai minimalist și intuitiv pentru
+                a fi ușor de folosit. De asemenea, pentru această primă parte a proiectului
+                am documentat și câteva surse cu privire la impactul pe care-l poate avea design-ul în
+                interacțiunea cu utilizatorul. Astfel, am optat pentru a folosi o tema cât mai naturală, în note de
+                albastru și gold, pentru a oferi un sentiment însuflețit, plin de viață și energie, dinamic, intens și
+                puternic.
+            </li>
+            <li>
+                Dupa realizarea paginii de home, am început integrarea paginii de About în care am facut o mica
+                descrierii a site-ului pentru a spori încrederea cu privire la serviciile oferite. In cadrul acestei
+                pagini am folosit
+                un design destul de simplu, dar modern. De asemenea, cum în interacțiunea cu o aplicație pot exista
+                destul de
+                multe întrebări în legătură cu diverse
+                aspecte, sau neînțelegeri în felul in care se poate folosi,
+                ne-am gândit să proiectăm și o pagină de FQA în care utilizatorul să poată vedea răspunsurile la
+                toate întrebările pe care le poate avea în legătură cu aplicația. Din alte exemple
+                de bună practică pe care le-am văzut și experimentat, am decis să alegem un design care să ofere
+                rapid răspunsul la o întrebare pe care o poate avea un user fără ca acesta să caute prea mult.Astfel
+                pagina de FAQ are un design cât mai simplu pentru ca
+                utilizatorul să-i fie cât mai ușor să găsească informațiile de care are nevoie.
+
+            </li>
+            <li>
+                Multe dintre funcționalitățile aplicației devin accesibile doar după crearea unui cont. Astfel,
+                am creat cele doua pagini de Login și Register
+                și ne-am gândit că pot avea un design similar.
+                De asemenea, cele doua pagini am dorit să fie prietenoase cu utilizatorul și în acest fel orice
+                tip de erori care pot aparea în completarea formularului sunt insoțite de mesaje de eroare
+                semnificative din care acesta își poate da seama rapid ce anume a greșit sau dacă a reușit cu
+                succes să creeze contul. În plus, datele completate care sunt valide nu vor fi șterse în
+                formular,
+                ci doar vor trebui completate acele câmpuri pentru care sunt greșeli sau în care nu au fost
+                respectate anumite reguli. Testarea în detaliu a acestor pagini a fost realizată în partea a
+                doua a proiectului (backend) întrucat puteam oferi modele reale pentru a ne testa produsul.
+            </li>
+
+            <li>
+                Odată cu oferirea posibilității de a crea un cont, ne-am gândit să construim și o pagină în care
+                utilizatorul își poate gestiona propriul cont. Astfel, în cadrul acestei pagini, un utilizator
+                poate vedea datele sale proprii pe care le-a furnizat aplicației.
+                Totodată, în această pagină, utilizatorul poate vedea și comenzile pe care le-a dat pâna în acel moment.
+                In mod similar, testarea pentru această pagină a fost făcută în mod intens în componenta de
+                backend în care aveam datele necesare pentru a testa toate funcționalitățile.
+            </li>
+            <li>
+                Unele dintre paginile pentru care am invesit mult timp în proiectare au fost: pagina cosului, pagina
+                unui produs și pagina cu toate produsele.
+                Aceaste pagini sunt destul de complexe, întrucat însumează multe elemente ce țin de
+                funcționalitățile principale ale aplicației, de exemplu un utilizator trebuie să poată vizualiza produse
+                indiferent
+                dacă este logat sau nu, dar poate adăuga în coș sau la favorite doar dacă este logat. Pentru toate
+                acestea am folosit un design simplu dar și modern, care să fie plăcut la vedere.
+                Totodată, intreaga aplicație dispune de un design responsive, adaptându-se ușor pe pe dispozitive de
+                orice dimensiune.
+
+            </li>
+
+        </ul>
+
+        <h3 id="back"><span>3.2 </span>Backend</h3>
+        <ul>
+            <li> În vederea realizării componentei de backend, am încercat pe cat posibil să scriem un cod care respectă
+                multe din principiile
+                ingineriei software (SOLID, DRY, KISS). De asemenea, în ceea ce privește siguranța
+                aplicației am recurs la metode care evită SQL-injection.
+                Astfel, rezultatului documentării și efortul depus în scrierea unui cod cât mai corect a
+                rezultat, în final, în realizarea unui proiect care poate fi ușor extins și modificat, care
+                are diverse funcționalități în cod
+                printre care, dintre cele mai importante, menționăm: formulare dinamice generate
+                cu ajutorul PHP-ul cu clase specializate,
+                diverse interogări SQL care se modelează în funcție de datele oferite.
+            </li>
+
+
+            <li>
+                Primul pas a fost să ne gândim la cum ar trebui modelate tabelele pentru a indeplini
+                toate funcționalitățile pe care trebuie să le oferim utilizatorului într-o manieră care să
+                faciliteze accesul ușor la date și o comunicare eficientă cu baza de date.
+            </li>
+
+            <li>
+                Având un model al bazei de date realizat, am început implementarea primei funcționalități pe
+                care o oferim utilizatorilor, și anume crearea unui cont. Astfel, formularul pentru a
+                colecta
+                datele utilizatorului este încărcat din PHP , întrucât am dorit
+                să putem modifica ușor un formular pe viitor în caz că vom avea nevoie să adăugăm un câmp în
+                plus, la fel și pentru register.
+                De asemenea,
+                pentru că am dorit o interfață cât mai prietenoasă cu utilizatorul și pentru că ne-am mai
+                întâlnit și noi cu aceste bune practici pe diferite site-uri, am implementat un formular
+                care îți oferă
+                mesaje sugestive în cazul în care greșești anumite câmpuri și de asemenea, dacă ai dat
+                submit, dar ai greșit un câmp, va trebui să introduci din nou doar acel câmp pe care l-ai
+                introdus greșit.
+                Dacă totul este corect și ai reușit sa-ți creezi un cont atunci vei fi redirecționat către pagina
+                principală. În plus, am optat pentru anumite
+                restricții pe care
+                le impunem utilizatorului atunci când completează formularul, acestea constând în a utiliza
+                o adresă de email validă care respectă un anumit format.
+                Finalizarea celor două pagini a constat în diverse teste, fie cu date eronate care nu
+                treceau constrângerile impuse, fie cu email-uri care deja existau în baza de date și erau
+                ale altor utilizatori,
+                fie încercarea de trimitere a formularelor goale sau a caracterelor malițioase și de
+                asemenea, SQL-injection.
+            </li>
+
+            <li>
+                Întrucât am oferit posibilitatea utilizatorilor de a-și crea un cont am început să
+                implementăm rând pe rând pricipalele funcționalități pe care trebuia să le oferim
+                utiliazatorilor. Astfel, cum rolul principal al acestei aplicații este de a permine utilizatorilor să și
+                achiziționeze parfumul dorit , am implementat pagina cu produse, prin care poți căuta și vedea toate
+                posibilitățile pe care le ai la dispoziție. Astfel, utilizatorul poate căuta produse de la un anumit
+                brand, un anumit sezon dar și în funcție de ingredientele principale din care este făcut. Atăt pe pagina
+                cu produse, căt și pe pagina unui produs anume, utilizatorul este informat în vedere cu disponibilitatea
+                stocului, acest lucru verificandu-se la fiecare încărcare a paginii în baza de date. Totodata, pe pagina
+                produsului, pe lănga elementele specifice unui anunț, apar și principalele 4 ingrediente din care este
+                compus, care ne oferă posibilitatea ca la apăsarea pe ele să ne afișeze restul de parfumuri care conțin
+                acel ingredient, la fel este si în cazul sezonului.
+                Tot pe această pagina sunt extrase și afișate produse care sunt inrudite ,după brand, cu produsul
+                inițial, dar și comentarii lasăte de alți utilizatori cu privire la produsul respectiv.
+
+            </li>
+
+            <li>
+                În continuare ne-am concentrat atenția asupra diferențlor dintr un utilizator logat și un simplu
+                vizitatator.
+                De fiecare dată cand vizitatorul încearcă să acceseze pagina profilului, pagina coșului sau pagina de
+                favorite este redirecționat către pagina de login și orice încercare de adăugare de produse în coș sau
+                favorite nu este luată în considerare.
+                Odata ce s-a logat acesta are posibilitatea de a adauga produse, fiind limitat de niște constrângeri cum
+                ar fi ca nu poate avea în coș mai mult de 10 produse, nu poate adăuga în coș mai multe produse decât
+                există în stoc, nu poate da comandă daca în coș nu sunt produse. De asemenea, pagina pentru plasarea
+                unei comenzi este implementată să verifice ca datele intoduse să respecte anumite criterii și ,în plus ,
+                la finalizarea comenzii utilizatorul este informat dacă între timp produsele pe care dorea să le
+                achiziționeze nu se mai află în stoc și este sfătuit să aleagă altceva.
+            </li>
+
+            <li>
+                În final am implementat funcționaliățile specifice administratorului sistemului: va
+                avea posibilitatea sa consulte rapoarte – generate in formatele HTML, JSON si PDF – privind stocurile
+                existente și situația vânzărilor în funcție de sezon, brand, profilul utilizatorilor,import/export de
+                date în format CSV. Astfel, în momentul în care administratorul se loghează acesta este redirecționat pe
+                o pagina specifică în care are posibilitatea de a alege între opțiunile enumerate mai sus. În cazul
+                rapoartelor acesta alege în ce format dorește să le vada, și au loc interogări asupra bazei de date, în
+                urma cărora primește informațiile cerute.
+
+            </li>
+
+
+        </ul>
+    </section>
+</article>
+
+<section typeof="sa:ScholarlyArticle" role="doc-chapter">
+    <h2 id="progress2"><span>4. </span>Sistemul de management al codului sursă</h2>
+    <p>
+        Pentru a ne putea organiza cât mai bine în scrierea codului am ales să utilizăm GitHub, întrucât putem
+        menține ușor versiuni ale proiectului și putem aduce modificări adnotate sugestiv pentru a putea înțelege mai
+        târziu care a fost evoluția proiectului. În acest fel, am lucrat colaborativ
+        pentru a ne putea organiza proiectului cât mai bine în scopul de a aduce noi funcționalități sau, când era
+        cazul, să revenim la versiunile anterioare (roll-back).
+    </p>
+</section>
+<section typeof="sa:ReferenceList" id="referinte" role="doc-bibliography">
+    <h2 id="bibliography"><span>5. </span>Referințe bibliografice</h2>
+    <ol>
+        <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="Scholarly-html2"
+            resource="https://w3c.github.io/scholarly-html/">
+            <cite property="schema:name">
+                <a href="https://w3c.github.io/scholarly-html/">Scholarly HTML</a>
+            </cite>, de
+            <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Tzviya</span>
+                        <span property="schema:aditionalName">Wiley</span>
+                        <span property="schema:familiyName">Siegman</span>
+
+                    </span>&amp;
+            <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Robin</span>
+                        <span property="schema:familiyName">Berjon</span>
+                    </span>
+        </li>
+        <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="Scholarly-html"
+            resource="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">
+            <cite property="schema:name">
+                <a href="https://vivliostyle.github.io/vivliostyle_doc/samples/scholarly/index.html">What is
+                    Scholarly HTML?</a>
+            </cite>, de
+            <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Robin</span>
+                        <span property="schema:familiyName">Berjon</span>
+
+                    </span>&amp;
+            <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Sebastien</span>
+                        <span property="schema:familiyName">Ballesteros</span>
+                    </span>
+        </li>
+        <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="busaco2"
+            resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
+                    <span property="schema:author" typeof="schema:Person">
+                        <span property="schema:givenName">Sabin</span>
+                        <span property="schema:aditionalName">Corneliu</span>
+                        <span property="schema:familiyName">Buraga</span>
+                    </span>,
+            <cite property="schema:name">
+                <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
+                    Site-ul disciplinei "Tehnologii Web"
+                </a> parte a
+                <span typeof="schema:Organization" resource="https://www.uaic.ro">
+                            <a href="https://www.uaic.ro">
+                                <span property="schema:name">UAIC</span>
+                            </a>
+                        </span>
+            </cite>
+        </li>
+
+        <li property="schema:citation" role="doc-biblioentry" typeof="schema:WebPage" id="busaco"
+            resource="https://www.w3schools.com">
+            <cite property="schema:name">
+                <a href="https://www.w3schools.com">
+                    W3School
+                </a>
+            </cite>
+        </li>
+    </ol>
+
+
+</section>
+
+
+</body>
+</html>

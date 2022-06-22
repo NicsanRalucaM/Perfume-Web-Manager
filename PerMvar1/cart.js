@@ -1,6 +1,5 @@
 window.onload = getItems();
 
-
 function getItems() {
     checkLogin();
     if (getCookie('id') != null) {
@@ -95,7 +94,6 @@ function addWish(id) {
         if (this.readyState === 4) {
             {
                 //document.getElementById("abc").innerText = "saluttyy";
-
             }
         }
     });
