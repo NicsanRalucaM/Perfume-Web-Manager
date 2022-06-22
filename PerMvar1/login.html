@@ -41,14 +41,14 @@
                     <i class="fas fa-bars"></i>
                 </label>
                 <ul>
-                    <li><a href="news.html" ><i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li><a href="news.html"><i class="fa fa-fw fa-home"></i> Home</a></li>
                     <li>
                         <button id="my_account" onclick="checkCookieAccount()"><i class="fa fa-fw fa-user"></i>My
                             Account
                         </button>
                     </li>
                     <li>
-                        <button id="cart"  onclick="checkCookieCart()"><i class="fa fa-fw fa-shopping-bag"></i></button>
+                        <button id="cart" onclick="checkCookieCart()"><i class="fa fa-fw fa-shopping-bag"></i></button>
                     </li>
                     <li>
                         <button id="fav" onclick="checkCookieWishs()"><i class="fa fa-fw fa-heart"></i> Wishs</button>
@@ -93,10 +93,13 @@
             <div class="login-button">
                 <button type="submit" id="btn-submit">Login</button>
             </div>
+
             <div class="input-group">
                 <p> Register if you don't have an account! </p>
                 <div class="re"><a href="register.html"> <b>Register now!</b></a></div>
-
+            </div>
+            <div class="login-button_admin">
+                <button type="submit" id="btn-submit_admin">Login as administrator</button>
             </div>
         </div>
     </div>
@@ -110,6 +113,7 @@
         email: document.getElementById('email'),
         password: document.getElementById('password'),
         submit: document.getElementById('btn-submit'),
+        submit_admin: document.getElementById('btn-submit_admin'),
         messages: document.getElementById('form-messages')
     };
 
@@ -136,6 +140,29 @@
         request.send(requestData);
     });
 
+    form.submit_admin.addEventListener('click', () => {
+        const request = new XMLHttpRequest();
+
+        request.onload = () => {
+            let responseObject = null;
+
+            try {
+                responseObject = JSON.parse(request.responseText);
+            } catch (e) {
+                console.error('Could not parse JSON!');
+            }
+
+            if (responseObject) {
+                handleResponse_admin(responseObject);
+            }
+        };
+        const requestData = `email=${form.email.value}&password=${form.password.value}`;
+
+        request.open('post', 'login_admin.php');
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        request.send(requestData);
+    });
+
     function handleResponse(responseObject) {
         if (responseObject.ok) {
             location.href = 'news.html';
@@ -152,6 +179,25 @@
 
             form.messages.style.display = "block";
         }
+    }
+
+    function handleResponse_admin(responseObject) {
+        if (responseObject.ok) {
+            location.href = 'rapoarte.html';
+        } else {
+            while (form.messages.firstChild) {
+                form.messages.removeChild(form.messages.firstChild);
+            }
+
+            responseObject.messages.forEach((message) => {
+                const li = document.createElement('li');
+                li.textContent = message;
+                form.messages.appendChild(li);
+            });
+
+            form.messages.style.display = "block";
+        }
+
     }
 </script>
 </body>

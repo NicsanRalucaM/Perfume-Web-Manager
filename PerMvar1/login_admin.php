@@ -30,11 +30,15 @@ if ($ok) {
         $messages[] = 'Email doesn`t exists';
     } else {
         if (password_verify($password, $result['password'])) {
-            if ($result['id'] != 0) {
+            if ($result['id'] == 0) {
                 $ok = true;
+
                 $_SESSION['user_id'] = $result['id'];
                 $cookie_value = $result['id'];
                 setcookie("id", $cookie_value, time() + (86400 * 30), "/");
+            } else {
+                $ok=false;
+                $messages[] = 'You do not have the necessary rights';
             }
 
         } else {
